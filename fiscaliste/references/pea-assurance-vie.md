@@ -21,7 +21,7 @@ Les plafonds concernent les **versements**, pas la valeur du plan. Un plan peut 
 #### Avant 5 ans
 
 - **Tout retrait entraîne la clôture** du plan
-- Imposition des gains au **PFU 30%** (ou barème sur option globale)
+- Imposition des gains : 12,8 % IR (ou barème sur option globale) + PS produits de placement, 17,2 % pour un retrait en 2025 puis **18,6 % à compter du 01/01/2026** (LFSS 2026), soit PFU 31,4 %
 
 **Exceptions** (clôture sans pénalité) :
 - Licenciement, invalidité, mise à la retraite

@@ -6,42 +6,45 @@ Voir `data/equity-salarial.json` pour les taux et seuils.
 
 **Terminologie** : "RSU" est le terme anglo-saxon ; "AGA" (Actions Gratuites d'Actions) est le terme juridique français (art. L. 225-197-1 C. com., art. 80 quaterdecies CGI). Les deux désignent le même dispositif : attribution d'actions gratuites aux salariés, avec période d'acquisition (vesting) puis détention éventuelle.
 
-### Deux événements fiscaux distincts
+### Deux événements fiscaux distincts, imposés la même année (celle de la cession)
 
-**1. Gain d'acquisition (au vesting)**
-- Valeur de l'action à la date d'acquisition
-- **Imposition : traitements et salaires** (case 1TT ou 1UT)
-- Au barème progressif de l'IR
-- Cotisations sociales : CSG/CRDS 9,7% + contribution salariale 10% (sur plans qualifiants, dans certains plafonds)
+Source : [BOI-RSA-ES-20-20-20](https://bofip.impots.gouv.fr/bofip/5654-PGP.html/identifiant=BOI-RSA-ES-20-20-20-20260521) (régime fiscal au regard des bénéficiaires, version du 21/05/2026) et [BOI-RSA-ES-20-30](https://bofip.impots.gouv.fr/bofip/2389-PGP.html/identifiant=BOI-RSA-ES-20-30-20260521) (contribution salariale). Le régime dépend de la **date de la décision d'AGE** qui a autorisé l'attribution et du caractère **qualifiant** du plan (C. com. art. L. 225-197-1 et s. ; plans de sociétés étrangères : [BOI-RSA-ES-20-20-10-20](https://bofip.impots.gouv.fr/bofip/9665-PGP.html/identifiant=BOI-RSA-ES-20-20-10-20-20170724)).
 
-**2. Plus-value de cession**
-- Valeur de cession − valeur au vesting
-- **Imposition : PV mobilière** : PFU à **31,4 % pour les cessions réalisées dès 2025** (12,8 % IR + 18,6 % PS, LFSS 2026), ou barème sur option
+**1. Gain d'acquisition** = valeur des actions à la date d'acquisition définitive (vesting) × nombre d'actions
+- Valeur retenue : **premier cours coté du jour de l'attribution définitive** ; cotation en devise convertie au taux de change de ce jour (§ 120 et 130)
+- **Fait générateur : la cession** (ou disposition, conversion au porteur, mise en location), pas le vesting (art. 80 quaterdecies CGI ; § 150). Un gain acquis en N et cédé en N+3 se déclare en N+3.
+- Une **moins-value de cession** (vente sous la valeur d'acquisition) s'impute sur le gain d'acquisition correspondant, dans la limite de ce montant, avant tout abattement (art. 80 quaterdecies V ; § 190). Les moins-values sur d'autres titres ne s'imputent jamais sur le gain d'acquisition.
+
+**2. Plus-value de cession** = prix de cession − valeur à la date d'acquisition définitive
+- **PV mobilière** : PFU à **31,4 % pour les cessions réalisées dès 2025** (12,8 % IR + 18,6 % PS, LFSS 2026), ou barème sur option globale
 - Les PV mobilières sont des "revenus du patrimoine" (art. L. 136-6 CSS), donc soumises au taux PS 18,6 % dès les revenus 2025
-- Uniquement si cession après vesting
 
-### Plans qualifiants (loi Macron)
+### Régime du gain d'acquisition selon la date de l'AGE (plans qualifiants)
 
-Régime de faveur pour la fraction ≤ plafonds (variables selon les plans) :
-- Imposition comme PV mobilière au PFU (pas comme salaire)
-- Abattement 50% possible sur une fraction
+| Décision d'AGE | Fraction annuelle ≤ 300 000 € | Fraction > 300 000 € |
+|---|---|---|
+| **Après le 31/12/2017** (LF 2018 art. 28, régime courant) | Barème **après abattement de 50 %** (art. 200 A, 3 CGI), le cas échéant abattement fixe 150-0 D ter ; **PS revenus du patrimoine** 18,6 % sans abattement (L. 136-6 I e CSS, § 50) ; **pas de contribution salariale** ; CSG non déductible | Traitements et salaires de droit commun : barème sans abattement, CSG/CRDS d'activité 9,7 %, **contribution salariale 10 %** (L. 137-14 CSS) |
+| Du 31/12/2016 au 31/12/2017 | Barème après abattements pour durée de détention (ancien 150-0 D) ou abattement fixe, non cumulables ; PS patrimoine | Idem ci-dessus (salaire + contribution 10 %) |
+| Du 08/08/2015 au 30/12/2016 (loi Macron) | Intégralité du gain : barème après abattements pour durée de détention, PS patrimoine, pas de contribution salariale | sans objet |
+| Du 28/09/2012 au 07/08/2015 | Salaire (barème), CSG/CRDS d'activité, contribution salariale 10 % | sans objet |
 
-Au-delà des plafonds : régime de droit commun (salaire).
+La limite de 300 000 € s'apprécie par contribuable et par année de cession, sur l'ensemble des gains d'acquisition, **après** imputation d'une éventuelle moins-value de cession.
 
-### Piège classique
+**Plans non qualifiants** (hors conditions du C. com.) : le gain d'acquisition est un salaire ordinaire, imposé l'année de l'acquisition définitive avec les cotisations de droit commun (§ 14).
 
-**Traiter le gain RSU comme une PV mobilière classique** → erreur majeure. Le gain au vesting est d'abord :
-1. Salaire (barème)
-2. Soumis à CSG 9,7%
-3. Soumis à contribution salariale 10% (plans qualifiants)
+### Pièges classiques
 
-Seule la plus-value ultérieure (valeur vesting → cession) est PV mobilière.
+Deux erreurs symétriques :
+1. **Traiter le gain d'acquisition d'un plan qualifiant comme un salaire** (cotisations, contribution 10 %, cases salaires) : faux sous 300 000 € depuis la loi Macron, c'est le régime des plans non qualifiants ou de la fraction excédentaire.
+2. **Le traiter comme une simple PV mobilière** au PFU : faux, il est au barème après abattement de 50 %, avec PS patrimoine, l'année de la cession.
+
+Seule la plus-value ultérieure (valeur au vesting → cession) est une PV mobilière. Les cases de la 2042 C (gain avec abattement 50 %, fraction > 300 000 €) sont à vérifier chaque année sur la notice.
 
 ### Stratégie : quotient pour revenus exceptionnels
 
-Un vesting massif (ex: 150 000 € en une seule année) fait franchir plusieurs tranches. Le **quotient pour revenus exceptionnels** (coefficient 4) peut lisser l'imposition.
+Une cession massive d'actions gratuites (ex: 150 000 € de gain d'acquisition imposable la même année) fait franchir plusieurs tranches. Le **quotient pour revenus exceptionnels** (coefficient 4) peut lisser l'imposition.
 
-Mécanisme : impôt = [IR(RNI_hors_RSU + vesting/4) − IR(RNI_hors_RSU)] × 4. Utile si le vesting seul fait franchir une tranche. **Nuance** : inutile si le foyer est déjà au TMI 45% — le taux marginal ne change pas avec la division. Détail et exemples chiffrés dans la section cas-speciaux listée depuis SKILL.md.
+Mécanisme : impôt = [IR(RNI_hors_RSU + gain/4) − IR(RNI_hors_RSU)] × 4. Utile si le gain seul fait franchir une tranche. **Nuance** : inutile si le foyer est déjà au TMI 45% — le taux marginal ne change pas avec la division. Détail et exemples chiffrés dans la section cas-speciaux listée depuis SKILL.md.
 
 ## Stock-options
 
