@@ -42,6 +42,7 @@
 - Primes versées **à partir du 13/10/1998**, même après 70 ans, relèvent de l'art. 990 I (abattement 152 500 EUR/bénéf.)
 - Le plafond défavorable de 30 500 EUR ne s'applique **jamais** à ces contrats anciens
 - **Ne jamais fermer un contrat pré-1991** sans vérifier cet avantage successoral
+- Sources : [BOI-TCAS-AUT-60](https://bofip.impots.gouv.fr/bofip/1335-PGP.html), [BOI-ENR-DMTG-10-10-20-20](https://bofip.impots.gouv.fr/bofip/3456-PGP.html) — exonération sous réserve d'absence de modification substantielle du contrat après le 20/11/1991
 
 **PV latentes au décès :**
 - UC : l'**IR** est définitivement exonéré (le décès n'est pas un fait générateur), mais les **PS restent dus** sur les gains constatés au dénouement, prélevés par l'assureur avant versement du capital (LFSS 2010, art. L136-7 II 3° CSS ; CE 18/02/2026, n° 504077). Seul l'IR est purgé, pas les PS — ne pas confondre avec le régime des cryptoactifs où IR et PS sont tous deux purgés au décès.

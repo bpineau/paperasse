@@ -170,6 +170,8 @@ L'assurance-vie est **hors succession** (art. L132-12 Code des assurances). Les 
 
 **Le vrai cas d'exonération totale** : les primes versées **avant le 13/10/1998** échappent à toute imposition (ni 990 I ni droits), que le contrat soit pré- ou post-20/11/1991 (pour un contrat post-1991, à condition d'un versement avant 70 ans). C'est le seuil du 13/10/1998 — et non l'âge — qui bascule ces primes anciennes vers l'art. 990 I.
 
+**Sources officielles** : [BOI-TCAS-AUT-60](https://bofip.impots.gouv.fr/bofip/1335-PGP.html) (prélèvement art. 990 I, tableau des régimes selon dates de souscription et de versement) ; [BOI-ENR-DMTG-10-10-20-20](https://bofip.impots.gouv.fr/bofip/3456-PGP.html) (art. 757 B, contrats d'assurance dans l'actif successoral). Réserve : l'exonération des primes versées avant le 13/10/1998 sur contrat pré-1991 suppose que le contrat n'ait pas subi de modification substantielle de son économie après le 20/11/1991.
+
 **Le seul cas défavorable** (757 B / plafond 30 500 EUR global) : contrat souscrit **après** le 20/11/1991 **ET** primes versées **après** 70 ans — **quelle que soit la date de versement**. Le seuil du 13/10/1998 ne joue que pour les primes versées **avant** 70 ans (exonération totale avant cette date, art. 990 I à partir).
 
 **Règle clé pour les contrats pré-1991** : primes versées **avant le 13/10/1998** = exonération totale ; primes versées **à partir du 13/10/1998**, même après 70 ans, relèvent de l'art. 990 I (abattement de 152 500 EUR par bénéficiaire) — le régime dérogatoire favorable s'applique dès lors que le contrat a été souscrit avant le 20/11/1991, et l'art. 757 B ne s'y applique jamais. Ne pas fermer ces contrats anciens.
