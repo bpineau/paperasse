@@ -20,7 +20,8 @@
       "limite_annuelle": 300000,
       "note_limite": "Limite annuelle par contribuable, appréciée sur l'ensemble des gains d'acquisition de l'année, après imputation d'une éventuelle moins-value de cession.",
       "moins_value_cession": "Une cession sous la valeur d'acquisition réduit le gain d'acquisition correspondant, dans la limite de ce montant, AVANT abattement (CGI art. 80 quaterdecies V ; § 190). Les moins-values sur d'autres titres ne s'imputent jamais sur le gain d'acquisition.",
-      "cases_2042": "À vérifier chaque année sur la notice 2042 C (cases du gain d'acquisition avec abattement 50 % et de la fraction > 300 000 €)."
+      "cases_2042": "2042 C millésime 2026 : fraction ≤ 300 000 € en 1TZ (gain imposable après abattement) avec l'abattement en 1WZ (50 %) ou 1VZ (abattement fixe) ; fraction > 300 000 € en 1TT / 1UT (salaires). AGE du 08/08/2015 au 31/12/2017 : abattement pour durée de détention en 1UZ. À revérifier chaque millésime.",
+      "piege_notice_2026": "La notice 2041-NOT du millésime 2026 imprime encore « prélèvements sociaux de 17,2 % » sur le gain d'acquisition et « PFU 30 % » ; la loi (LFSS 2026 art. 12, II : L. 136-6 « à compter de l'imposition des revenus de l'année 2025 ») donne 18,6 % et 31,4 % pour les revenus 2025. Citer la loi, pas la brochure."
     },
     "plans_qualifiants_age_2016_2017": "AGE entre le 31/12/2016 et le 31/12/2017 : même seuil de 300 000 €, mais abattements pour durée de détention (ancien 150-0 D) ou abattement fixe, non cumulables ; au-delà, salaire + contribution salariale 10 %.",
     "plans_qualifiants_age_2015_2016": "AGE entre le 08/08/2015 et le 30/12/2016 (loi Macron) : intégralité du gain au barème avec abattements pour durée de détention, PS patrimoine, pas de contribution salariale.",
@@ -43,11 +44,11 @@
     },
     "gain_levee": {
       "plans_pre_2012": "Régime spécifique (barème de faveur selon durée détention)",
-      "plans_post_2012": "Salaire avec régime spécifique — contribution salariale 10%",
+      "plans_post_2012": "Options attribuées à compter du 28/09/2012 : gain de levée imposé comme un salaire (barème, case 1TT / 1UT), CSG/CRDS d'activité 9,7 %, contribution salariale 10 %",
       "note": "Consulter le plan pour déterminer le régime applicable"
     },
     "contribution_salariale": 0.1,
-    "note_contribution": "Taux 10% sur les gains d'acquisition des plans qualifiants"
+    "note_contribution": "Contribution salariale de 10 % (CSS L. 137-14 ; BOI-RSA-ES-20-30 § 30 et § 150) sur le gain de levée des options attribuées depuis le 16/10/2007, sur la totalité du gain : le seuil de 300 000 € ne concerne que les actions gratuites (voir rsu). Options et actions gratuites attribuées avant le 28/09/2012 : case 3VN."
   },
   "bspce": {
     "description": "Bons de Souscription de Parts de Créateur d'Entreprise — réservés aux startups éligibles",
@@ -55,14 +56,15 @@
     "gain_cession": {
       "definition": "Prix de vente des actions − prix d'exercice des BSPCE",
       "anciennete_3_ans_plus": {
-        "taux": 0.3,
-        "detail": "12.8% IR + 18.6% PS depuis la LFSS 2026 (17.2% jusqu'aux revenus 2024), soit 31.4% ; régime des plus-values mobilières"
+        "taux": 0.314,
+        "detail": "12.8% IR (bons attribués depuis le 01/01/2018 ; 19 % avant, case 3SJ) ou barème sur option globale + 18.6% PS revenus du patrimoine depuis la LFSS 2026 (17.2% jusqu'aux revenus 2024), soit 31.4% ; BOI-RSA-ES-20-40-30 § 30 à 50 et § 120"
       },
       "anciennete_moins_3_ans": {
-        "taux": 0.5,
-        "detail": "30% IR + 20% PS — pénalité forte si départ précoce"
+        "taux": 0.486,
+        "detail": "30% IR (CGI art. 163 bis G, sans option pour le barème ; BOI-RSA-ES-20-40-30 § 70) + 18.6% PS revenus du patrimoine (§ 120, dès le premier euro), soit 48.6% ; il n'existe aucun prélèvement spécifique à 20 %. Pénalité forte si départ précoce."
       },
-      "note_anciennete": "Anciennete du salarié dans la société à la date de cession"
+      "note_anciennete": "Anciennete du salarié dans la société à la date de cession",
+      "note_bspce_2025": "Titres souscrits en exercice de bons à compter du 01/01/2025 (loi 2025-127 art. 92) : l'avantage salarial issu de l'exercice (12,8 % ou 30 % selon l'ancienneté) est séparé du gain de cession (plus-values mobilières, case 3TL) ; cases dédiées sur la 2042 C 2026."
     },
     "conditions_eligibilite_societe": [
       "SA ou SAS française",

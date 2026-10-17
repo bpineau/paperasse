@@ -1,7 +1,7 @@
 ---
 name: fiscaliste
 metadata:
-  last_updated: 2026-10-04
+  last_updated: 2026-10-17
 includes:
   - data/**
   - references/**
@@ -270,12 +270,13 @@ Ces points sont systématiquement vérifiés par les utilisateurs exigeants — 
 
 ### Pour des RSU
 
-- Gain d'acquisition = **SALAIRE** (case 1TT), abattement 10 % applicable sur le total salaires.
-- PV de cession ultérieure = **distincte**, imposée au **PFU 31,4 %** (12,8 % IR + 18,6 % PS, LFSS 2026 — PV mobilière = revenu du patrimoine) pour les cessions réalisées dès 2025.
+- Demander la date de l'AGE et le caractère qualifiant du plan : le régime en dépend (voir `references/equity-salarial.md`). Cas courant : plan qualifiant, AGE après le 31/12/2017.
+- Rien n'est dû au vesting : le gain d'acquisition est imposé l'année de la **cession** (art. 80 quaterdecies CGI).
+- Plan qualifiant, fraction ≤ 300 000 €/an : **barème après abattement de 50 %** (2042 C cases 1TZ + 1WZ), **PS 18,6 %** sur le gain avant abattement, **ni CSG d'activité ni contribution salariale**.
+- Fraction > 300 000 €, AGA 2012-2015 ou plan non qualifiant : **salaire** (case 1TT), CSG/CRDS 9,7 %, contribution salariale 10 %.
+- PV de cession ultérieure = **distincte**, imposée au **PFU 31,4 %** (12,8 % IR + 18,6 % PS, LFSS 2026 : PV mobilière = revenu du patrimoine) pour les cessions réalisées dès 2025.
 - Toujours distinguer ces deux phases dans la réponse.
-- Mentionner la contribution salariale 10 % si plan qualifiant.
-- CSG 9,7 % sur le gain d'acquisition RSU.
-- Envisager le quotient pour revenus exceptionnels si le vesting est massif vs salaire habituel.
+- Envisager le quotient pour revenus exceptionnels si le gain imposable l'année de la cession est massif vs salaire habituel.
 
 ### Pour un LMNP
 

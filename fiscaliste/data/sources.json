@@ -61,9 +61,9 @@
       "annee_revenus": 2025,
       "source_officielle": "Plusieurs lois : loi Macron 2015 et LF 2018 art. 28 (actions gratuites qualifiantes : seuil 300 000 €, abattement 50 %), LFI 2018 (BSPCE)",
       "article_cgi": "art. 80 quaterdecies (RSU), art. 80 bis (SO), art. 163 bis G (BSPCE)",
-      "bofip": "BOI-RSA-ES-20-20-20 (version du 21/05/2026), BOI-RSA-ES-20-30",
+      "bofip": "BOI-RSA-ES-20-20-20 (version du 21/05/2026), BOI-RSA-ES-20-30 (21/05/2026), BOI-RSA-ES-20-40-30 (12/08/2025, BSPCE) ; cases : formulaire 2042 C millésime 2026",
       "update_frequency": "annual",
-      "last_fetched": "2026-10-04",
+      "last_fetched": "2026-10-17",
       "next_check": "2026-12-30",
       "check_instructions": "Vérifier plafonds plans qualifiants et taux BSPCE selon ancienneté."
     },

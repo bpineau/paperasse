@@ -83,16 +83,16 @@
       "id": 6,
       "name": "rsu-vesting-quotient",
       "prompt": "J'ai reçu un vesting RSU de 100 000 € cette année. Mon salaire habituel est 60 000 €. Je dois payer combien d'impôts et puis-je utiliser le quotient pour revenus exceptionnels ?",
-      "expected_output": "Gain acquisition 100 000 € = imposé comme salaire (1TT). Total imposable salaires : 160 000 € + abattement 10%. CSG 9,7% sur RSU + contribution salariale 10% éventuelle. Quotient : comparer impôt avec/sans quotient (coefficient 4). À 160k€ on est en TMI 41%, quotient peut lisser si on revient en 30% sans RSU. La PV ultérieure (cession après vesting) sera imposée séparément au PFU.",
+      "expected_output": "Demander la date de l'AGE et le caractère qualifiant du plan. Cas courant (plan qualifiant, AGE après 2017) : rien n'est dû au titre du vesting, le gain d'acquisition de 100 000 € est imposé l'année de la cession des actions. Cette année-là : barème après abattement de 50 % (50 000 € s'ajoutent aux 60 000 € de salaire ; 2042 C cases 1TZ + 1WZ), PS 18,6 % sur les 100 000 € (18 600 €), ni CSG d'activité ni contribution salariale sous 300 000 €. Quotient (coefficient 4) : comparer l'impôt avec/sans. La PV de cession (prix de vente − valeur au vesting) est imposée séparément au PFU 31,4 %. Plan non qualifiant ou fraction > 300 000 € : salaire (1TT), CSG 9,7 %, contribution salariale 10 %.",
       "files": [],
       "assertions": [
-        "Le skill identifie le gain RSU comme SALAIRE (pas comme PV mobilière)",
-        "L'abattement 10% salaire s'applique sur le total salaires + RSU",
-        "La CSG 9,7% sur le gain RSU est mentionnée",
-        "La contribution salariale 10% sur plans qualifiants est évoquée",
+        "Le skill ne taxe rien au vesting : le gain d'acquisition est imposé l'année de la cession",
+        "Le skill ne traite PAS le gain d'un plan qualifiant comme un salaire ordinaire sous 300 000 € : barème après abattement de 50 %",
+        "Les prélèvements sociaux de 18,6 % (revenus du patrimoine) sur le gain avant abattement sont mentionnés, sans CSG d'activité ni contribution salariale",
+        "Le régime salaire (1TT, CSG 9,7 %, contribution 10 %) est réservé à la fraction > 300 000 € ou aux plans non qualifiants",
         "Le mécanisme du quotient (coefficient 4) est expliqué",
         "Le skill chiffre (ou explique comment chiffrer) les 2 scénarios avec/sans quotient",
-        "Le skill distingue gain d'acquisition (salaire) et future PV de cession (PFU)"
+        "Le skill distingue gain d'acquisition (barème après abattement) et future PV de cession (PFU 31,4 %)"
       ]
     },
     {

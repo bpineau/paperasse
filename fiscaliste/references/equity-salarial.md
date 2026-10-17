@@ -38,7 +38,9 @@ Deux erreurs symétriques :
 1. **Traiter le gain d'acquisition d'un plan qualifiant comme un salaire** (cotisations, contribution 10 %, cases salaires) : faux sous 300 000 € depuis la loi Macron, c'est le régime des plans non qualifiants ou de la fraction excédentaire.
 2. **Le traiter comme une simple PV mobilière** au PFU : faux, il est au barème après abattement de 50 %, avec PS patrimoine, l'année de la cession.
 
-Seule la plus-value ultérieure (valeur au vesting → cession) est une PV mobilière. Les cases de la 2042 C (gain avec abattement 50 %, fraction > 300 000 €) sont à vérifier chaque année sur la notice.
+Seule la plus-value ultérieure (valeur au vesting → cession) est une PV mobilière. Cases de la 2042 C millésime 2026 : 1TZ (gain imposable après abattement) et 1WZ (abattement 50 %) pour la fraction ≤ 300 000 €, 1TT / 1UT pour la fraction excédentaire ; à revérifier chaque millésime.
+
+**Piège de la brochure** : la notice 2041-NOT 2026 imprime encore « prélèvements sociaux de 17,2 % » sur le gain d'acquisition et un PFU « au total 30 % ». La loi (LFSS 2026 art. 12, II) applique le taux de 18,6 % aux revenus du patrimoine « à compter de l'imposition des revenus de l'année 2025 » ; citer la loi, pas la brochure.
 
 ### Stratégie : quotient pour revenus exceptionnels
 
@@ -57,13 +59,12 @@ Différence entre prix du marché à l'attribution et prix d'exercice, au-delà 
 
 Selon date d'attribution :
 
-| Plan | Régime |
+| Options attribuées | Régime |
 |------|--------|
-| Avant 2012 | Barème de faveur (selon durée détention) |
-| 2012-2016 | Salaire (barème IR + cotisations sociales spécifiques) |
-| Après 2017 | Salaire (barème) + contribution salariale 10% sur plans qualifiants |
+| Avant le 28/09/2012 | Taux forfaitaires de faveur selon la durée de portage (cases 3VD à 3SF), ou option salaire ; contribution salariale 10 % si attribuées depuis le 16/10/2007 (case 3VN) |
+| À compter du 28/09/2012 | Salaire (barème, case 1TT / 1UT), CSG/CRDS d'activité 9,7 %, contribution salariale 10 % (L. 137-14 CSS ; [BOI-RSA-ES-20-30](https://bofip.impots.gouv.fr/bofip/2389-PGP.html/identifiant=BOI-RSA-ES-20-30-20260521) § 30 et § 150) |
 
-Toujours consulter le plan pour déterminer le régime applicable.
+La contribution salariale frappe la totalité du gain de levée : le seuil de 300 000 € n'existe que pour les actions gratuites. Toujours consulter le plan pour déterminer le régime applicable.
 
 ## BSPCE (Bons de Souscription de Parts de Créateur d'Entreprise)
 
@@ -75,10 +76,10 @@ Voir `data/equity-salarial.json` → `bspce.gain_cession`.
 
 | Ancienneté dans la société à la date de cession | Taux global pour cessions 2025 |
 |--------------------------------------------------|-------------|
-| **≥ 3 ans** | **31,4 %** (12,8 % IR + 18,6 % PS) — PV mobilière |
-| **< 3 ans** | 50 % (30 % IR + 20 % PS — contribution salariale spécifique) |
+| **≥ 3 ans** | **31,4 %** (12,8 % IR, ou barème sur option globale, + 18,6 % PS) ; 19 % d'IR pour les bons attribués avant le 01/01/2018 (case 3SJ) |
+| **< 3 ans** | **48,6 %** (30 % IR sans option pour le barème + 18,6 % PS) |
 
-Note : pour les cessions ≥ 3 ans, le PS suit le taux applicable aux PV mobilières (revenus du patrimoine, L. 136-6 CSS), soit 18,6 % dès 2025. Pour les cessions < 3 ans, la part PS reste à 20 % (contribution salariale spécifique, distincte du PS de droit commun).
+Source : [BOI-RSA-ES-20-40-30](https://bofip.impots.gouv.fr/bofip/5653-PGP.html/identifiant=BOI-RSA-ES-20-40-30-20250812) (§ 30 à 70 pour les taux d'IR, § 120 pour les prélèvements sociaux). Dans les deux cas, les prélèvements sociaux sont ceux des revenus du patrimoine (L. 136-6 CSS), dus dès le premier euro, soit 18,6 % dès les revenus 2025 ; il n'existe aucun prélèvement spécifique à 20 %. Pour les titres souscrits en exercice de bons à compter du 01/01/2025 (loi 2025-127 art. 92), la 2042 C 2026 sépare l'avantage salarial issu de l'exercice (12,8 % ou 30 % selon l'ancienneté) du gain de cession (PV mobilière, case 3TL).
 
 La pénalité pour départ précoce (< 3 ans) est forte. À intégrer dans les décisions de départ.
 
@@ -152,7 +153,8 @@ Vesting massif, cession d'entreprise, indemnité de départ → à activer.
 
 | Revenu | Formulaire / case |
 |--------|-------------------|
-| Gain acquisition RSU (salaire) | 2042 case 1TT / 1UT |
+| Gain acquisition RSU, plan qualifiant, fraction ≤ 300 000 € | 2042 C case 1TZ (gain après abattement) + 1WZ (abattement 50 %) ou 1UZ (durée de détention, AGE 2015-2017) ou 1VZ (abattement fixe) |
+| Gain acquisition RSU, fraction > 300 000 €, AGA 2012-2015, plans non qualifiants | 2042 C case 1TT / 1UT (salaires) |
 | Plus-value cession RSU | 2042 C case 3VG (PFU) ou 2074 (détail) |
 | Gain cession BSPCE | 2042 C case 3VG ou 3WB selon ancienneté |
 | Abondement PEE (information) | Déclaration employeur — exonéré |
