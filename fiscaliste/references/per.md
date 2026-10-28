@@ -130,8 +130,8 @@ L'abondement est un complément versé par l'entreprise pour chaque euro versé 
 
 | Dispositif | Avantage |
 |------------|----------|
-| **PEE + abondement** | Prime gratuite de l'employeur + exonération IR sur l'abondement + PFU 17,2 % à la sortie (pas 30 %) |
-| **PERCO + abondement** | Idem + blocage jusqu'à la retraite |
+| **PEE + abondement** | Prime de l'employeur exonérée d'IR (soumise à CSG/CRDS 9,7 %) + sortie exonérée d'IR, seuls PS sur les gains (17,2 % jusqu'en 2025, 18,6 % dès 2026) |
+| **PERCO / PERECO + abondement** | Idem (capital issu de l'épargne salariale exonéré d'IR à la sortie) + blocage jusqu'à la retraite |
 | **PER individuel** | Uniquement économie d'impôt immédiate × TMI, pas de match employeur |
 
 **Règle** : un abondement employeur de 100 % représente un rendement immédiat de 100 %. Aucune défiscalisation PER n'égale ce rendement. Toujours saturer PEE/PERCO en premier si l'option existe.
