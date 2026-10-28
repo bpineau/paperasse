@@ -27,13 +27,14 @@ Impôt annuel sur le patrimoine **immobilier net** du foyer fiscal au **1er janv
 | Résidence principale | **Abattement 30%** sur la valeur vénale |
 | Biens professionnels | Exonération totale si outil de travail (conditions strictes) |
 | Bois, forêts, parts GFA | Exonération partielle (25% imposable) sous engagement 30 ans |
-| LMP | Exonéré comme bien professionnel sous conditions de recettes et de revenus |
+| Locaux loués meublés (LMP) | Exonérés sous des critères propres à l'IFI (art. 975, V, 1°) : recettes > 23 000 €, bénéfice commercial net (après amortissements) > 50 % des revenus nets d'activité du foyer (ce bénéfice compris), et profession principale, en général exclue pour un salarié à plein temps (BOI-PAT-IFI-30-10-10-10 § 60 ; BOI-PAT-IFI-30-10-10-30 § 20). Le statut LMP à l'IR ne suffit pas |
 | Location longue durée bail rural | Exonération partielle sous conditions |
 
-**Conditions "biens professionnels"** (article 885 O bis CGI) :
-- Fonction de direction effective
-- Rémunération > 50% des revenus professionnels du foyer
-- Détention > seuil minimum de participation
+**Conditions "actifs professionnels"** (art. 975 CGI ; brochure IR 2026, IFI) :
+- Entreprise individuelle : activité industrielle, commerciale, artisanale, agricole ou libérale exercée à titre de profession principale par le propriétaire ou un membre du foyer, biens nécessaires à cette profession
+- Société : activité professionnelle principale exercée dans la société ; pour une société à l'IS, fonction de direction, rémunération normale représentant plus de la moitié des revenus professionnels et détention d'au moins 25 % des droits de vote, avec des dérogations (BOI-PAT-IFI-30-10-30-20)
+
+**Foyer IFI** : couple marié, pacsé ou concubins notoires et enfants mineurs ; un enfant majeur rattaché à l'IR forme son propre foyer IFI.
 
 ## Passif déductible
 
@@ -41,17 +42,18 @@ Impôt annuel sur le patrimoine **immobilier net** du foyer fiscal au **1er janv
 
 - Emprunts immobiliers (capital restant dû au 1er janvier)
 - Dettes liées à travaux sur immeubles taxables
-- Impôts afférents à l'immobilier : taxe foncière, IFI N-1, droits de succession/donation
+- Impositions dues à raison des biens au 1er janvier : taxes foncières de l'année, droits de mutation à titre gratuit afférents à des actifs taxables, et **l'IFI théorique de l'année lui-même** (calculé sur le patrimoine net avant sa propre déduction, ligne 9GH de la 2042-IFI) ; l'IFI de l'année précédente, déjà payé, n'est plus une dette (art. 974, I, 4° CGI ; BOI-PAT-IFI-20-40-10)
+- Emprunts in fine : déductibles pour le capital emprunté diminué de M × n / N (n années écoulées, N durée totale) ; prêt sans terme : moins un vingtième par année écoulée (art. 974, II CGI)
+- Prêts d'ascendants, descendants, frères et sœurs : déductibles si le redevable justifie du caractère normal des conditions (échéances, montant, remboursements effectifs) (art. 974, III)
 
 ### Dettes NON déductibles
 
-- Dettes personnelles non liées à l'immobilier
-- Emprunts in fine → **amortissement fictif** appliqué (déduction limitée selon un calendrier théorique)
-- Emprunts familiaux sans formalisme (acte non enregistré, pas d'intérêt réel) — article 885 T bis CGI
+- Dettes personnelles non liées à l'immobilier, dettes afférentes à des biens totalement exonérés
+- Prêts consentis par le redevable lui-même, son conjoint, partenaire ou concubin, ses enfants mineurs, ou une société qu'il contrôle (art. 974, III CGI)
 
 ### Plafonnement du passif
 
-Si le passif total dépasse 60% de la valeur des biens ET > 5 M€, la fraction au-delà n'est déductible qu'à hauteur de 50%.
+Lorsque la valeur vénale des biens taxables excède 5 M€ et que le total des dettes déductibles excède 60 % de cette valeur, la fraction des dettes au-delà de 60 % n'est admise qu'à hauteur de 50 %, sauf dettes dont le redevable justifie qu'elles n'ont pas un objectif principalement fiscal (art. 974, IV CGI ; brochure IR 2026).
 
 ## Calcul du barème
 
@@ -78,7 +80,7 @@ Entre 1 300 000 € et 1 400 000 € : formule `17 500 − 1,25% × valeur_patri
 
 Si dépassement → l'IFI est **réduit de l'excédent**.
 
-**Stratégie** : optimiser les revenus pris en compte (certains revenus exonérés ne comptent pas) pour maximiser le plafonnement.
+**Attention** : le plafond retient les revenus mondiaux nets de frais professionnels de l'année précédente, **y compris les revenus exonérés d'IR et les produits soumis à un prélèvement libératoire** (art. 979 CGI ; brochure IR 2026, IFI). Seuls les gains non réalisés (plus-values latentes) n'y figurent pas.
 
 ## Évaluation des biens
 
@@ -96,16 +98,15 @@ Valeur des parts × fraction immobilière. Possible décote pour illiquidité.
 
 ### Biens démembrés
 
-- **Usufruit** : valeur pleine propriété × quote-part de l'usufruit selon barème fiscal (article 669 CGI)
-- **Nue-propriété** : pas d'IFI (sauf cas spécifiques : donation avec réserve d'usufruit, nue-propriété issue de démembrement fiscal → règles particulières)
+- **Usufruit (principe, art. 968 CGI)** : l'usufruitier (ou le titulaire d'un droit d'usage ou d'habitation) déclare le bien pour sa **valeur en pleine propriété**, quelle que soit la date du démembrement ; le nu-propriétaire ne déclare rien. Aucun abattement pour démembrement.
+- **Nue-propriété** : hors IFI, sauf dans les trois cas d'imposition répartie ci-dessous.
 
-**Exception art. 885 G CGI** : dans certains cas (démembrement volontaire ultérieur), l'usufruitier et le nu-propriétaire sont chacun imposables à hauteur de leur quote-part.
+**Exceptions (art. 968, 1° à 3° CGI)** : imposition répartie entre usufruitier et nu-propriétaire selon le barème de l'art. 669 : 1° usufruit **légal** du conjoint survivant ou d'un ascendant (art. 757, 767, 1094 et 1098 C. civ.) ; l'usufruit issu d'une donation entre époux (art. 1094-1 C. civ.) reste imposé en pleine propriété chez l'usufruitier ; 2° **vente** de la nue-propriété avec réserve d'usufruit, si l'acquéreur n'est pas une personne visée à l'art. 751 CGI ; 3° **don ou legs** de la nue-propriété avec réserve d'usufruit à l'État, aux collectivités, à un établissement public ou à une association reconnue d'utilité publique.
 
 ## Déclaration
 
-- Déclaration 2042-IFI jointe à la 2042
-- Annexes : 2042-IFI-K (évaluation des biens)
-- Date limite : même que la déclaration IR
+- Déclaration 2042-IFI (annexes 1 à 6) déposée avec la déclaration de revenus, case 0IF cochée sur la 2042 ; 2042-IFI-COV pour ceux qui ne déposent pas de déclaration de revenus
+- Date limite : même que la déclaration IR ; avis en août, paiement au 15 septembre
 
 ### Documents à préparer
 
@@ -117,7 +118,7 @@ Valeur des parts × fraction immobilière. Possible décote pour illiquidité.
 ## Pièges fréquents
 
 1. **Oublier l'abattement 30% RP** — perte directe
-2. **Inclure un LMP en patrimoine taxable** — alors qu'il peut être exonéré comme bien professionnel
+2. **Exclure un bien LMP du patrimoine taxable** sans vérifier les critères propres à l'IFI (bénéfice net > 50 % des revenus d'activité, profession principale) : risque de rappel
 3. **Emprunt in fine sans amortissement fictif** — redressement probable
 4. **Évaluer la RP au prix d'achat** au lieu de la valeur vénale actuelle — source de sous-déclaration
 5. **Omettre les SCPI en assurance-vie** — fraction immobilière imposable
@@ -130,7 +131,7 @@ Valeur des parts × fraction immobilière. Possible décote pour illiquidité.
 - Manquement délibéré : majoration 40%
 - Manœuvres frauduleuses : majoration 80%
 
-**Délai de reprise** : 6 ans pour l'IFI (contre 3 ans pour l'IR dans certains cas).
+**Délai de reprise** : jusqu'au 31 décembre de la troisième année si la déclaration révèle suffisamment l'exigibilité (LPF art. L. 180), sinon six ans (LPF art. L. 186).
 
 ## Références CGI / BOFiP
 

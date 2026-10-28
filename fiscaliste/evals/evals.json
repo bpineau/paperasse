@@ -68,14 +68,15 @@
       "id": 5,
       "name": "lmnp-micro-vs-reel",
       "prompt": "J'ai un appartement loué meublé, recettes 18 000 €/an (longue durée). Je suis au micro-BIC avec abattement 50%. Un ami me dit que je devrais passer au réel. Bonne idée ?",
-      "expected_output": "Micro-BIC = 18 000 × 50% = 9 000 € imposables. Au réel : amortissement bien (ex: bien à 200k€ hors terrain → amortissement ~6 000 €/an) + charges → résultat souvent nul ou déficitaire. Nuance : déficit LMNP non imputable sur revenu global. Évoquer bascule LMP si recettes > 23 000 € ET > 50% autres revenus pro.",
+      "expected_output": "Micro-BIC = 18 000 × 50% = 9 000 € imposables. Au réel : amortissement bien (ex: bien à 200k€ hors terrain → amortissement ~6 000 €/an) + charges → résultat souvent ramené à zéro (les amortissements ne peuvent pas créer de déficit, art. 39 C). Nuance : déficit LMNP non imputable sur revenu global. Contrepartie : pour une cession depuis le 15/02/2025, les amortissements déduits sont retranchés du prix d'acquisition dans le calcul de la plus-value (art. 150 VB, III). Évoquer la bascule LMP si recettes > 23 000 € ET recettes > total des autres revenus d'activité du foyer (pensions comprises).",
       "files": [],
       "assertions": [
-        "Le skill reconnaît le régime micro-BIC LMNP longue durée (abattement 50%, seuil 77 700 €)",
+        "Le skill reconnaît le régime micro-BIC LMNP longue durée (abattement 50%, seuil 77 700 € pour 2025, 83 600 € pour 2026-2028)",
         "Le calcul micro est donné (18 000 × 50% = 9 000 € de base imposable)",
-        "Le skill explique le principe du réel : amortissements + charges",
+        "Le skill explique le principe du réel : amortissements + charges, sans que les amortissements créent un déficit",
         "Le skill rappelle que le déficit LMNP n'est PAS imputable sur le revenu global",
-        "La règle de bascule LMP (23 000 € ET > 50% autres revenus pro) est mentionnée",
+        "Le skill signale que les amortissements déduits au réel minorent le prix d'acquisition à la revente (art. 150 VB, III)",
+        "La règle de bascule LMP (23 000 € ET recettes > total des autres revenus d'activité du foyer, pas 50 %) est mentionnée",
         "La recommandation est nuancée : ça dépend de la valeur du bien et des charges réelles"
       ]
     },
@@ -165,14 +166,14 @@
       "id": 12,
       "name": "deficit-foncier-imputation",
       "prompt": "Foncier nu au réel : loyers bruts 15 000 €, charges courantes 4 000 €, travaux déductibles 18 000 €, intérêts d'emprunt 6 000 €. Quel est mon déficit foncier et combien s'impute sur mon revenu global ?",
-      "expected_output": "Résultat foncier = 15 000 − 4 000 − 18 000 − 6 000 = −13 000 €. Le déficit foncier s'impute sur le revenu global dans la limite de 10 700 €, hors intérêts d'emprunt. Part intérêts (6 000 €) reste imputable uniquement sur les revenus fonciers des 10 années suivantes. Part hors intérêts : 13 000 − 6 000 = 7 000 € ≤ 10 700 € → entièrement imputable sur le revenu global. Solde sur revenus fonciers futurs : 6 000 €.",
+      "expected_output": "Résultat foncier = 15 000 − 4 000 − 18 000 − 6 000 = −13 000 €. Les loyers (15 000 €) sont réputés couvrir d'abord les intérêts d'emprunt (6 000 €) : aucune part du déficit ne provient des intérêts (BOI-RFPI-BASE-30-20 § 110). Le déficit de 13 000 € provient des autres charges : 10 700 € s'imputent sur le revenu global (case 4BC), 2 300 € se reportent sur les revenus fonciers des dix années suivantes (4BB), sous réserve de louer nu le bien jusqu'au 31 décembre de la troisième année suivant l'imputation.",
       "files": [],
       "assertions": [
         "Le déficit foncier est calculé correctement (−13 000 €)",
-        "Le skill distingue la part intérêts d'emprunt et le reste",
-        "La limite de 10 700 € d'imputation sur revenu global est citée",
-        "Les intérêts d'emprunt sont exclus de l'imputation sur revenu global",
-        "Le report 10 ans sur revenus fonciers uniquement est mentionné pour la part non imputée"
+        "Le skill applique la règle d'imputation prioritaire des loyers sur les intérêts (aucune fraction du déficit n'est due aux intérêts ici), et ne retranche pas les 6 000 € d'intérêts de la part imputable",
+        "La limite de 10 700 € d'imputation sur revenu global est citée : 10 700 € imputés, 2 300 € reportés",
+        "Seule la part du déficit due aux intérêts qui excède les loyers serait exclue du revenu global",
+        "Le report 10 ans sur revenus fonciers uniquement est mentionné pour la part non imputée, avec la condition de location de trois ans"
       ]
     },
     {

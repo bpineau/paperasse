@@ -39,16 +39,22 @@
   "passif_deductible": {
     "emprunts_immobiliers": "Capital restant dû au 1er janvier",
     "emprunts_travaux": "Dettes liées à des travaux sur immeubles taxables",
-    "impots_afferents_immobilier": "Taxe foncière, droits de succession/donation, IFI N-1",
+    "impots_afferents_immobilier": "Impositions dues à raison des biens au 1er janvier : taxes foncières de l'année, droits de mutation à titre gratuit afférents à des actifs taxables, et IFI théorique de l'année lui-même (calculé sur le patrimoine net avant sa propre déduction ; 2042-IFI ligne 9GH « Autres dettes dont IFI théorique ») (art. 974, I, 4° CGI ; BOI-PAT-IFI-20-40-10). L'IFI de l'année précédente, déjà payé, n'est plus une dette.",
+    "emprunts_in_fine": "Déductibles pour le capital emprunté diminué de M × n / N (n années écoulées, N durée totale) ; prêt sans terme : moins un vingtième par année écoulée (art. 974, II CGI)",
+    "prets_familiaux": "Non déductibles sans dérogation : prêts consentis par le redevable lui-même, son conjoint, partenaire ou concubin, ou ses enfants mineurs sous administration légale (974, III, 1°) ; prêts d'ascendants, descendants, frères et sœurs (2°) ou d'une société contrôlée par ces personnes (3°) déductibles si le redevable justifie du caractère normal des conditions (échéances, montant, remboursements effectifs) (art. 974, III CGI)",
+    "plafonnement_passif": "Si la valeur vénale des actifs taxables excède 5 M€ et que les dettes déductibles excèdent 60 % de cette valeur, la fraction des dettes au-delà de 60 % n'est déductible qu'à hauteur de 50 %, sauf dettes sans objectif principalement fiscal (art. 974, IV CGI)",
     "non_deductible": [
-      "Emprunts in fine → amortissement fictif appliqué (déduction limitée)",
       "Dettes personnelles non liées à l'immobilier",
-      "Emprunts familiaux sans formalisme (article 885 T)"
+      "Dettes se rapportant à des biens totalement exonérés"
     ]
   },
 
   "plafonnement": {
-    "description": "Plafonnement IR + IFI + PS à 75% des revenus de l'année N-1",
-    "note": "Si le total IR + IFI + PS dépasse 75% des revenus, l'IFI est réduit de l'excédent"
-  }
+    "description": "Plafonnement IR + IFI + PS à 75% des revenus de l'année N-1 (art. 979 CGI)",
+    "note": "Si le total IR + IFI + PS dépasse 75% des revenus mondiaux nets de frais professionnels de l'année précédente, revenus exonérés d'IR et produits soumis à prélèvement libératoire COMPRIS, l'IFI est réduit de l'excédent (brochure IR 2026, IFI)"
+  },
+
+  "foyer_ifi": "Couple marié, pacsé ou concubins notoires et enfants mineurs ; un enfant majeur rattaché à l'IR forme son propre foyer IFI (brochure IR 2026, IFI)",
+  "declaration": "2042-IFI (annexes 1 à 6) déposée avec la déclaration de revenus, case 0IF cochée sur la 2042 ; 2042-IFI-COV sans déclaration de revenus ; avis en août, paiement au 15 septembre",
+  "references": "art. 964 et s. CGI : 965 (assiette), 968 (démembrement), 973 (évaluation, abattement RP 30 %), 974 (passif), 975 (actifs professionnels), 977 (barème), 979 (plafonnement). Les articles 885 et suivants (ISF) sont abrogés."
 }

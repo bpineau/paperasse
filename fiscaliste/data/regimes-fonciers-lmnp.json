@@ -10,7 +10,7 @@
     "description": "Régime simplifié pour revenus fonciers non meublés (location nue)",
     "seuil_recettes_brutes": 15000,
     "abattement": 0.30,
-    "note": "Revenus fonciers bruts ≤ 15 000 € → micro-foncier éligible, abattement 30% automatique. Au-delà : régime réel obligatoire. Exclusions : SCI, monument historique, Pinel, Borloo, etc."
+    "note": "Revenus fonciers bruts du foyer ≤ 15 000 € (sans prorata temporis) → micro-foncier, abattement 30% automatique. Au-delà : régime réel obligatoire ; option pour le réel irrévocable trois ans. Exclusions (brochure IR 2026, revenus fonciers) : monuments historiques, immeubles en nue-propriété, Loc'Avantages, amortissements Périssol, Besson neuf, Robien, Borloo neuf, déductions spécifiques (Anah, Borloo ancien, Cosse, Scellier intermédiaire, ZRR), et le cas où les seuls revenus fonciers du foyer viennent de parts de sociétés non soumises à l'IS (une SCI plus un immeuble en direct reste éligible). Le Pinel (réduction d'impôt) n'exclut pas du micro-foncier."
   },
 
   "regime_reel_foncier": {
@@ -24,10 +24,22 @@
       "Charges de copropriété (fraction non récupérable)"
     ],
     "deficit_foncier": {
+      "source": "art. 156, I, 3° CGI ; BOI-RFPI-BASE-30-20 (version du 16/09/2025)",
       "imputation_revenu_global": 10700,
-      "note_travaux_renovation_energetique": "Plafond temporairement doublé à 21 400 € pour travaux de rénovation énergétique globale (loi climat)",
-      "imputation_revenus_fonciers": "Reportable 10 ans au-delà du plafond annuel",
-      "exception_interets": "Les intérêts d'emprunt NE sont JAMAIS imputables sur le revenu global, uniquement sur les revenus fonciers"
+      "note_travaux_renovation_energetique": "Sur option (à la déclaration 2044), la limite de 10 700 € est rehaussée du montant des dépenses de rénovation énergétique qui font passer le logement d'une classe E, F ou G à une classe A, B, C ou D, dans la limite de 21 400 € par an : devis accepté depuis le 05/11/2022 et dépenses payées du 01/01/2023 au 31/12/2025 (LFR 2022 art. 12 ; BOI-RFPI-BASE-30-20 § 210 à 310), prorogé pour les dépenses payées jusqu'au 31/12/2027 (LFI 2026 art. 47 ; brochure IR 2026, nouveautés) ; deux DPE à fournir. Ce n'est pas un « doublement ».",
+      "imputation_revenus_fonciers": "La fraction au-delà de 10 700 € (ou 21 400 €) et la part du déficit due aux intérêts d'emprunt se reportent sur les revenus fonciers des 10 années suivantes",
+      "exception_interets": "La part du déficit provenant des intérêts d'emprunt n'est jamais imputable sur le revenu global. MAIS les loyers sont réputés couvrir d'abord les intérêts (BOI-RFPI-BASE-30-20 § 110) : seule la fraction des intérêts qui excède les loyers forme une part « intérêts » du déficit. Exemple : loyers 15 000, intérêts 6 000, autres charges 22 000 : déficit 13 000 entièrement dû aux autres charges, 10 700 sur le revenu global, 2 300 reportés.",
+      "condition_location_3_ans": "L'imputation sur le revenu global suppose de louer nu le bien jusqu'au 31 décembre de la troisième année qui suit l'année d'imputation (§ 20) : une vente, une reprise pour soi ou un passage en meublé avant cette date fait réintégrer le déficit imputé",
+      "deficit_global": "Si le revenu global ne suffit pas à absorber les 10 700 €, l'excédent forme un déficit global reportable six ans",
+      "cases_2042": "4BA bénéfice, 4BB déficit imputable sur les revenus fonciers, 4BC déficit imputable sur le revenu global, 4BD déficits antérieurs non encore imputés (annexe 2044)"
+    },
+    "amortissement_bailleur_prive_2026_2028": {
+      "description": "Nouveau dispositif « bailleur privé » (LFI 2026 art. 47 ; art. 31, I, 1°, i et j CGI) : amortissement déductible des revenus fonciers d'une fraction du prix d'acquisition d'un logement acquis en vue d'une location nue",
+      "champ": "Acquisitions réalisées (ou permis de construire déposés) du 21/02/2026 au 31/12/2028, logement dans un bâtiment d'habitation collectif ; pour l'ancien (j), travaux d'au moins 30 % du prix d'acquisition",
+      "calcul": "Taux 3,5 % (neuf, i) ou 3 % (ancien réhabilité, j), majorés pour les loyers sociaux ou très sociaux, sur une base qui exclut un foncier forfaitaire de 20 % du prix net de frais ; déduction plafonnée à 8 000 € par an et par foyer (majorée de 2 000 ou 4 000 € selon le niveau de loyer)",
+      "engagements": "Location nue à usage de résidence principale, effective et continue, pendant au moins neuf ans, hors membres du foyer et parents ou alliés jusqu'au deuxième degré, sous plafonds de loyers et de ressources (renvoi au III de l'art. 199 novovicies)",
+      "revente": "Les amortissements déduits sont retranchés du prix d'acquisition pour le calcul de la plus-value (art. 150 VB, III)",
+      "reserve": "Interaction avec le micro-foncier, avec le plafond du déficit foncier, et montants des plafonds de loyers et de ressources : à vérifier au BOFiP (non commenté au 29/10/2026) avant tout calcul"
     }
   },
 
@@ -35,22 +47,27 @@
     "description": "Régime micro pour locations meublées non professionnelles",
     "reforme_le_meur": "Distinction désormais classé / non classé (et non résidence principale ou non). Applicable revenus 2025.",
 
+    "seuils_par_annee": "Seuils 2025 : 15 000 € (meublés de tourisme non classés) et 77 700 € (autres locations meublées, classés, chambres d'hôtes). Seuils 2026 à 2028 : 15 000 € et 83 600 € (BOI-BAREME-000044, version du 19/08/2026). Le micro s'applique si le seuil n'est pas dépassé en N-1 ou en N-2 : régime réel obligatoire après deux années consécutives de dépassement (brochure IR 2026, revenus non salariés).",
+    "cases_2042_c_pro_2026": "5NG / 5OG / 5PG meublés de tourisme classés et chambres d'hôtes ; 5NH / 5OH / 5PH meublés de tourisme non classés ; 5NI / 5OI / 5PI autres locations meublées (longue durée) ; réel : 5NA bénéfice, 5NY déficit, 5GA à 5GJ déficits antérieurs ; 5NJ à 5NM pour les locations soumises aux cotisations sociales. La case 5ND n'existe plus.",
+
     "lmnp_longue_duree": {
       "seuil": 77700,
+      "seuil_2026_2028": 83600,
       "abattement": 0.50,
-      "note": "Location meublée longue durée (bail >9 mois) — inchangé"
+      "note": "Autres locations meublées (non touristiques : longue durée, bail mobilité...), définies par exclusion des deux catégories suivantes, sans critère de durée de bail"
     },
 
     "meuble_tourisme_classe": {
       "seuil": 77700,
+      "seuil_2026_2028": 83600,
       "abattement": 0.50,
-      "note": "Meublés de tourisme classés (catégorie étoilée) — inchangé"
+      "note": "Meublés de tourisme classés et chambres d'hôtes : abattement 50 % dans la limite de 77 700 € à compter des revenus 2025 (loi 2024-1039 art. 7 ; 71 % et seuil plus élevé auparavant)"
     },
 
     "meuble_tourisme_non_classe": {
       "seuil": 15000,
       "abattement": 0.30,
-      "note": "Seuil et abattement abaissés par la loi Le Meur. Au-delà de 15 000 € : régime réel obligatoire."
+      "note": "Seuil et abattement abaissés par la loi Le Meur (revenus 2025). Régime réel obligatoire après deux années consécutives de dépassement."
     }
   },
 
@@ -61,24 +78,26 @@
       "mobilier": "10-20% par an sur 5-10 ans",
       "gros_travaux": "Amortissables sur leur durée d'usage"
     },
-    "resultat_fiscal": "Recettes − charges − amortissements. Souvent nul ou déficitaire.",
-    "deficit_lmnp": "NON imputable sur le revenu global (contrairement au LMP). Reportable sur les BIC des 10 années suivantes."
+    "resultat_fiscal": "Recettes − charges − amortissements. Les amortissements ramènent au mieux le résultat à zéro : ils ne peuvent ni créer ni augmenter un déficit (art. 39 C, II CGI ; BOI-BIC-CHAMP-40-20 § 57) ; la part non déduite est reportée sans limite de durée. Un déficit LMNP ne peut provenir que des charges.",
+    "deficit_lmnp": "NON imputable sur le revenu global (contrairement au LMP). Reportable sur les seuls bénéfices de location meublée non professionnelle des 10 années suivantes (art. 156, I, 1° ter CGI), pas sur d'autres BIC.",
+    "revente": "Pour les cessions depuis le 15/02/2025, les amortissements déduits au réel sont retranchés du prix d'acquisition dans le calcul de la plus-value des particuliers (art. 150 VB, III CGI ; LF 2025 art. 84), sauf résidences étudiantes, seniors et médico-sociales : l'arbitrage micro / réel doit intégrer cette reprise à la revente.",
+    "formalites": "Déclaration de début d'activité au guichet unique dans les 15 jours (numéro SIRET à reporter) ; au réel, liasse 2031 et annexes 2033 ; CFE possible (service-public F32744)"
   },
 
   "lmp_vs_lmnp": {
-    "description": "Bascule en LMP (Loueur Meublé Professionnel)",
+    "description": "Bascule en LMP (Loueur Meublé Professionnel), art. 155, IV, 2 CGI ; BOI-BIC-CHAMP-40-10",
     "seuils_cumulatifs": {
       "seuil_recettes": 23000,
-      "condition_revenus": "ET recettes meublées > 50% des autres revenus professionnels du foyer (salaires, BNC, BIC, revenus dirigeants)",
-      "note": "Les DEUX conditions doivent être remplies. Seuil 23 000 € non renouvelable — application dès dépassement."
+      "condition_revenus": "ET recettes meublées du foyer > TOTAL des autres revenus d'activité du foyer : traitements et salaires au sens de l'art. 79 CGI (y compris pensions et rentes viagères, et rémunérations de l'art. 62), BIC hors location meublée, BA, BNC (brochure IR 2026, revenus non salariés). Pas « 50 % » : les recettes doivent excéder ces revenus.",
+      "note": "Les DEUX conditions doivent être remplies, appréciées chaque année sur l'ensemble du foyer."
     },
     "consequences_lmp": {
-      "deficits": "Imputables sur le revenu global (contrairement au LMNP)",
-      "plus_values": "Régime des plus-values professionnelles avec exonération totale possible après 5 ans d'activité sous conditions de recettes",
-      "cotisations_sociales": "Cotisations TNS sur le bénéfice (SSI) — charge significative vs LMNP",
-      "ifi": "Biens LMP exonérés d'IFI comme biens professionnels (sous conditions)"
+      "deficits": "Imputables sur le revenu global sans limitation de montant (contrairement au LMNP)",
+      "plus_values": "Régime des plus-values professionnelles : court terme à hauteur des amortissements déduits, long terme au-delà ; exonération art. 151 septies si l'activité est exercée depuis au moins cinq ans et recettes < 90 000 € (totale) ou < 126 000 € (partielle)",
+      "cotisations_sociales": "Cotisations TNS sur le bénéfice (SSI), charge significative vs LMNP. Location meublée de courte durée > 23 000 € de recettes : cotisations sociales d'activité même en LMNP (art. L. 611-1, 6° CSS)",
+      "ifi": "Exonération IFI des locaux loués meublés sous des critères PROPRES (art. 975, V, 1° CGI ; BOI-PAT-IFI-30-10-10-10 § 60) : recettes > 23 000 € ET bénéfice commercial net (après amortissements) > 50 % des revenus nets d'activité du foyer, ce bénéfice compris, et profession principale (exclu en général pour un salarié à plein temps, BOI-PAT-IFI-30-10-10-30 § 20). Le statut LMP à l'IR ne suffit pas."
     },
-    "bascule_involontaire": "Attention : passage LMP possible en cas de hausse des recettes meublées OU baisse des autres revenus professionnels. À surveiller annuellement."
+    "bascule_involontaire": "Attention : passage LMP possible en cas de hausse des recettes meublées OU baisse des autres revenus d'activité ; les pensions comptent parmi ces revenus, c'est donc l'arrêt de toute activité sans pension (par exemple une retraite anticipée financée par l'épargne) qui fait basculer. À surveiller annuellement."
   },
 
   "sci_ir": {

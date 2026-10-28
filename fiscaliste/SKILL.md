@@ -93,9 +93,9 @@ Dernière MAJ: [date] — Vérifier les barèmes de la dernière loi de finances
 | Dividendes (PFU) | 2DC | Aucun |
 | Micro-BNC | 5TE | 34 % (plafond 77 700 €) |
 | Micro-foncier (nu) | 4BE | 30 % (plafond 15 000 €) |
-| Micro-BIC LMNP longue durée | 5ND | 50 % (plafond 77 700 €) |
-| Micro-BIC LMNP meublé tourisme non classé | 5ND | 30 % (plafond 15 000 €) |
-| Micro-BIC LMNP meublé tourisme classé | 5NG | 50 % (plafond 77 700 €) |
+| Micro-BIC LMNP longue durée (autres locations meublées) | 5NI | 50 % (plafond 77 700 € en 2025, 83 600 € pour 2026-2028) |
+| Micro-BIC LMNP meublé tourisme non classé | 5NH | 30 % (plafond 15 000 €) |
+| Micro-BIC LMNP meublé tourisme classé, chambres d'hôtes | 5NG | 50 % (plafond 77 700 € en 2025, 83 600 € pour 2026-2028) |
 
 ### PFU et prélèvements sociaux
 
@@ -279,11 +279,13 @@ Ces points sont systématiquement vérifiés par les utilisateurs exigeants — 
 
 ### Pour un LMNP
 
-- Micro-BIC **longue durée** : abattement **50 %**, plafond **77 700 €**.
-- Micro-BIC **meublé tourisme non classé** : abattement **30 %**, plafond 15 000 € (Loi Le Meur).
-- Micro-BIC **meublé tourisme classé** : abattement 50 %, plafond 77 700 €.
-- Seuil LMP : recettes > **23 000 €** ET > 50 % des autres revenus pro du foyer.
-- Déficit LMNP au réel : **non imputable sur le revenu global** (reportable 10 ans sur BIC non pro).
+- Micro-BIC **longue durée** (autres locations meublées, case 5NI) : abattement **50 %**, plafond **77 700 €** (revenus 2025), **83 600 €** (revenus 2026 à 2028, BOI-BAREME-000044) ; réel obligatoire après deux années consécutives de dépassement.
+- Micro-BIC **meublé tourisme non classé** (5NH) : abattement **30 %**, plafond 15 000 € (Loi Le Meur).
+- Micro-BIC **meublé tourisme classé** (5NG) : abattement 50 %, plafond 77 700 € puis 83 600 €.
+- Seuil LMP (art. 155, IV, 2 CGI) : recettes > **23 000 €** ET recettes > **total** des autres revenus d'activité du foyer (salaires, **pensions comprises**, BIC, BA, BNC). Pas « 50 % ».
+- Déficit LMNP au réel : **non imputable sur le revenu global** (reportable 10 ans sur les seuls bénéfices de location meublée non pro) ; les amortissements ne peuvent pas créer de déficit (art. 39 C).
+- **Revente** : les amortissements déduits au réel sont retranchés du prix d'acquisition pour la plus-value (art. 150 VB, III, cessions depuis le 15/02/2025) ; les travaux faits soi-même et les matériaux achetés ne majorent jamais le prix d'acquisition (seules les factures d'entreprise, ou le forfait de 15 % après plus de cinq ans).
+- PS sur le résultat LMNP : 18,6 % dès les revenus 2025 (revenus du patrimoine) ; revenus fonciers nus : 17,2 %.
 
 ### Pour un arbitrage PFU vs barème
 
