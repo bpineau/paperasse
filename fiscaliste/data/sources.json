@@ -117,7 +117,7 @@
       "update_frequency": "rare",
       "last_fetched": "2026-04-12",
       "next_check": "2027-01-15",
-      "check_instructions": "Plafonds PEA 150 k€ / PEA-PME 225 k€. Abattements AV 4 600 € / 9 200 €. Seuil 150 k€ AV."
+      "check_instructions": "Plafonds PEA 150 k€ / PEA-PME 225 k€ (commun). Abattements AV 4 600 € / 9 200 €. Seuil AV de 150 k€ de primes : personnel, au 31/12 N-1 (BOI-RPPM-RCM-20-15). Cases 2042 (2VV, 2WW, 3VT) à relire chaque millésime."
     },
     {
       "id": "niches",

@@ -1,7 +1,7 @@
 ---
 name: fiscaliste
 metadata:
-  last_updated: 2026-10-17
+  last_updated: 2026-10-28
 includes:
   - data/**
   - references/**
@@ -156,7 +156,7 @@ Détail dans [references/cas-speciaux.md](references/cas-speciaux.md) section CD
 ### Assurance-vie — rachats après 8 ans
 
 - **Abattement annuel** : 4 600 € (célibataire) / **9 200 € (couple)** — sur la quote-part de gains imposable
-- **Seuil 150 000 €** de versements nets (tous contrats AV du foyer) : au-delà, PFU 30 % sur la fraction
+- **Seuil 150 000 €** de primes nettes : **seuil personnel** (par bénéficiaire du rachat, pas par foyer : chaque conjoint a le sien), apprécié sur les primes non remboursées au 31 décembre de l'année précédant le rachat, tous contrats du bénéficiaire confondus (BOI-RPPM-RCM-20-15 § 140 à 190). Au-delà : 12,8 % d'IR au lieu de 7,5 % sur la fraction correspondante (PS 17,2 % dans tous les cas, l'AV étant exclue de la hausse LFSS 2026)
 
 ### Fiches précises
 
