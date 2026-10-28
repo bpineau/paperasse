@@ -17,7 +17,7 @@ La LFSS 2026 (loi n° 2025-1403 du 30/12/2025, art. 12) modifie le taux de CSG (
 |---|---|---|---|
 | Revenus du patrimoine (PV mobilières, crypto, LMNP) | **18,6 %** | 18,6 % | L. 136-6 |
 | Produits de placement (dividendes, intérêts, PEA à la sortie, PER) | 17,2 % | **18,6 % à partir du 01/01/2026** | L. 136-7 |
-| AV, foncier nu, SCPI, PEL/CEL anciens, livrets réglementés | 17,2 % | 17,2 % (inchangé) | n/a |
+| AV et capitalisation, revenus fonciers (nu, SCPI), PV immobilières, épargne logement (PEL/CEL), PEP | 17,2 % | 17,2 % (inchangé) | L. 136-8 IV |
 
 Voir `data/pfu-prelevements-sociaux.json` pour les taux exacts.
 
@@ -29,7 +29,7 @@ Voir `data/pfu-prelevements-sociaux.json` pour les taux exacts.
 | 30% | À chiffrer | Selon composition : dividendes (abattement 40%) vs intérêts/PV (pas d'abattement) |
 | 41% ou 45% | PFU | Flat tax 12,8% < TMI 41%/45% |
 
-**Règle absolue** : l'option barème est **globale et irrévocable pour l'année**. Elle engage TOUS les revenus du capital du foyer. Ne jamais recommander sans avoir vérifié la composition complète.
+**Règle absolue** : l'option barème est **globale** : elle engage TOUS les revenus du capital du foyer pour l'année. Elle était **irrévocable** jusqu'aux revenus 2025 ; la LFI 2026 (loi n° 2026-103, art. 126 ; art. 200 A CGI) a supprimé ce caractère irrévocable (brochure IR 2026, nouveautés). Ne jamais recommander sans avoir vérifié la composition complète.
 
 ### Exemple de calcul comparatif
 
@@ -62,7 +62,8 @@ Mais si le même foyer a aussi **5 000 € de PV mobilière réalisée en 2025**
 
 - Par défaut : PFU 30 % en 2025 (12,8 % IR + 17,2 % PS), passe à 31,4 % à compter des dividendes encaissés en 2026
 - Option barème : abattement 40 % puis IR barème + PS (17,2 % en 2025, 18,6 % à partir de 2026)
-- **Dividendes étrangers** : peuvent avoir été soumis à une retenue à la source dans le pays d'origine — crédit d'impôt possible sous convention fiscale
+- **Dividendes étrangers** : peuvent avoir été soumis à une retenue à la source dans le pays d'origine ; crédit d'impôt sous convention fiscale (déclaration 2047, report en 2AB ; non restituable au-delà de l'impôt dû)
+- **Établissement payeur établi hors de France** (courtier étranger) : pas de prélèvement à la source ; le contribuable acquitte le prélèvement de 12,8 % et les PS via la 2778-DIV (dans les 15 jours du mois suivant), ou laisse l'administration les établir par voie de rôle d'après la 2042 et la 2047. Dans ce dernier cas, les PS sont ceux des **revenus du patrimoine** (L. 136-6 CSS, voie de rôle) : **18,6 % dès les revenus 2025**, et non 17,2 % (impots.gouv.fr, « Les revenus mobiliers », mis à jour le 08/04/2026 : les produits qui n'ont pas supporté les PS à l'encaissement en 2025 « seront soumis aux prélèvements sociaux au taux de 18,6 % sur votre avis d'impôt 2026 »). Le taux de 17,2 % de 2025 ne vaut que pour les revenus prélevés à la source par un établissement payeur français ou via la 2778
 
 ### Intérêts, RCM (case 2TR)
 
@@ -96,9 +97,10 @@ Régime distinct : méthode PAMC (prix acquisition moyen pondéré) sur l'ensemb
 **Cas restant à 17,2 % de manière permanente** (exclus de la hausse LFSS 2026) :
 - Assurance-vie et contrats de capitalisation
 - Revenus fonciers (foncier nu, SCPI)
-- CEL/PEL ouverts avant le 31/12/2017
+- Épargne logement (PEL, CEL), y compris les plans ouverts depuis 2018
 - PEP
-- Livrets réglementés (Livret A, LDDS, LEP : totalement exonérés)
+- Plus-values immobilières des particuliers
+- Les livrets réglementés (Livret A, LDDS, LEP) sont, eux, totalement exonérés d'IR et de PS
 
 ### CSG déductible
 
@@ -109,7 +111,7 @@ Régime distinct : méthode PAMC (prix acquisition moyen pondéré) sur l'ensemb
 
 ## Enveloppes fiscales spécifiques
 
-**PEA** : exonération IR après 5 ans. PS dus à chaque retrait : **17,2 % pour les retraits effectués avant le 01/01/2026**, **18,6 % à partir du 01/01/2026** (sur la totalité du gain, y compris la fraction acquise avant cette date). Cf. art. L. 136-7 CSS.
+**PEA** : exonération IR après 5 ans. PS dus à chaque retrait : **17,2 % pour les retraits effectués avant le 01/01/2026**, **18,6 % à partir du 01/01/2026** sur le gain constaté au retrait. Réserve : la LFSS 2026 (art. 12, II-2°) exclut de la hausse les produits relevant des « taux historiques » (fraction des gains de PEA ouverts avant 2018 acquise avant 2018, produits de PEE attachés à des versements antérieurs à 2018) « acquis ou constatés avant le 1er janvier 2026 » ; l'établissement applique le calcul par couches. Cf. art. L. 136-7 CSS.
 
 **AV** : abattement annuel après 8 ans, fiscalité selon date des versements. PS **17,2 % inchangés** (cas exclu de la hausse LFSS 2026).
 
