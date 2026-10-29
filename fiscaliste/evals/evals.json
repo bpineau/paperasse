@@ -53,7 +53,7 @@
       "id": 4,
       "name": "pfu-vs-bareme-dividendes",
       "prompt": "Célibataire, salaires 30 000 € net imposable. Je reçois 5 000 € de dividendes. Je choisis PFU ou barème ?",
-      "expected_output": "Calcul des deux scénarios. Sous PFU : 5 000 × 30% = 1 500 €. Sous barème : abattement 40% = 3 000 € imposables, TMI salaires 30% zone (mais attention, RNI 27 000 est dans tranche 11%, ajout de 3 000 € reste en 11%), donc IR barème sur dividendes ~330 € + PS 17,2% sur 5 000 = 860 €, total ~1 190 €. Barème plus favorable ici. Plus CSG déductible 6,8% × 5 000 × 11% = 37 € en N+1.",
+      "expected_output": "Calcul des deux scénarios. Sous PFU : 5 000 × 30% = 1 500 €. Sous barème : abattement 40% = 3 000 € imposables, RNI 27 000 est dans la tranche 11 % mais l'ajout de 3 000 € franchit la limite de 29 579 € : 2 579 × 11 % + 421 × 30 % ≈ 410 € d'IR, + PS 17,2 % sur 5 000 € (dividende payé par un établissement français en 2025) = 860 €, total ~1 270 €. Barème plus favorable ici. Plus CSG déductible 6,8% × 5 000 × 11% = 37 € en N+1.",
       "files": [],
       "assertions": [
         "Les deux scénarios (PFU et barème) sont chiffrés",
