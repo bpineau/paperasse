@@ -327,7 +327,10 @@ def from_foyer(foyer, bareme, pfu_data, annee_revenus=None):
     enfants_alternee = f.get("nb_enfants_alternee", 0)
     # Les 2 premiers enfants = 0,5 part chacun ; à partir du 3e = 1 part
     demi_parts_enfants = 0.5 * min(enfants, 2) + 1.0 * max(0, enfants - 2)
-    demi_parts_alt = 0.25 * min(enfants_alternee, 2) + 0.5 * max(0, enfants_alternee - 2)
+    # Résidence alternée : décomptés après les enfants à charge exclusive ;
+    # 0,25 part pour le 1er ou le 2e enfant à charge, 0,5 à partir du 3e (art. 194 CGI)
+    rangs_alt = range(enfants + 1, enfants + enfants_alternee + 1)
+    demi_parts_alt = sum(0.25 if rang <= 2 else 0.5 for rang in rangs_alt)
     parts = parts_base + demi_parts_enfants + demi_parts_alt
 
     # Revenu net catégoriel traitements et salaires, déclarant par déclarant.
@@ -344,6 +347,13 @@ def from_foyer(foyer, bareme, pfu_data, annee_revenus=None):
 
     net_pensions = abattement_pensions(
         [r.get("pensions_declarant1", 0), r.get("pensions_declarant2", 0)], bareme)
+    # Cases 1AI / 1BI : sorties en capital d'un PER (part des versements déduits),
+    # imposables au barème comme des pensions mais SANS abattement de 10 %
+    # (art. 158, 5-b quinquies CGI ; brochure IR, rubrique pensions).
+    pensions_sans_abattement = (
+        r.get("pensions_capital_per_declarant1", 0)
+        + r.get("pensions_capital_per_declarant2", 0)
+    )
 
     # Revenus fonciers : déjà au net (micro post-abattement / réel post-charges).
     fonciers = r.get("revenus_fonciers_reels", 0) + r.get("revenus_fonciers_micro", 0)
@@ -360,7 +370,7 @@ def from_foyer(foyer, bareme, pfu_data, annee_revenus=None):
         option_capital = "pfu"
 
     # Revenus imposables au barème
-    revenu_global = net_salaires + net_pensions + fonciers + lmnp
+    revenu_global = net_salaires + net_pensions + pensions_sans_abattement + fonciers + lmnp
     abattement_40 = 0
     if option_capital == "bareme":
         abattement_40 = round(dividendes * pfu_data["dividendes_option_bareme"]["abattement"]) if pfu_data else 0
