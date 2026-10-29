@@ -1,7 +1,7 @@
 ---
 name: fiscaliste
 metadata:
-  last_updated: 2026-10-17
+  last_updated: 2026-10-28
 includes:
   - data/**
   - references/**
@@ -157,7 +157,7 @@ Détail dans [references/cas-speciaux.md](references/cas-speciaux.md) section CD
 ### Assurance-vie — rachats après 8 ans
 
 - **Abattement annuel** : 4 600 € (célibataire) / **9 200 € (couple)** — sur la quote-part de gains imposable
-- **Seuil 150 000 €** de versements nets (tous contrats AV du foyer) : au-delà, PFU 30 % sur la fraction
+- **Seuil 150 000 €** de primes nettes : **seuil personnel** (par bénéficiaire du rachat, pas par foyer : chaque conjoint a le sien), apprécié sur les primes non remboursées au 31 décembre de l'année précédant le rachat, tous contrats du bénéficiaire confondus (BOI-RPPM-RCM-20-15 § 140 à 190). Au-delà : 12,8 % d'IR au lieu de 7,5 % sur la fraction correspondante (PS 17,2 % dans tous les cas, l'AV étant exclue de la hausse LFSS 2026)
 
 ### Fiches précises
 
@@ -271,13 +271,16 @@ Ces points sont systématiquement vérifiés par les utilisateurs exigeants — 
 
 ### Pour des RSU
 
-- Demander la date de l'AGE et le caractère qualifiant du plan : le régime en dépend (voir `references/equity-salarial.md`). Cas courant : plan qualifiant, AGE après le 31/12/2017.
-- Rien n'est dû au vesting : le gain d'acquisition est imposé l'année de la **cession** (art. 80 quaterdecies CGI).
-- Plan qualifiant, fraction ≤ 300 000 €/an : **barème après abattement de 50 %** (2042 C cases 1TZ + 1WZ), **PS 18,6 %** sur le gain avant abattement, **ni CSG d'activité ni contribution salariale**.
-- Fraction > 300 000 €, AGA 2012-2015 ou plan non qualifiant : **salaire** (case 1TT), CSG/CRDS 9,7 %, contribution salariale 10 %.
-- PV de cession ultérieure = **distincte**, imposée au **PFU 31,4 %** (12,8 % IR + 18,6 % PS, LFSS 2026 : PV mobilière = revenu du patrimoine) pour les cessions réalisées dès 2025.
-- Toujours distinguer ces deux phases dans la réponse.
-- Envisager le quotient pour revenus exceptionnels si le gain imposable l'année de la cession est massif vs salaire habituel.
+- Demander la date de l'AGE et le caractère qualifiant du plan : le régime en dépend (voir `references/equity-salarial.md`). Cas courant : plan qualifiant, AGE après le 31/12/2017. Pour une société étrangère, c'est la date d'autorisation du plan par l'organe habilité, pas celle du sous-plan français (BOI-RSA-ES-20-20-10-20 § 460).
+- Rien n'est dû au vesting : le gain d'acquisition est imposé l'année de la **cession** (ou donation, mise en location ; art. 80 quaterdecies CGI).
+- **Période de conservation** : une vente pendant la période de conservation prévue par le plan (au moins deux ans cumulés acquisition + conservation, C. com. L. 225-197-1) fait imposer le gain en salaire de droit commun (BOI-RSA-ES-20-20-20 § 10). Vérifier la date de fin de conservation de chaque lot.
+- Plan qualifiant, fraction ≤ 300 000 €/an par attributaire : **barème après abattement de 50 %** (2042 C cases 1TZ + 1WZ), **PS 18,6 %** sur le gain avant abattement, **ni CSG d'activité ni contribution salariale** ; CSG déductible l'année suivante à hauteur de 3,4 % du gain (6,8 points au prorata du gain imposé).
+- Fraction > 300 000 € ou AGA attribuées depuis le 28/09/2012 sur AGE antérieure au 08/08/2015 : **salaire** (case 1TT), CSG/CRDS 9,7 %, contribution salariale 10 %. Plan non qualifiant : salaire ordinaire l'année du vesting, via la paie (1AJ), sans contribution de 10 %.
+- PV de cession ultérieure = **distincte**, imposée au **PFU 31,4 %** (12,8 % IR + 18,6 % PS, LFSS 2026 : PV mobilière = revenu du patrimoine) pour les cessions réalisées dès 2025, ou barème sur option globale (à comparer les années à faible revenu).
+- Toujours distinguer ces deux phases dans la réponse ; identifier les lots cédés (lot par lot si individualisables, sinon au prorata) quand RSU, ESPP et achats se mêlent.
+- RFR : le gain compte avant abattement de 50 % pour la CEHR ; après abattement pour la CDHR.
+- Quotient pour revenus exceptionnels : seulement si le gain est exceptionnel par nature et par montant (moyenne des trois années précédentes) ; le BOFiP exclut les revenus « réalisés dans le cadre normal de l'activité professionnelle » (BOI-IR-LIQ-20-30-20 § 50), demande à motiver, à chiffrer avec et sans.
+- **ESPP** (plan d'achat avec décote, non qualifié) : la décote est un salaire l'année de l'achat (paie, 1AJ), sans abattement ni seuil de 300 000 € ni contribution de 10 % ; la plus-value ultérieure est une PV mobilière calculée sur la valeur réelle au jour de l'achat.
 
 ### Pour un LMNP
 
