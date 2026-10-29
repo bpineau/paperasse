@@ -190,7 +190,7 @@ python fiscaliste/scripts/calc_ir.py --rni 45000 --parts 1
 python fiscaliste/scripts/calc_ir.py --rni 126000 --parts 3 --parts-base 2
 ```
 
-Le script applique : barème 2025, quotient familial avec plafonnement, décote, PS différenciés selon la nature du revenu (18,6 % sur revenus du patrimoine dès 2025 ; 17,2 % sur produits de placement 2025 ; 17,2 % inchangé sur AV/foncier nu/SCPI/PEL-CEL), CEHR. Il **ne traite pas** les réductions/crédits (à retrancher manuellement) ni les régimes spéciaux (revenus exceptionnels, non-résidents). Pour la CDHR (plancher 20 % sur RFR > 250/500 k€), voir [references/cas-speciaux.md](references/cas-speciaux.md) — calculée automatiquement par l'administration.
+Le script applique : abattement de 10 % par déclarant (salaires + ARE) et par pensionné, barème 2025, quotient familial avec plafonnement général, décote, IR 12,8 % sur les revenus du capital au PFU (ou intégration au barème si `options_fiscales.revenus_capital = "bareme"`, dividendes après abattement de 40 %), PS différenciés selon la nature du revenu (18,6 % sur les revenus du patrimoine dès 2025 ; 17,2 % sur les produits de placement encaissés en 2025, 18,6 % avec `--annee-revenus 2026` ; 17,2 % sur les revenus fonciers nets), RFR approché avec réintégration du PER, CEHR. Il **ne traite pas** les réductions/crédits (à retrancher manuellement), la CDHR, le quotient des revenus exceptionnels, les non-résidents, les plafonds spécifiques du QF (parent isolé, veuf), le contrôle du plafond PER, l'assurance-vie ni l'IFI. Pour la CDHR (plancher 20 % sur RFR > 250/500 k€), voir [references/cas-speciaux.md](references/cas-speciaux.md) — calculée automatiquement par l'administration.
 
 Pour la fraîcheur des données : `python fiscaliste/scripts/update_data.py`.
 
