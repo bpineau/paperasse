@@ -38,7 +38,7 @@ Les plafonds concernent les **versements**, pas la valeur du plan. Un plan peut 
 
 ### Taux historiques PS
 
-Pour un plan ouvert avant 2018, la fraction du gain acquise avant le 01/01/2018 (et, pour les plans de plus de 5 ans à cette date, acquise pendant les 5 premières années) reste taxée aux taux en vigueur lors de son acquisition (« taux historiques », LFSS 2018 art. 8, V-C). La LFSS 2026 (art. 12, II-2°) exclut en outre de la hausse à 18,6 % ces produits « acquis ou constatés avant le 1er janvier 2026 » ; la portée exacte de cette clause n'est pas encore commentée au BOFiP (BOI-RPPM-PSOC). Calcul par couches fait par l'établissement : ne pas le reconstituer à la main, lire le relevé.
+Pour un plan ouvert avant 2018, la fraction du gain acquise avant le 01/01/2018 (et, pour les plans qui avaient moins de 5 ans à cette date, la fraction acquise pendant les 5 premières années du plan, au plus tard fin 2022) reste taxée aux taux en vigueur lors de son acquisition (« taux historiques », LFSS 2018 art. 8, V-C). La LFSS 2026 (art. 12, II-2°) exclut en outre de la hausse à 18,6 % ces produits « acquis ou constatés avant le 1er janvier 2026 » ; la portée exacte de cette clause n'est pas encore commentée au BOFiP (BOI-RPPM-PSOC). Calcul par couches fait par l'établissement : ne pas le reconstituer à la main, lire le relevé.
 
 ### Composition éligible
 
@@ -119,8 +119,8 @@ Taux dégressif selon ancienneté du contrat. Prélèvement libératoire (PFL) o
 | Contrat ≥ 8 ans, primes nettes ≤ 150 000 € | 7,5 % IR (après abattement de 4 600 / 9 200 €) + 17,2 % PS (24,7 %) ; cases 2VV |
 | Contrat ≥ 8 ans, primes nettes > 150 000 € | 7,5 % sur la fraction des produits correspondant à 150 000 € de primes, 12,8 % au-delà (case 2WW) ; PS 17,2 % sur tout |
 
-**Seuil 150 000 €** (art. 125-0 A, I-2° bis CGI ; BOI-RPPM-RCM-20-15 § 140 à 190) :
-- **seuil personnel**, par bénéficiaire du rachat, et non par foyer : dans un couple, chacun a son propre seuil de 150 000 € (co-souscription : moitié des primes pour chaque époux ou partenaire) ;
+**Seuil 150 000 €** (art. 200 A, 1-B-2° et art. 125-0 A, II-2°-b CGI ; BOI-RPPM-RCM-20-15 § 140 à 190) :
+- **seuil personnel**, par bénéficiaire du rachat, et non par foyer : dans un couple, chacun a son propre seuil de 150 000 € (co-souscription : en principe la totalité des primes du contrat est retenue pour chaque co-souscripteur ; par tolérance, la moitié pour les époux et partenaires de Pacs, § 170) ;
 - apprécié sur les **primes versées non remboursées au 31 décembre de l'année qui précède le rachat**, tous contrats d'assurance-vie et de capitalisation du bénéficiaire confondus, français ou étrangers, quel que soit leur régime ;
 - fraction des produits à 7,5 % = produits × (150 000 € − primes antérieures au 27/09/2017 non remboursées) / primes postérieures au 27/09/2017 non remboursées (§ 190).
 
@@ -162,9 +162,9 @@ L'ancienneté compte. Un contrat ouvert avec 100 € prend date → 8 ans plus t
 
 ### Rachats AV (2042 millésime 2026, cadre 2)
 
-- Produits des primes versées **avant le 27/09/2017** : 2CH (contrat ≥ 8 ans, barème ou PFL), 2DH (produits soumis au prélèvement libératoire)
+- Produits des primes versées **avant le 27/09/2017**, contrat ≥ 8 ans : 2DH (produits soumis au prélèvement libératoire), 2CH (autres produits, imposés au barème)
 - Produits des primes versées **depuis le 27/09/2017**, contrat ≥ 8 ans : **2VV** (fraction imposable à 7,5 %, primes ≤ 150 000 €) et **2WW** (fraction à 12,8 %, primes > 150 000 €)
-- Contrat < 8 ans, primes depuis le 27/09/2017 : 2XX / 2YY / 2ZZ selon le régime appliqué (vérifier l'IFU de l'assureur)
+- Contrat < 8 ans : primes versées avant le 27/09/2017 en 2XX (produits soumis au prélèvement libératoire) ou 2YY (autres produits) ; primes versées depuis le 27/09/2017 en 2ZZ (2042 millésime 2026 ; vérifier l'IFU de l'assureur)
 - **2CG et 2BH ne déclarent pas le gain** : elles signalent les revenus déjà soumis aux prélèvements sociaux par l'assureur (2CG sans CSG déductible, 2BH avec CSG déductible si option barème), pour éviter une seconde perception des PS
 - Attestation annuelle (IFU) de l'assureur requise
 
@@ -182,6 +182,6 @@ L'ancienneté compte. Un contrat ouvert avec 100 € prend date → 8 ans plus t
 - PEA : art. 163 quinquies D CGI, art. L. 221-30 Code monétaire et financier
 - Assurance-vie fiscalité rachats : art. 125-0 A CGI
 - Abattement annuel AV : art. 125-0 A-I-2° CGI
-- Seuil 150 000 € : art. 125-0 A-I-2° bis CGI
+- Seuil 150 000 € : art. 200 A, 1-B-2° CGI (renvoi au b du 2 du II de l'art. 125-0 A)
 - PEA-PME : art. L. 221-32-1 CMF
 - BOFiP : BOI-RPPM-RCM-40-50 et BOI-ANNX-000072 (PEA, tableau des retraits), BOI-RPPM-RCM-20-10-20-50 et BOI-RPPM-RCM-20-15 (AV, seuil de 150 000 €)
