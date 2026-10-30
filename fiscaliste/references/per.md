@@ -152,7 +152,7 @@ L'abondement est un complément versé par l'entreprise pour chaque euro versé 
 
 ## Pièges fréquents
 
-1. **Oublier le plafond** : versement > plafond → l'excédent n'est **ni déductible ni reportable** (brochure IR 2026, charges déductibles, exemple) ; à la sortie, il suit le régime des versements non déduits s'il a été déclaré comme tel
+1. **Oublier le plafond** : versement > plafond → l'excédent n'est **ni déductible ni reportable** (brochure IR 2026, charges déductibles, exemple) ; à la sortie en capital, la part du capital correspondant à ces versements excédentaires est imposée comme celle des versements déduits (pensions, sans abattement de 10 %, BOI-RSA-PENS-30-10-20 § 90 à 110), sauf option pour la non-déduction exercée auprès du gestionnaire au plus tard lors du versement (CMF art. L. 224-20 ; exonération, § 120)
 2. **Sortie en capital sur un TMI 45%** : imposition quasi équivalente à un revenu normal, sans abattement de 10 % : intérêt limité
 3. **Mutualisation couple oubliée** : conjoint sans revenu laisse 4 637 € (versements 2025) ou 4 710 € (versements 2026) de plafond inemployé
 3 bis. **Confondre le PASS de l'année et celui de N-1** : les bornes des versements 2025 se calculent sur le PASS 2024 (4 637 / 37 094 €), pas sur le PASS 2025
