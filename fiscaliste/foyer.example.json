@@ -64,7 +64,9 @@
   "options_fiscales": {
     "revenus_capital": "pfu",
     "_options": ["pfu", "bareme"],
-    "_commentaire_option": "L'option barème est globale : elle s'applique à TOUS les revenus du capital de l'année"
+    "_commentaire_option": "L'option barème est globale : elle s'applique à TOUS les revenus du capital de l'année (dividendes, intérêts, plus-values mobilières), sauf les actifs numériques",
+    "crypto": "pfu",
+    "_commentaire_crypto": "Option distincte pour les plus-values sur actifs numériques (art. 200 C CGI, case 3CN) : \"pfu\" ou \"bareme\", indépendante de revenus_capital"
   },
 
   "patrimoine_ifi": {
