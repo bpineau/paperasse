@@ -128,13 +128,13 @@ Enveloppe collective distincte du PER individuel.
 - **Blocage** : 5 ans, sauf déblocage anticipé (art. R. 3324-22 C. trav., 14 cas) : mariage ou PACS ; 3e enfant ; divorce ou séparation avec garde d'un enfant ; violences conjugales ; invalidité ; décès ; **rupture du contrat de travail**, cessation d'activité, fin de mandat social ; **création ou reprise d'entreprise** (titulaire, conjoint ou partenaire, enfant) ; acquisition ou agrandissement de la résidence principale ; remise en état après catastrophe naturelle ; rénovation énergétique de la résidence principale ; surendettement ; proche aidant ; véhicule propre. Demande dans les 6 mois de l'événement, à tout moment pour la rupture du contrat, le décès, l'invalidité, les violences, le surendettement et le proche aidant.
 - **Sortie** (après 5 ans ou déblocage anticipé) : versements et gains **exonérés d'IR** ; prélèvements sociaux sur les seuls gains, au taux des produits de placement (art. L. 136-7, II-7° CSS) : **17,2 % jusqu'au 31/12/2025, 18,6 % à compter du 01/01/2026** (LFSS 2026), sous réserve des taux historiques pour les gains issus de versements antérieurs à 2018. Ce n'est pas un « PFU » : aucun IR à la sortie.
 - **Dividendes réinvestis** : exonérés IR tant qu'ils restent dans l'enveloppe
-- **Participation et intéressement** : exonérés d'IR s'ils sont affectés au PEE ou au PERCO (CSG/CRDS 9,7 % prélevées), imposés comme salaire s'ils sont perçus. Plafonds à vérifier au BOSS.
+- **Participation et intéressement** : exonérés d'IR s'ils sont affectés au PEE ou au PERCO (CSG/CRDS 9,7 % prélevées), imposés comme salaire s'ils sont perçus. Plafond d'exonération de chacun : 75 % du PASS (36 045 € pour 2026, service-public.fr fiche F2142 ; 35 325 € pour 2025, PASS 47 100 €).
 
 ### PERCO / PERECO (PER d'entreprise collectif)
 
 - **Sortie à la retraite** : rente ou capital
 - **Fiscalité de sortie** (BOI-ANNX-000513) : les sommes issues de l'intéressement, de la participation et de l'abondement sortent en capital **exonérées d'IR** (versements et gains, art. 81, 18° et 4° bis-b CGI), avec PS sur les seuls gains (art. L. 136-7, II-7° bis CSS). Seuls les **versements volontaires déduits** suivent le régime du PER individuel (capital au barème sans abattement de 10 %, gains au PFU). Ne pas écrire « même fiscalité que le PER individuel » pour l'épargne salariale.
-- **Abondement employeur** : exonéré d'IR et de cotisations sociales dans le plafond, soumis à CSG/CRDS ; plafond distinct du PEE : 16 % du PASS de l'année (7 419 € en 2024, **7 536 € en 2025**, **7 689,60 € en 2026**)
+- **Abondement employeur** : exonéré d'IR et de cotisations sociales dans le plafond, soumis à CSG/CRDS ; plafond distinct du PEE : 16 % du PASS de l'année (7 418,88 € en 2024, **7 536 € en 2025**, **7 689,60 € en 2026**)
 
 ### Arbitrage PEE/PERCO vs PER individuel
 

@@ -24,7 +24,7 @@
       "2027": { "plancher": 4806, "plafond": 38448, "pass_reference": 48060 }
     },
     "report": {
-      "description": "Versements 2025 : reliquats des 3 années précédentes (2022 à 2024). À compter de l'imposition des revenus 2026 : 5 ans (LFI 2026, loi n° 2026-103, art. 9 et 10 ; art. 163 quatervicies, I-2-b CGI ; BOI-IR-BASE-20-50-30 § 40).",
+      "description": "Versements 2025 : reliquats des 3 années précédentes (2022 à 2024). Reliquats nés à partir de 2026 : reportables 5 ans (LFI 2026, loi n° 2026-103, art. 9 et 10 ; art. 163 quatervicies, I-2-b CGI ; BOI-IR-BASE-20-50-30 § 40 et § 80) ; les versements 2026 n'utilisent que les reliquats 2023 à 2025, la fenêtre complète de cinq ans n'est atteinte qu'en 2031.",
       "ordre": "Imputer sur le plafond de l'année N en premier, puis sur les reliquats des années précédentes en commençant par le plus ancien (BOI-IR-BASE-20-50-30 § 50)"
     },
     "mutualisation_couple": "Les époux/pacsés soumis à imposition commune peuvent mutualiser leurs plafonds (case 6QR de la 2042) ; sans objet l'année qui suit les 70 ans d'un conjoint",
