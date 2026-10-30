@@ -49,7 +49,7 @@ Impôt annuel sur le patrimoine **immobilier net** du foyer fiscal au **1er janv
 ### Dettes NON déductibles
 
 - Dettes personnelles non liées à l'immobilier, dettes afférentes à des biens totalement exonérés
-- Prêts consentis par le redevable lui-même, son conjoint, partenaire ou concubin, ses enfants mineurs, ou une société qu'il contrôle (art. 974, III CGI)
+- Prêts consentis par le redevable lui-même, son conjoint, partenaire ou concubin, ou ses enfants mineurs, directement ou par une société interposée (art. 974, III, 1° CGI ; BOI-PAT-IFI-20-40-30 § 20 et 30). Les prêts d'un ascendant, d'un descendant majeur, d'un frère ou d'une sœur (2°), ou d'une société contrôlée par le redevable, seul ou avec son foyer ou ce cercle familial (3°), restent déductibles si le redevable justifie du caractère normal du prêt : échéances, montant, remboursements effectifs (§ 50 à 70)
 
 ### Plafonnement du passif
 
@@ -80,7 +80,7 @@ Entre 1 300 000 € et 1 400 000 € : formule `17 500 − 1,25% × valeur_patri
 
 Si dépassement → l'IFI est **réduit de l'excédent**.
 
-**Attention** : le plafond retient les revenus mondiaux nets de frais professionnels de l'année précédente, **y compris les revenus exonérés d'IR et les produits soumis à un prélèvement libératoire** (art. 979 CGI ; brochure IR 2026, IFI). Seuls les gains non réalisés (plus-values latentes) n'y figurent pas.
+**Attention** : le plafond retient les revenus mondiaux nets de frais professionnels de l'année précédente, **y compris les revenus exonérés d'IR et les produits soumis à un prélèvement libératoire** (art. 979 CGI ; brochure IR 2026, IFI). Les plus-values y sont retenues sans abattement ni exonération, celle de la résidence principale comprise, et les moins-values immobilières ne sont pas déduites ; n'y figurent pas les revenus des logements dont le propriétaire se réserve la jouissance (loyers fictifs de la résidence principale) et les gains non réalisés (BOI-PAT-IFI-40-30-10 § 160 à 190).
 
 ## Évaluation des biens
 

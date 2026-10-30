@@ -20,7 +20,7 @@ Voir `data/regimes-fonciers-lmnp.json` → `micro_foncier`.
 
 - **Condition** : revenus fonciers bruts ≤ 15 000 €
 - **Abattement** : 30% automatique
-- **Exclusions** (brochure IR 2026, revenus fonciers) : monuments historiques, immeubles en nue-propriété, Loc'Avantages, amortissements Périssol, Besson neuf, Robien, Borloo neuf, déductions spécifiques (Anah, Borloo ancien, Cosse, Scellier intermédiaire, ZRR), et le cas où les seuls revenus fonciers du foyer viennent de parts de sociétés non soumises à l'IS (une SCI plus un immeuble en direct reste éligible). Le Pinel n'exclut pas du micro-foncier. Seuil apprécié sur l'ensemble du foyer, sans prorata temporis.
+- **Exclusions** (brochure IR 2026, revenus fonciers) : monuments historiques, immeubles en nue-propriété, Loc'Avantages, amortissements Périssol, Besson neuf, Robien, Borloo neuf, déductions spécifiques (conventionnement Anah, Borloo ancien, Cosse, Scellier intermédiaire, Scellier ZRR, Robien ZRR), logements ayant ouvert droit à la réduction pour travaux dans les logements touristiques (art. 199 decies EA et 199 decies F), parts de SCI ou de SCPI qui louent un immeuble relevant de l'un de ces régimes (dont Robien SCPI et Borloo SCPI), et le cas où les seuls revenus fonciers du foyer viennent de parts de sociétés non soumises à l'IS ou de FPI (une société plus un immeuble loué nu en direct reste éligible ; brochure IR 2026, p. 158). Le Pinel n'exclut pas du micro-foncier. Seuil apprécié sur l'ensemble du foyer, sans prorata temporis.
 - **Avantage** : simplicité. Pas de comptabilité.
 - **Inconvénient** : aucun déficit possible. Si vos charges réelles > 30%, vous payez trop d'impôt.
 
@@ -45,8 +45,8 @@ Voir `data/regimes-fonciers-lmnp.json` → `regime_reel_foncier.deficit_foncier`
 **Mécanisme** :
 - Charges > recettes → déficit
 - **Imputable sur le revenu global dans la limite de 10 700 €** par an (art. 156, I, 3° CGI ; BOI-RFPI-BASE-30-20, version du 16/09/2025)
-- **Limite rehaussée à 21 400 €**, sur option à la 2044, du montant des dépenses de rénovation énergétique qui font passer le logement d'une classe E, F ou G à A, B, C ou D : devis accepté depuis le 05/11/2022, dépenses payées du 01/01/2023 au 31/12/2025, prorogé pour les dépenses payées jusqu'au 31/12/2027 (LFI 2026 art. 47) ; deux DPE à fournir. Ce n'est pas un « doublement » automatique.
-- Au-delà : reportable sur les revenus fonciers des **10 années suivantes** ; si le revenu global ne suffit pas, l'excédent forme un déficit global reportable six ans
+- **Limite de 10 700 € rehaussée du montant des dépenses de rénovation énergétique**, sur option à la 2044, sans pouvoir dépasser 21 400 € au total (BOI-RFPI-BASE-30-20 § 231), pour les dépenses qui font passer le logement d'une classe E, F ou G à A, B, C ou D : devis accepté depuis le 05/11/2022, dépenses payées du 01/01/2023 au 31/12/2025, prorogé pour les dépenses payées jusqu'au 31/12/2027 (LFI 2026 art. 47) ; deux DPE à fournir. Ce n'est pas un « doublement » automatique.
+- Au-delà : reportable sur les revenus fonciers des **10 années suivantes** ; si le revenu global ne suffit pas, l'excédent forme un déficit global reportable six ans (art. 156, I, premier alinéa CGI ; BOI-RFPI-BASE-30-20 § 160)
 - **Intérêts d'emprunt** : la part du déficit qui provient des intérêts n'est jamais imputable sur le revenu global. Mais **les loyers sont réputés couvrir d'abord les intérêts** (§ 110) : seule la fraction des intérêts qui excède les loyers forme une part « intérêts ». Exemple : loyers 15 000 €, intérêts 6 000 €, autres charges 22 000 € : déficit de 13 000 € entièrement dû aux autres charges, 10 700 € sur le revenu global, 2 300 € reportés.
 - Cases 2042 : 4BA (bénéfice), 4BB (déficit imputable sur les revenus fonciers), 4BC (déficit imputable sur le revenu global), 4BD (déficits antérieurs), annexe 2044.
 
@@ -105,7 +105,7 @@ Voir `data/regimes-fonciers-lmnp.json` → `lmp_vs_lmnp`. Source : art. 155, IV,
 - Cotisations sociales TNS sur le bénéfice (SSI), charge significative ; la location meublée de courte durée au-delà de 23 000 € de recettes y est soumise même en LMNP (art. L. 611-1, 6° CSS)
 - IFI : exonération des locaux loués meublés sous des critères **propres** (art. 975, V, 1° CGI ; BOI-PAT-IFI-30-10-10-10 § 60) : recettes > 23 000 € ET bénéfice commercial net (après amortissements) > 50 % des revenus nets d'activité du foyer, ce bénéfice compris, et profession principale (exclu en général pour un salarié à plein temps, BOI-PAT-IFI-30-10-10-30 § 20). Le statut LMP à l'IR ne suffit pas.
 
-**Attention bascule involontaire** : une baisse des autres revenus d'activité peut faire basculer en LMP malgré des loyers inchangés. Les pensions comptent parmi ces revenus : c'est l'arrêt de toute activité sans pension (par exemple une retraite anticipée financée par l'épargne, ou une année sans salaire ni ARE) qui fait basculer. À surveiller chaque année.
+**Attention bascule involontaire** : une baisse des autres revenus d'activité peut faire basculer en LMP malgré des loyers inchangés. Les pensions comptent parmi ces revenus : la bascule se produit dès que les recettes meublées dépassent le total pension + autres revenus d'activité du foyer, donc souvent au départ en retraite (pension inférieure à l'ancien salaire), et à coup sûr une année sans salaire, ARE ni pension (retraite anticipée financée par l'épargne). À surveiller chaque année.
 
 ## SCI à l'IR
 

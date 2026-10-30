@@ -140,7 +140,7 @@ Voir [foyer.example.json](../foyer.example.json) pour la structure. Champs criti
 
 Le réel est avantageux dès que charges réelles > 30 % des loyers (crédit immobilier, travaux, assurance PNO, taxe foncière).
 
-**Déficit foncier** : imputable sur le revenu global dans la limite de 10 700 € / an (21 400 € sur option pour des travaux de rénovation énergétique E/F/G vers A-D payés de 2023 à 2027), reportable 10 ans sur revenus fonciers uniquement ; les loyers sont réputés couvrir d'abord les intérêts d'emprunt ; location nue à maintenir jusqu'au 31 décembre de la troisième année suivant l'imputation.
+**Déficit foncier** : imputable sur le revenu global dans la limite de 10 700 € / an (limite rehaussée, sur option, du montant des dépenses de rénovation énergétique E/F/G vers A-D payées de 2023 à 2027, sans dépasser 21 400 €), reportable 10 ans sur revenus fonciers uniquement ; les loyers sont réputés couvrir d'abord les intérêts d'emprunt ; location nue à maintenir jusqu'au 31 décembre de la troisième année suivant l'imputation.
 
 **Location meublée (LMNP)** :
 
