@@ -10,7 +10,7 @@
     "description": "Régime simplifié pour revenus fonciers non meublés (location nue)",
     "seuil_recettes_brutes": 15000,
     "abattement": 0.30,
-    "note": "Revenus fonciers bruts du foyer ≤ 15 000 € (sans prorata temporis) → micro-foncier, abattement 30% automatique. Au-delà : régime réel obligatoire ; option pour le réel irrévocable trois ans. Exclusions (brochure IR 2026, revenus fonciers) : monuments historiques, immeubles en nue-propriété, Loc'Avantages, amortissements Périssol, Besson neuf, Robien, Borloo neuf, déductions spécifiques (Anah, Borloo ancien, Cosse, Scellier intermédiaire, ZRR), et le cas où les seuls revenus fonciers du foyer viennent de parts de sociétés non soumises à l'IS (une SCI plus un immeuble en direct reste éligible). Le Pinel (réduction d'impôt) n'exclut pas du micro-foncier."
+    "note": "Revenus fonciers bruts du foyer ≤ 15 000 € (sans prorata temporis) → micro-foncier, abattement 30% automatique. Au-delà : régime réel obligatoire ; option pour le réel irrévocable trois ans. Exclusions (brochure IR 2026, revenus fonciers) : monuments historiques, immeubles en nue-propriété, Loc'Avantages, amortissements Périssol, Besson neuf, Robien, Borloo neuf, déductions spécifiques (conventionnement Anah, Borloo ancien, Cosse, Scellier intermédiaire, Scellier ZRR, Robien ZRR), logements ayant ouvert droit à la réduction pour travaux dans les logements touristiques (art. 199 decies EA et 199 decies F), parts de SCI ou de SCPI qui louent un immeuble relevant de l'un de ces régimes (dont Robien SCPI et Borloo SCPI), et le cas où les seuls revenus fonciers du foyer viennent de parts de sociétés non soumises à l'IS ou de FPI (une société plus un immeuble loué nu en direct reste éligible ; brochure IR 2026, p. 158). Le Pinel (réduction d'impôt) n'exclut pas du micro-foncier."
   },
 
   "regime_reel_foncier": {
@@ -30,7 +30,7 @@
       "imputation_revenus_fonciers": "La fraction au-delà de 10 700 € (ou 21 400 €) et la part du déficit due aux intérêts d'emprunt se reportent sur les revenus fonciers des 10 années suivantes",
       "exception_interets": "La part du déficit provenant des intérêts d'emprunt n'est jamais imputable sur le revenu global. MAIS les loyers sont réputés couvrir d'abord les intérêts (BOI-RFPI-BASE-30-20 § 110) : seule la fraction des intérêts qui excède les loyers forme une part « intérêts » du déficit. Exemple : loyers 15 000, intérêts 6 000, autres charges 22 000 : déficit 13 000 entièrement dû aux autres charges, 10 700 sur le revenu global, 2 300 reportés.",
       "condition_location_3_ans": "L'imputation sur le revenu global suppose de louer nu le bien jusqu'au 31 décembre de la troisième année qui suit l'année d'imputation (§ 20) : une vente, une reprise pour soi ou un passage en meublé avant cette date fait réintégrer le déficit imputé",
-      "deficit_global": "Si le revenu global ne suffit pas à absorber les 10 700 €, l'excédent forme un déficit global reportable six ans",
+      "deficit_global": "Si le revenu global ne suffit pas à absorber les 10 700 €, l'excédent forme un déficit global reportable six ans (art. 156, I, premier alinéa CGI ; BOI-RFPI-BASE-30-20 § 160)",
       "cases_2042": "4BA bénéfice, 4BB déficit imputable sur les revenus fonciers, 4BC déficit imputable sur le revenu global, 4BD déficits antérieurs non encore imputés (annexe 2044)"
     },
     "amortissement_bailleur_prive_2026_2028": {
@@ -97,7 +97,7 @@
       "cotisations_sociales": "Cotisations TNS sur le bénéfice (SSI), charge significative vs LMNP. Location meublée de courte durée > 23 000 € de recettes : cotisations sociales d'activité même en LMNP (art. L. 611-1, 6° CSS)",
       "ifi": "Exonération IFI des locaux loués meublés sous des critères PROPRES (art. 975, V, 1° CGI ; BOI-PAT-IFI-30-10-10-10 § 60) : recettes > 23 000 € ET bénéfice commercial net (après amortissements) > 50 % des revenus nets d'activité du foyer, ce bénéfice compris, et profession principale (exclu en général pour un salarié à plein temps, BOI-PAT-IFI-30-10-10-30 § 20). Le statut LMP à l'IR ne suffit pas."
     },
-    "bascule_involontaire": "Attention : passage LMP possible en cas de hausse des recettes meublées OU baisse des autres revenus d'activité ; les pensions comptent parmi ces revenus, c'est donc l'arrêt de toute activité sans pension (par exemple une retraite anticipée financée par l'épargne) qui fait basculer. À surveiller annuellement."
+    "bascule_involontaire": "Attention : passage LMP possible en cas de hausse des recettes meublées OU baisse des autres revenus d'activité ; les pensions comptent parmi ces revenus : la bascule se produit dès que les recettes meublées dépassent le total pension + autres revenus d'activité du foyer, donc souvent au départ en retraite (pension inférieure à l'ancien salaire), et à coup sûr une année sans salaire, ARE ni pension (retraite anticipée financée par l'épargne). À surveiller annuellement."
   },
 
   "sci_ir": {
