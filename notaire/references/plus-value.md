@@ -135,8 +135,9 @@ Le seuil de 50 000 € s'apprécie après l'abattement pour durée de détention
 | Première cession autre que RP | Non propriétaire RP dans les 4 ans + remploi RP dans 24 mois (plus-value exonérée à reporter en 3VW) | art. 150 U-II-1° bis CGI |
 | Retraités / invalides | Non assujettis à l'IFI et RFR de l'avant-dernière année ≤ limite de l'art. 1417, I | art. 150 U-III CGI |
 | Expropriation, droit de délaissement | Remploi de l'intégralité de l'indemnité dans les 12 mois de sa perception | art. 150 U-II-4° CGI |
-| Vente à organisme de logement social | HLM, SEM, collectivités ; cessions jusqu'au 31/12/2027 | art. 150 U-II-7° et 8° CGI |
-| Cession à un acquéreur qui s'engage à démolir et reconstruire ou réhabiliter des logements collectifs (zones tendues, GOU, ORT) | Abattement exceptionnel, fenêtre de promesse à vérifier (rescrit BOI-RES-RFPI-000242) | art. 150 VE CGI |
+| Vente à organisme de logement social | HLM, SEM, collectivités ; cessions jusqu'au 31/12/2027 (prorogation LFI 2026, art. 52) | art. 150 U-II-7° et 8° CGI |
+
+**Abattement exceptionnel de l'art. 150 VE** (ce n'est pas une exonération) : 60 % pour un terrain à bâtir ou un bien bâti en zone tendue, 75 % pour un bien bâti dans le périmètre d'une grande opération d'urbanisme, d'une opération d'intérêt national ou d'une convention de l'art. L. 303-2 CCH, portés à 85 % si le cessionnaire s'engage à affecter au moins 50 % de la surface à des logements sociaux, en bail réel solidaire ou intermédiaires ; l'acquéreur s'engage à construire ou réhabiliter des logements collectifs. Abattement sur l'IR et les PS. Promesse ayant acquis date certaine du 01/01/2024 au 31/12/2027 (fenêtre prolongée par la LFI 2026, art. 54), cession au plus tard le 31 décembre de la deuxième année suivante ; tolérance pour les promesses signées entre le 01/01/2026 et la promulgation de la LFI 2026 (BOI-RES-RFPI-000242 du 31/12/2025). Exclu entre proches (conjoint, partenaire, concubin, ascendants, descendants et leurs sociétés).
 
 ### Exonération résidence principale : conditions
 
