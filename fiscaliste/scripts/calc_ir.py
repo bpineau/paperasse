@@ -25,7 +25,11 @@ Couvre :
       (18,6 % revenus du patrimoine : PV mobilières, crypto, LMNP ; 17,2 % produits
       de placement encaissés en 2025, 18,6 % à partir de 2026 : dividendes, intérêts)
     - Option barème (options_fiscales.revenus_capital = "bareme") : dividendes après
-      abattement de 40 %, intérêts et plus-values ajoutés au revenu global, PS inchangés
+      abattement de 40 %, intérêts et plus-values ajoutés au revenu global, PS inchangés,
+      CSG déductible (6,8 %) des dividendes et intérêts à PS prélevés à la source
+      déduite du revenu global de l'année même (ligne 2BH)
+    - Crypto : option distincte pour le barème (options_fiscales.crypto = "bareme",
+      case 3CN, art. 200 C CGI), indépendante de la 2OP
     - PS 17,2 % sur les revenus fonciers nets positifs (taux maintenu, L. 136-8 IV CSS)
     - RFR approché : RNI + cotisations PER réintégrées + revenus au PFU
       + abattement de 40 % si option barème (art. 1417, IV CGI)
@@ -39,7 +43,8 @@ Ne couvre PAS :
     - Plafonds spécifiques du QF (parent isolé 4 262 €, veuf, case L)
     - Contrôle du plafond de déduction PER (le versement est déduit tel quel)
     - Champs equity_salarial, micro_bnc_recettes, bnc_regime_normal du foyer.json
-    - CSG déductible de l'année suivante en cas d'option barème
+    - CSG déductible de l'année suivante (plus-values, crypto, RCM sans PS à la
+      source) en cas d'option barème
     - IFI (script distinct à créer si besoin)
 
 Les valeurs viennent de data/bareme-ir-2025.json et data/pfu-prelevements-sociaux.json.
@@ -259,7 +264,8 @@ def ir_pfu(base, pfu_data):
 
 def calc(rni, parts, parts_base, bareme, rfr=None, base_ps_patrimoine=0,
          base_ps_placement=0, pfu_data=None, base_ps_foncier=0,
-         option_capital="pfu", annee_revenus=2025, avertissements=None):
+         option_capital="pfu", annee_revenus=2025, avertissements=None,
+         base_ir_pfu=None):
     qf = impot_avec_qf(rni, parts, parts_base, bareme)
     dec = decote(qf["impot_brut"], parts_base, bareme)
     impot_apres_decote = max(0, qf["impot_brut"] - dec)
@@ -272,9 +278,12 @@ def calc(rni, parts, parts_base, bareme, rfr=None, base_ps_patrimoine=0,
     ps = ps_detail["total"] if ps_detail else 0
 
     # IR à 12,8 % sur les revenus du capital, sauf option barème (ils sont alors
-    # déjà dans le RNI, dividendes après abattement de 40 %).
-    base_pfu = (base_ps_patrimoine + base_ps_placement) if option_capital == "pfu" else 0
-    ir_forfaitaire = ir_pfu(base_pfu, pfu_data)
+    # déjà dans le RNI, dividendes après abattement de 40 %). La base IR peut
+    # différer de la base PS : le LMNP est au barème (déjà dans le RNI) mais
+    # supporte les PS des revenus du patrimoine ; la crypto a sa propre option.
+    if base_ir_pfu is None:
+        base_ir_pfu = (base_ps_patrimoine + base_ps_placement) if option_capital == "pfu" else 0
+    ir_forfaitaire = ir_pfu(base_ir_pfu, pfu_data)
 
     cehr_montant = cehr(rfr, parts_base, bareme) if rfr else 0
 
@@ -314,10 +323,15 @@ def from_foyer(foyer, bareme, pfu_data, annee_revenus=None):
         annee_revenus = int(meta.get("annee_revenus", 2025))
     avertissements = []
 
-    if f.get("residence_fiscale", "FR") != "FR":
+    non_resident = f.get("residence_fiscale", "FR") != "FR" or "non_resident" in foyer
+    if non_resident:
         avertissements.append(
             "Foyer non résident : le script applique les règles des résidents "
-            "(décote, PS). Taux minimum de l'art. 197 A CGI et PS selon affiliation non gérés."
+            "(décote). Taux minimum de l'art. 197 A CGI non géré. PS sur les revenus "
+            "fonciers non calculés : 17,2 % en principe, mais seul le prélèvement de "
+            "solidarité de 7,5 % est dû en cas d'affiliation à un régime de sécurité "
+            "sociale de l'EEE, de Suisse ou du Royaume-Uni (art. 235 ter CGI ; "
+            "art. L. 136-6, I ter CSS)."
         )
 
     # Parts
@@ -353,46 +367,78 @@ def from_foyer(foyer, bareme, pfu_data, annee_revenus=None):
     # Revenus du capital
     dividendes = r.get("dividendes_bruts", 0)
     interets = r.get("interets_rcm", 0)
-    pv_mobilieres = r.get("plus_values_mobilieres", 0) + r.get("crypto_plus_values", 0)
+    pv_mobilieres = r.get("plus_values_mobilieres", 0)
+    crypto = r.get("crypto_plus_values", 0)
     option_capital = opt.get("revenus_capital", "pfu")
     if option_capital not in ("pfu", "bareme"):
         avertissements.append(f"options_fiscales.revenus_capital = {option_capital!r} inconnu, PFU appliqué.")
         option_capital = "pfu"
+    # Les actifs numériques ont leur propre option pour le barème (art. 200 C CGI,
+    # case 3CN), indépendante de la 2OP qui ne couvre que les RCM et les PV mobilières.
+    option_crypto = opt.get("crypto", "pfu")
+    if option_crypto not in ("pfu", "bareme"):
+        avertissements.append(f"options_fiscales.crypto = {option_crypto!r} inconnu, PFU appliqué.")
+        option_crypto = "pfu"
+    rcm_sans_ps_source = bool(r.get("rcm_sans_ps_a_la_source", False))
 
     # Revenus imposables au barème
     revenu_global = net_salaires + net_pensions + fonciers + lmnp
     abattement_40 = 0
+    csg_ded_annee = 0
     if option_capital == "bareme":
         abattement_40 = round(dividendes * pfu_data["dividendes_option_bareme"]["abattement"]) if pfu_data else 0
         revenu_global += (dividendes - abattement_40) + interets + pv_mobilieres
+        # CSG déductible (6,8 %) des dividendes et intérêts dont les PS ont été
+        # prélevés à la source en 2025 (ligne 2BH) : déduite du revenu global de
+        # l'année même, automatiquement (brochure IR 2026, RCM). Pour les PS
+        # établis par voie de rôle (plus-values, RCM d'un courtier étranger sans
+        # 2778), la CSG n'est déductible que l'année suivante.
+        if pfu_data and not rcm_sans_ps_source:
+            taux_csg_ded = pfu_data["prelevements_sociaux"]["dont_csg_deductible_si_bareme"]
+            csg_ded_annee = round((dividendes + interets) * taux_csg_ded)
+        if pv_mobilieres or (rcm_sans_ps_source and (dividendes or interets)):
+            avertissements.append(
+                "Option barème : la CSG déductible (6,8 %) des plus-values mobilières "
+                "et des RCM sans PS à la source s'imputera sur le revenu global de "
+                "l'année suivante, non modélisée."
+            )
+    if option_crypto == "bareme":
+        revenu_global += crypto
         avertissements.append(
-            "Option barème : la CSG déductible (6,8 %) s'imputera sur le RNI de l'année suivante, non modélisée."
+            "Crypto au barème (case 3CN) : la CSG déductible (6,8 %) s'imputera sur le "
+            "revenu global de l'année suivante, non modélisée."
         )
 
     # Déductions (PER + pension alimentaire + CSG déductible)
     per = d.get("per_declarant1", 0) + d.get("per_declarant2", 0)
     pension_alim = d.get("pension_alimentaire_enfant_majeur", 0)
     csg_ded = d.get("csg_deductible_n1", 0)
-    rni = max(0, revenu_global - per - pension_alim - csg_ded)
+    rni = max(0, revenu_global - per - pension_alim - csg_ded - csg_ded_annee)
     if per:
         avertissements.append("Le versement PER est déduit sans contrôle du plafond (voir l'avis d'imposition N-1).")
 
     # Base PS sur revenus du capital, séparée par nature (LFSS 2026)
     base_ps_placement = dividendes + interets
-    base_ps_patrimoine = pv_mobilieres + lmnp
+    base_ps_patrimoine = pv_mobilieres + crypto + lmnp
     # Dividendes et intérêts non soumis aux PS à l'encaissement (établissement payeur
     # hors de France sans 2778) : PS établis par voie de rôle au titre des revenus du
     # patrimoine, 18,6 % dès les revenus 2025 (impots.gouv.fr, « Les revenus mobiliers »).
-    if r.get("rcm_sans_ps_a_la_source", False):
+    if rcm_sans_ps_source:
         base_ps_patrimoine += base_ps_placement
         base_ps_placement = 0
-    base_ps_foncier = max(0, fonciers)
+    base_ps_foncier = 0 if non_resident else max(0, fonciers)
+
+    # Base de l'IR forfaitaire de 12,8 % : revenus du capital restés au PFU.
+    # Le LMNP n'en fait jamais partie (barème, déjà dans le RNI).
+    base_ir_pfu = 0
+    if option_capital == "pfu":
+        base_ir_pfu += dividendes + interets + pv_mobilieres
+    if option_crypto == "pfu":
+        base_ir_pfu += crypto
 
     # RFR approché (art. 1417, IV CGI) : RNI + cotisations PER réintégrées
     # + revenus imposés au PFU + abattement de 40 % réintégré si option barème.
-    rfr_approx = rni + per + abattement_40
-    if option_capital == "pfu":
-        rfr_approx += base_ps_placement + base_ps_patrimoine - lmnp  # le LMNP est déjà dans le RNI
+    rfr_approx = rni + per + abattement_40 + base_ir_pfu
 
     return calc(
         rni=rni,
@@ -407,6 +453,7 @@ def from_foyer(foyer, bareme, pfu_data, annee_revenus=None):
         option_capital=option_capital,
         annee_revenus=annee_revenus,
         avertissements=avertissements,
+        base_ir_pfu=base_ir_pfu,
     )
 
 
