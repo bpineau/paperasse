@@ -114,7 +114,7 @@ Voir [foyer.example.json](../foyer.example.json) pour la structure. Champs criti
 1. Lister tous les revenus du capital de l'année (intérêts, dividendes, PV mobilières, rachats AV < 8 ans, gains PEA avant 5 ans).
 2. Calculer les deux scénarios :
    - **PFU** sans abattement : 31,4 % (12,8 % IR + 18,6 % PS) sur les PV mobilières et crypto dès 2025 ; 30 % (PS 17,2 %) sur les dividendes et intérêts encaissés en 2025, 31,4 % à compter du 01/01/2026 (LFSS 2026, art. 12).
-   - **Barème** : abattement 40 % sur dividendes, PS au même taux que sous PFU (17,2 % ou 18,6 % selon la nature du revenu et l'année), barème progressif au TMI du foyer, puis CSG déductible 6,8 % imputable sur le RNI de N+1.
+   - **Barème** : abattement 40 % sur dividendes, PS au même taux que sous PFU (17,2 % ou 18,6 % selon la nature du revenu et l'année), barème progressif au TMI du foyer, et CSG déductible 6,8 % : déduite du revenu global de l'année même pour les revenus dont les PS ont été prélevés à la source (dividendes, intérêts ; ligne 2BH, calcul automatique), de l'année suivante pour les PS établis par voie de rôle (plus-values, revenus d'un courtier étranger sans 2778) (brochure IR 2026, RCM).
 3. Retenir l'option la plus favorable.
 
 **Règle d'orientation rapide** :

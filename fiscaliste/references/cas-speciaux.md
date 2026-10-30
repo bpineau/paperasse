@@ -73,7 +73,7 @@ Foyer célibataire, RNI habituel 40 000 € (TMI 30%), vesting RSU 80 000 € im
 - Supplément × 4 : (11 104 − 5 104) × 4 = 24 000 €
 - Impôt total : 5 104 + 24 000 = 29 104 €
 
-Gain : environ 3 900 €, parce que le quart du revenu exceptionnel (20 000 €) reste dans la tranche à 30 % au lieu de faire monter 35 423 € dans la tranche à 41 %. Le gain est nul si le revenu ordinaire est déjà dans la dernière tranche, et il ne joue que sur l'IR : la CEHR et la CDHR sont calculées sur le RFR sans quotient.
+Gain : environ 3 900 €, parce que le quart du revenu exceptionnel (20 000 €) reste dans la tranche à 30 % au lieu de faire monter 35 423 € dans la tranche à 41 %. Le gain est nul si le revenu ordinaire est déjà dans la dernière tranche, et il ne joue que sur l'IR : la CEHR est calculée sur le RFR sans quotient ; pour la CDHR, les revenus exceptionnels au sens de l'art. 163-0 A sont retenus pour le quart de leur montant (art. 224 CGI ; brochure IR 2026, « Divers », CDHR, note 2).
 
 **Règle** : chiffrer systématiquement les deux scénarios avant de recommander le quotient.
 
@@ -93,7 +93,7 @@ Voir `data/bareme-ir-2025.json` → `cehr`. Base légale : art. 223 sexies CGI.
 ### À ne pas oublier
 
 - S'ajoute à l'IR net (ne se déduit pas) ; le quotient des revenus exceptionnels allège l'IR, pas la CEHR
-- **Lissage** (art. 223 sexies, II CGI ; brochure IR 2026, case 8TD) : si le RFR de l'année est au moins égal à 1,5 fois la moyenne des RFR des deux années précédentes, et si chacun de ces deux RFR est resté sous le seuil d'assujettissement (250 000 € ou 500 000 €), la fraction du RFR qui dépasse cette moyenne est divisée par deux pour le calcul, puis la contribution supplémentaire obtenue est multipliée par deux. Cas d'usage : une année isolée de grosses cessions.
+- **Lissage** (art. 223 sexies, II CGI ; brochure IR 2026, case 8TD) : si le RFR de l'année est au moins égal à 1,5 fois la moyenne des RFR des deux années précédentes, si chacun de ces deux RFR est resté sous le seuil d'assujettissement (250 000 € ou 500 000 €), et si les revenus passibles de l'IR en France ont excédé la moitié du RFR mondial de chacune de ces deux années (sinon cocher 8TD : calcul de droit commun), la fraction du RFR qui dépasse cette moyenne est divisée par deux pour le calcul, puis la contribution supplémentaire obtenue est multipliée par deux. Cas d'usage : une année isolée de grosses cessions. Mariage, Pacs, divorce, séparation ou décès dans l'année ou les deux années précédentes : les RFR retenus sont ceux des foyers successifs auxquels le contribuable a appartenu, et le lissage passe par une réclamation (brochure IR 2026, « Divers », p. 325).
 
 ## CDHR (Contribution Différentielle sur les Hauts Revenus)
 
