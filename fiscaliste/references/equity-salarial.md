@@ -52,7 +52,7 @@ Une cession massive d'actions gratuites (ex: 150 000 € de gain d'acquisition i
 
 **Réserve** : le BOFiP refuse la qualification aux revenus « réalisés dans le cadre normal de l'activité professionnelle », même si leur montant varie fortement d'une année sur l'autre (BOI-IR-LIQ-20-30-20 § 40 et § 50), et aucune doctrine ne vise expressément les actions gratuites. Pour des attributions récurrentes qui font partie de la rémunération normale, la nature exceptionnelle est douteuse ; une cession unique de plusieurs années de vesting se défend mieux. Chiffrer avec et sans quotient, et présenter le quotient comme une demande à motiver, non comme un réflexe. Il n'existe aucun seuil du type « 1,5 fois le salaire ».
 
-Mécanisme : impôt = [IR(RNI_hors_RSU + gain/4) − IR(RNI_hors_RSU)] × 4. Utile si le gain seul fait franchir une tranche. **Nuance** : inutile si le foyer est déjà au TMI 45% (le taux marginal ne change pas avec la division) et sans effet sur la CEHR et la CDHR, calculées sur le RFR sans quotient. Détail et exemples chiffrés dans la section cas-speciaux listée depuis SKILL.md.
+Mécanisme : impôt = [IR(RNI_hors_RSU + gain/4) − IR(RNI_hors_RSU)] × 4. Utile si le gain seul fait franchir une tranche. **Nuance** : inutile si le foyer est déjà au TMI 45% (le taux marginal ne change pas avec la division) et sans effet sur la CEHR, calculée sur le RFR sans quotient (seul le lissage propre à la CEHR, art. 223 sexies, II, peut jouer) ; pour la CDHR, les revenus exceptionnels sont retenus pour le quart de leur montant (art. 224 CGI). Détail et exemples chiffrés dans la section cas-speciaux listée depuis SKILL.md.
 
 ## Stock-options
 
@@ -67,7 +67,7 @@ Selon date d'attribution :
 
 | Options attribuées | Régime |
 |------|--------|
-| Avant le 28/09/2012 | Taux forfaitaires de faveur selon la durée de portage (cases 3VD à 3SF), ou option salaire ; contribution salariale 10 % si attribuées depuis le 16/10/2007 (case 3VN) |
+| Avant le 28/09/2012 | Taux forfaitaires de faveur selon la durée de portage (cases 3VD / 3VI / 3VF), ou option salaire ; contribution salariale 10 % si attribuées depuis le 16/10/2007 (case 3VN) |
 | À compter du 28/09/2012 (plans qualifiés) | Imposé **l'année de la cession**, de la conversion au porteur ou de la mise en location des titres (art. 80 bis, II bis CGI) : salaire au barème (case 1TT / 1UT), CSG/CRDS d'activité 9,7 %, contribution salariale 10 % (L. 137-14 CSS ; [BOI-RSA-ES-20-30](https://bofip.impots.gouv.fr/bofip/2389-PGP.html/identifiant=BOI-RSA-ES-20-30-20260521) § 30 et § 150). Une moins-value de cession sous la valeur à la levée s'impute sur le gain de levée (brochure IR 2026). La plus-value au-delà de la valeur à la levée est une PV mobilière (3VG / 3VH) |
 | Plan non qualifié (options étrangères sans sous-plan conforme au code de commerce) | Salaire de droit commun, en principe l'année de la levée, par la paie (BOI-RSA-ES-20-10-20-50 § 1) |
 
@@ -156,7 +156,7 @@ Vesting massif, cession d'entreprise, indemnité de départ → à activer.
 4. × coefficient
 
 **À mentionner systématiquement** pour :
-- Vesting RSU > 1,5 × salaire annuel
+- Gain d'acquisition d'actions gratuites exceptionnellement élevé par rapport aux revenus habituels (aucun seuil légal du type « 1,5 fois le salaire », voir la réserve plus haut)
 - Cession de parts de société
 - Indemnité de départ importante
 - Prime exceptionnelle massive
@@ -171,8 +171,8 @@ Vesting massif, cession d'entreprise, indemnité de départ → à activer.
 | Gain acquisition RSU, fraction > 300 000 € ou AGA attribuées depuis le 28/09/2012 sur AGE antérieure au 08/08/2015 | 2042 C case 1TT / 1UT (salaires) |
 | Gain acquisition RSU, plan non qualifiant | Salaire ordinaire de l'année du vesting, via la paie (1AJ / 1BJ) |
 | Plus-value cession RSU | 2042 C case 3VG (plus-value, PFU ou barème selon la case 2OP) ou 3VH (moins-value), 2074 si détail |
-| Gain cession BSPCE, titres souscrits jusqu'au 31/12/2024 | 2042 C : 3SJ (bons attribués avant 2018, au moins 3 ans), 3TJ et 3TK (bons attribués du 01/01/2018 au 31/12/2024), 3SK (moins de 3 ans, 30 %) |
-| BSPCE, titres souscrits depuis le 01/01/2025 | 2042 C : gain d'exercice 3PC (12,8 %) ou 3PE (30 %), ou 1AY / 1BY sur option salaires ; gain de cession 3TL et 3TM |
+| Gain cession BSPCE, titres souscrits jusqu'au 31/12/2024 | 2042 C : 3SJ (bons attribués avant 2018, au moins 3 ans), 3TJ (bons attribués du 01/01/2018 au 31/12/2024 ; 3TK ne reçoit que l'abattement fixe du dirigeant partant à la retraite), 3SK (moins de 3 ans, 30 %) |
+| BSPCE, titres souscrits depuis le 01/01/2025 | 2042 C : gain d'exercice 3PC (12,8 %) ou 3PE (30 %), ou 1AY / 1BY sur option salaires ; gain de cession 3TL (3TM : abattement fixe du dirigeant partant à la retraite) |
 | Décote ESPP | Salaire du mois de l'achat, via la paie (1AJ / 1BJ) |
 | Abondement PEE (information) | Déclaration employeur, exonéré d'IR |
 | Stock-options | 1TP / 1UP (rabais excédentaire), 1TT / 1UT (options attribuées depuis le 28/09/2012), 3VD / 3VI / 3VF / 3VJ / 3VK / 3VN (options antérieures), 3VG / 3VH (plus ou moins-value de cession) |
