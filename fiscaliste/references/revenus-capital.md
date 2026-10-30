@@ -17,7 +17,7 @@ La LFSS 2026 (loi n° 2025-1403 du 30/12/2025, art. 12) modifie le taux de CSG (
 |---|---|---|---|
 | Revenus du patrimoine (PV mobilières, crypto, LMNP) | **18,6 %** | 18,6 % | L. 136-6 |
 | Produits de placement (dividendes, intérêts, PEA à la sortie, PER) | 17,2 % | **18,6 % à partir du 01/01/2026** | L. 136-7 |
-| AV et capitalisation, revenus fonciers (nu, SCPI), PV immobilières, épargne logement (PEL/CEL), PEP | 17,2 % | 17,2 % (inchangé) | L. 136-8 IV |
+| AV et capitalisation, revenus fonciers (nu, SCPI), PV immobilières, épargne logement (CEL ouverts jusqu'au 31/12/2017, PEL), PEP | 17,2 % | 17,2 % (inchangé) | L. 136-8 IV |
 
 Voir `data/pfu-prelevements-sociaux.json` pour les taux exacts.
 
@@ -90,14 +90,14 @@ Régime distinct : méthode PAMC (prix acquisition moyen pondéré) sur l'ensemb
 **À ne jamais confondre avec l'IR.** Les PS sont prélevés en plus sur la quasi-totalité des revenus du capital.
 
 - Composition : CSG + CRDS + prélèvement de solidarité
-- Taux différencié depuis la LFSS 2026 (voir table en haut du document) : 18,6 % pour les revenus du patrimoine dès 2025, 17,2 % puis 18,6 % au 01/01/2026 pour les produits de placement, 17,2 % inchangé pour AV/foncier nu/SCPI/PEL-CEL anciens
+- Taux différencié depuis la LFSS 2026 (voir table en haut du document) : 18,6 % pour les revenus du patrimoine dès 2025, 17,2 % puis 18,6 % au 01/01/2026 pour les produits de placement, 17,2 % inchangé pour AV/foncier nu/SCPI/épargne logement (voir la liste ci-dessous)
 - **Sous PFU** : PS inclus dans le taux global (30 % ou 31,4 % selon la nature du revenu)
 - **Sous barème** : PS séparés de l'IR (mais CSG 6,8 % déductible en N+1)
 
 **Cas restant à 17,2 % de manière permanente** (exclus de la hausse LFSS 2026) :
 - Assurance-vie et contrats de capitalisation
 - Revenus fonciers (foncier nu, SCPI)
-- Épargne logement (PEL, CEL), y compris les plans ouverts depuis 2018
+- Épargne logement : CEL ouverts jusqu'au 31/12/2017 (L. 136-7, II, 1°) et PEL (L. 136-7, II, 2° et 2° bis, qui visent les plans quelle que soit leur date d'ouverture). La page impots.gouv.fr « Les revenus mobiliers » ne retient que les PEL et CEL ouverts jusqu'au 31/12/2017 : pour un PEL ouvert depuis 2018, vérifier le BOFiP (BOI-RPPM-PSOC) avant de retenir 17,2 %
 - PEP
 - Plus-values immobilières des particuliers
 - Les livrets réglementés (Livret A, LDDS, LEP) sont, eux, totalement exonérés d'IR et de PS

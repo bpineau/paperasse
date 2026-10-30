@@ -110,7 +110,7 @@ La LFSS 2026 (loi n° 2025-1403 du 30/12/2025, art. 12) a porté la CSG sur les 
 
 **Conséquence pratique** : pour la déclaration 2026 (revenus 2025), une PV mobilière sur compte-titres est imposée à **31,4 % au PFU** (12,8 % IR + 18,6 % PS), alors qu'un dividende encaissé en 2025 reste à **30 %** (12,8 % IR + 17,2 % PS). Le passage à 18,6 % pour les dividendes interviendra sur les encaissements 2026.
 
-- **CSG déductible : 6,8 %** — **uniquement si option barème** sur revenus du capital N-1
+- **CSG déductible : 6,8 %** — **uniquement si option barème** ; déduite l'année même pour les revenus dont les PS sont prélevés à la source (dividendes, intérêts), l'année suivante pour les PS par voie de rôle (plus-values)
 - **Option barème globale** : concerne TOUS les revenus du capital de l'année
 
 ### PER (versements 2025)
@@ -230,7 +230,7 @@ Des **scénarios illustratifs** sont fournis dans [`examples/`](examples/README.
 
 1. Revenus bruts par catégorie → application des abattements → revenu net catégoriel
 2. Somme des revenus nets catégoriels → revenu brut global
-3. Déductions (PER, pension alimentaire, CSG déductible N-1) → RNI
+3. Déductions (PER, pension alimentaire, CSG déductible) → RNI
 4. RNI ÷ nombre de parts → quotient
 5. Barème progressif sur le quotient → impôt par part
 6. × nombre de parts → impôt brut

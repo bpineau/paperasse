@@ -57,11 +57,11 @@
     },
     "taux_inchanges_17_2": {
       "valeur": 0.172,
-      "couvre": ["assurance-vie", "contrats de capitalisation", "revenus fonciers (nu, SCPI)", "plus-values immobilières", "épargne logement (PEL, CEL)", "PEP"],
+      "couvre": ["assurance-vie", "contrats de capitalisation", "revenus fonciers (nu, SCPI)", "plus-values immobilières", "épargne logement (CEL ouverts jusqu'au 31/12/2017 ; PEL : L. 136-7, II, 2°, portée pour les plans ouverts depuis 2018 à confirmer au BOFiP)", "PEP"],
       "note": "Cas exclus de la hausse LFSS 2026 (art. L. 136-8, IV CSS : CSG maintenue à 9,2 %). Les livrets réglementés (Livret A, LDDS, LEP) sont exonérés d'IR et de PS, pas à 17,2 %."
     },
     "dont_csg_deductible_si_bareme": 0.068,
-    "note_csg_deductible": "La CSG déductible (6,8 %) ne s'applique QUE si option barème progressif. Zéro déductible sous PFU. Elle s'impute en N+1 sur le RNI.",
+    "note_csg_deductible": "La CSG déductible (6,8 %) ne s'applique QUE si option barème progressif. Zéro déductible sous PFU. Déduite du revenu global de l'année même pour les revenus dont les PS ont été prélevés à la source (dividendes, intérêts : ligne 2BH, calcul automatique), de l'année suivante pour les PS établis par voie de rôle (plus-values, revenus d'un courtier étranger sans 2778) (brochure IR 2026, RCM).",
     "taux_plus_values_immo": 0.172
   },
 
