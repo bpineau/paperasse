@@ -118,8 +118,9 @@
       "update_frequency": "rare",
       "last_fetched": "2026-04-12",
       "section_deces_last_fetched": "2026-10-31",
+      "check_instructions_deces": "Abattement 152 500 €/bénéficiaire et taux 20 % / 31,25 % (990 I), abattement global 30 500 € (757 B), matrice 20/11/1991 et 13/10/1998 (BOI-TCAS-AUT-60 § 70 à 90), exonération des bénéficiaires de l'art. 796-0 bis (§ 120). Vérifier que les produits du 3° du II de l'art. L. 136-7 CSS restent visés par la dérogation à 9,2 % du IV de l'art. L. 136-8 CSS — c'est ce qui maintient les PS de l'AV à 17,2 % malgré la LFSS 2026.",
       "next_check": "2027-01-15",
-      "check_instructions": "Plafonds PEA 150 k€ / PEA-PME 225 k€. Abattements AV 4 600 € / 9 200 €. Seuil 150 k€ AV. Section assurance_vie_deces : abattement 152 500 €/bénéficiaire et taux 20 % / 31,25 % (990 I), abattement global 30 500 € (757 B), matrice 20/11/1991 et 13/10/1998 (BOI-TCAS-AUT-60 § 70 à 90), exonération des bénéficiaires de l'art. 796-0 bis (§ 120). Vérifier aussi que les produits du 3° du II de l'art. L. 136-7 CSS restent visés par la dérogation à 9,2 % du IV de l'art. L. 136-8 CSS — c'est ce qui maintient les PS de l'AV à 17,2 % malgré la LFSS 2026."
+      "check_instructions": "Plafonds PEA 150 k€ / PEA-PME 225 k€. Abattements AV 4 600 € / 9 200 €. Seuil 150 k€ AV."
     },
     {
       "id": "niches",
