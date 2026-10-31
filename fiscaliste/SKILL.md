@@ -1,7 +1,7 @@
 ---
 name: fiscaliste
 metadata:
-  last_updated: 2026-10-28
+  last_updated: 2026-10-31
 includes:
   - data/**
   - references/**

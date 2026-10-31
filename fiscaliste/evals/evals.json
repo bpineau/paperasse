@@ -293,6 +293,23 @@
         "Le skill précise que la distinction 1AP vs 1AJ porte sur la nature du revenu (remplacement vs activité), pas sur l'abattement",
         "L'abattement suit le régime des salaires (plancher commun 509 € / plafond commun 14 555 € sur le total salaires + ARE)"
       ]
+    },
+    {
+      "id": 21,
+      "name": "av-pv-latentes-uc-deces-ps-dus",
+      "prompt": "Mon oncle est décédé en 2026. Son assurance-vie en unités de compte valait 800 000 EUR pour 500 000 EUR de primes versées, soit 300 000 EUR de plus-values latentes. Comme pour les cryptos, le décès purge tout, non ? Je n'ai rien à payer sur ces gains ?",
+      "expected_output": "Le skill corrige la prémisse : le décès n'est pas un fait générateur de l'IR, donc l'IR (12,8 %) est définitivement purgé sur les 300 000 EUR de gains — mais les prélèvements sociaux restent dus. Depuis la LFSS 2010 (art. L. 136-7, II, 3° CSS), l'assureur prélève les PS sur les gains UC au dénouement par décès, nets des PS déjà acquittés, et les déduit du capital avant versement : environ 51 600 EUR à 17,2 %. Le taux reste 17,2 % et non 18,6 % car les produits du 3° du II de l'art. L. 136-7 CSS sont visés par la dérogation à 9,2 % du IV de l'art. L. 136-8 CSS, malgré la hausse de CSG de la LFSS 2026. Le raisonnement crypto (où IR ET PS sont purgés) ne se transpose pas. La fiscalité de transmission (990 I / 757 B) relève du skill notaire.",
+      "files": [],
+      "assertions": [
+        "Le skill corrige la prémisse de l'utilisateur : les PS ne sont pas purgés au décès sur les UC",
+        "L'IR est identifié comme définitivement purgé (le décès n'est pas un fait générateur)",
+        "Les PS sont calculés à 17,2 % sur les gains UC, soit environ 51 600 EUR",
+        "Le skill ne retient pas le taux de 18,6 % de la LFSS 2026 pour l'assurance-vie",
+        "Le skill cite l'art. L. 136-7 II 3° CSS comme base du prélèvement par l'assureur",
+        "Le skill précise que les PS sont prélevés par l'assureur avant versement du capital",
+        "Le skill refuse explicitement de transposer le régime des cryptoactifs à l'assurance-vie en UC",
+        "La fiscalité de transmission (990 I / 757 B) est renvoyée au skill notaire"
+      ]
     }
   ]
 }
