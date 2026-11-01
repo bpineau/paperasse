@@ -196,14 +196,32 @@ Régimes spéciaux :
 
 ## Allocations chômage et revenus de remplacement
 
-Déclarées case **1AP / 1BP** (pas 1AJ).
+Déclarées case **1AP / 1BP** (pas 1AJ). Bien vérifier le pré-rempli France Travail.
 
 **Points critiques** :
-- **Pas d'abattement 10%** (contrairement aux salaires)
+- **Abattement 10 % applicable** : l'ARE est un revenu de remplacement imposé selon les règles des traitements et salaires (BOI-RSA-BASE-30-50-20). La déduction forfaitaire de 10 % s'applique sur le total salaires + ARE (plafond commun 14 555 €/membre). La déclarer en 1AP au lieu de 1AJ ne supprime PAS l'abattement.
 - CSG prélevée à taux réduit à la source
 - La fraction de CSG prélevée à taux réduit n'est pas déductible du revenu imposable
 
-**Erreur classique** : déclarer l'ARE en case 1AJ → bénéficie à tort de l'abattement 10% → redressement probable.
+**Pourquoi 1AP et pas 1AJ ?** L'ARE n'est pas un revenu d'*activité* mais de *remplacement* : la distinction compte pour les calculs fondés sur les seuls revenus d'activité (plafond de déduction PER, certaines prestations sociales), pas pour l'abattement de 10 %.
+
+## Professions médicales conventionnées secteur 1
+
+Deux déductions forfaitaires spécifiques aux médecins conventionnés secteur 1
+en déclaration contrôlée (BOI-BNC-SECT-40) :
+
+- **Déduction Groupe III (2 %)** : forfait de 2 % des recettes brutes couvrant
+  représentation, réception, prospection, cadeaux professionnels, travaux de
+  recherche, blanchissage et petits déplacements (§ 120). Alternative au réel :
+  non cumulable avec la déduction des frais réels de ces mêmes catégories.
+- **Déduction complémentaire (3 %)** : 3 % calculés sur les recettes
+  conventionnelles (§ 160).
+
+Depuis la disparition du régime AGA/OGA (majoration supprimée depuis les
+revenus 2023, réduction frais de comptabilité abrogée par la LF 2025), ces
+forfaits constituent le principal avantage catégoriel restant pour les
+médecins secteur 1. Vérifier les conditions à jour dans BOI-BNC-SECT-40 avant
+application.
 
 ## Situations matrimoniales particulières
 

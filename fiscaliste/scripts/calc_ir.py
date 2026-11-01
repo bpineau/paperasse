@@ -17,7 +17,10 @@ Couvre :
     - Barème progressif tranche par tranche
     - Quotient familial (avec plafonnement)
     - Décote célibataire / couple
-    - PS 17,2 % sur revenus du capital (ajout séparé)
+    - PS différenciés LFSS 2026 : 18,6 % revenus du patrimoine (PV mobilières,
+      crypto) / 17,2 % produits de placement 2025 (dividendes, intérêts).
+      Les PS sur le résultat LMNP ne sont PAS calculés (le champ
+      lmnp_reel_resultat du foyer.json n'alimente pas la base PS)
     - CEHR
 
 Ne couvre PAS :
@@ -173,21 +176,40 @@ def cehr(rfr, parts_base, bareme):
 # PS sur revenus du capital
 # ─────────────────────────────────────────────────────
 
-def ps_capital(base_capital, pfu_data):
-    taux = pfu_data["prelevements_sociaux"]["taux_revenus_capital"]
-    return round(base_capital * taux)
+def ps_capital(base_patrimoine, base_placement, pfu_data):
+    """PS différenciés LFSS 2026 (revenus 2025).
+
+    - Revenus du patrimoine (PV mobilières CTO, crypto, LMNP) : 18,6 % dès 2025.
+    - Produits de placement (dividendes, intérêts, RCM) : 17,2 % pour les
+      encaissements 2025 (18,6 % à partir du 01/01/2026).
+    """
+    ps = pfu_data["prelevements_sociaux"]
+    taux_patrimoine = ps["taux_revenus_du_patrimoine_2025"]["valeur"]
+    taux_placement = ps["taux_produits_de_placement_2025"]["valeur"]
+    return {
+        "patrimoine": {"base": base_patrimoine, "taux": taux_patrimoine,
+                       "montant": round(base_patrimoine * taux_patrimoine)},
+        "placement": {"base": base_placement, "taux": taux_placement,
+                      "montant": round(base_placement * taux_placement)},
+        "total": round(base_patrimoine * taux_patrimoine) + round(base_placement * taux_placement),
+    }
 
 
 # ─────────────────────────────────────────────────────
 # Orchestration
 # ─────────────────────────────────────────────────────
 
-def calc(rni, parts, parts_base, bareme, rfr=None, base_capital_ps=0, pfu_data=None):
+def calc(rni, parts, parts_base, bareme, rfr=None, base_ps_patrimoine=0,
+         base_ps_placement=0, pfu_data=None):
     qf = impot_avec_qf(rni, parts, parts_base, bareme)
     dec = decote(qf["impot_brut"], parts_base, bareme)
     impot_apres_decote = max(0, qf["impot_brut"] - dec)
 
-    ps = ps_capital(base_capital_ps, pfu_data) if (base_capital_ps and pfu_data) else 0
+    if (base_ps_patrimoine or base_ps_placement) and pfu_data:
+        ps_detail = ps_capital(base_ps_patrimoine, base_ps_placement, pfu_data)
+    else:
+        ps_detail = None
+    ps = ps_detail["total"] if ps_detail else 0
     cehr_montant = cehr(rfr, parts_base, bareme) if rfr else 0
 
     return {
@@ -204,6 +226,7 @@ def calc(rni, parts, parts_base, bareme, rfr=None, base_capital_ps=0, pfu_data=N
         "decote": round(dec),
         "impot_apres_decote": impot_apres_decote,
         "prelevements_sociaux": ps,
+        "ps_details": ps_detail,
         "cehr": cehr_montant,
         "total_a_payer": impot_apres_decote + ps + cehr_montant,
         "_note": "Avant réductions et crédits d'impôt. Les additionner manuellement.",
@@ -226,20 +249,28 @@ def from_foyer(foyer, bareme, pfu_data):
     demi_parts_alt = 0.25 * min(enfants_alternee, 2) + 0.5 * max(0, enfants_alternee - 2)
     parts = parts_base + demi_parts_enfants + demi_parts_alt
 
-    # Revenu net catégoriel salaires (abattement 10 %)
+    # Limitation connue : salaires + ARE partagent ici un seul plafond d'abattement
+    # (14 555 €). Correct pour un même déclarant ; un foyer où salaire et ARE
+    # relèvent de deux conjoints distincts aurait droit à deux plafonds. Non géré
+    # (limitation préexistante) — voir issue dédiée plutôt que d'élargir cette PR.
+    #
+    # Revenu net catégoriel salaires + ARE (abattement 10 %).
+    # L'ARE est un revenu de remplacement imposé selon les règles des T&S
+    # (BOI-RSA-BASE-30-50-20) : même abattement 10 % et même plafond (14 555 €)
+    # que les salaires. On l'intègre donc à la base salaires.
     salaires = r.get("salaires_declarant1", 0) + r.get("salaires_declarant2", 0)
-    net_salaires = abattement_salaires(salaires, bareme) if salaires else 0
+    chomage = r.get("revenus_chomage", 0)
+    base_traitements = salaires + chomage
+    net_salaires = abattement_salaires(base_traitements, bareme) if base_traitements else 0
 
     pensions = r.get("pensions_declarant1", 0) + r.get("pensions_declarant2", 0)
     net_pensions = abattement_pensions(pensions, bareme) if pensions else 0
 
-    # Autres revenus ajoutés au RNI sans abattement (simplification) :
-    # revenus fonciers (déjà calculés au net), chômage (pas d'abattement)
+    # Revenus fonciers : déjà au net (micro post-abattement / réel post-charges).
     fonciers = r.get("revenus_fonciers_reels", 0) + r.get("revenus_fonciers_micro", 0)
-    chomage = r.get("revenus_chomage", 0)
 
     # Revenus imposables au barème (hors revenus du capital si PFU)
-    revenu_global = net_salaires + net_pensions + fonciers + chomage
+    revenu_global = net_salaires + net_pensions + fonciers
 
     # Déductions (PER + pension alimentaire + CSG déductible)
     per = d.get("per_declarant1", 0) + d.get("per_declarant2", 0)
@@ -247,17 +278,15 @@ def from_foyer(foyer, bareme, pfu_data):
     csg_ded = d.get("csg_deductible_n1", 0)
     rni = max(0, revenu_global - per - pension_alim - csg_ded)
 
-    # Base PS sur revenus du capital (dividendes + intérêts + PV mobi + crypto)
-    base_ps = (
-        r.get("dividendes_bruts", 0)
-        + r.get("interets_rcm", 0)
-        + r.get("plus_values_mobilieres", 0)
-        + r.get("crypto_plus_values", 0)
-    )
+    # Base PS sur revenus du capital, séparée par nature (LFSS 2026) :
+    # - produits de placement (dividendes, intérêts) : 17,2 % sur les encaissements 2025
+    # - revenus du patrimoine (PV mobilières, crypto) : 18,6 % dès les revenus 2025
+    base_ps_placement = r.get("dividendes_bruts", 0) + r.get("interets_rcm", 0)
+    base_ps_patrimoine = r.get("plus_values_mobilieres", 0) + r.get("crypto_plus_values", 0)
 
     # RFR approximatif : RNI + revenus du capital taxés au PFU + abattements réintégrés
-    # Simplification : RNI + base_ps
-    rfr_approx = rni + base_ps
+    # Simplification : RNI + bases PS
+    rfr_approx = rni + base_ps_placement + base_ps_patrimoine
 
     return calc(
         rni=rni,
@@ -265,7 +294,8 @@ def from_foyer(foyer, bareme, pfu_data):
         parts_base=parts_base,
         bareme=bareme,
         rfr=rfr_approx,
-        base_capital_ps=base_ps,
+        base_ps_patrimoine=base_ps_patrimoine,
+        base_ps_placement=base_ps_placement,
         pfu_data=pfu_data,
     )
 
@@ -276,7 +306,12 @@ def main():
     p.add_argument("--parts", type=float, help="Nombre de parts fiscales")
     p.add_argument("--parts-base", type=float, help="Parts hors enfants (1 célib, 2 couple)")
     p.add_argument("--rfr", type=float, help="RFR pour CEHR (optionnel)")
-    p.add_argument("--base-ps", type=float, default=0, help="Base PS sur revenus du capital")
+    p.add_argument("--base-ps-patrimoine", type=float, default=0,
+                   help="Base PS revenus du patrimoine (PV mobilières, crypto) : 18,6 %% dès 2025")
+    p.add_argument("--base-ps-placement", type=float, default=0,
+                   help="Base PS produits de placement (dividendes, intérêts) : 17,2 %% en 2025")
+    p.add_argument("--base-ps", type=float, default=0,
+                   help="(déprécié) alias de --base-ps-placement, comportement 17,2 %% historique")
     p.add_argument("--foyer", type=str, help="Chemin vers un foyer.json")
     p.add_argument("--bareme", type=str, default=str(DEFAULT_BAREME))
     p.add_argument("--pfu", type=str, default=str(DEFAULT_PFU))
@@ -299,7 +334,8 @@ def main():
             parts_base=parts_base,
             bareme=bareme,
             rfr=args.rfr,
-            base_capital_ps=args.base_ps,
+            base_ps_patrimoine=args.base_ps_patrimoine,
+            base_ps_placement=args.base_ps_placement + args.base_ps,
             pfu_data=pfu_data,
         )
 
@@ -318,7 +354,14 @@ def main():
         print(f"  Décote .......................... {-result['decote']:>10} €")
         print(f"  Impôt après décote .............. {result['impot_apres_decote']:>10} €")
         if result["prelevements_sociaux"]:
-            print(f"  PS 17,2% sur revenus capital .... {result['prelevements_sociaux']:>10} €")
+            det = result.get("ps_details") or {}
+            pat = det.get("patrimoine", {})
+            pla = det.get("placement", {})
+            if pat.get("base"):
+                print(f"  PS {pat['taux']*100:.1f}% revenus patrimoine ...... {pat['montant']:>10} €")
+            if pla.get("base"):
+                print(f"  PS {pla['taux']*100:.1f}% produits placement ...... {pla['montant']:>10} €")
+            print(f"  PS total revenus capital ........ {result['prelevements_sociaux']:>10} €")
         if result["cehr"]:
             print(f"  CEHR ............................ {result['cehr']:>10} €")
         print(f"  ─────────────────────────────────────────────────")
