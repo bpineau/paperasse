@@ -32,7 +32,7 @@ Prix d'achat effectif (ou valeur vénale retenue pour les droits de mutation si 
 | Travaux | 15% forfaitaire du prix d'achat ou montant réel | Forfait si l'immeuble bâti est cédé plus de 5 ans après son acquisition (art. 150 VB-II-4° CGI), sans justificatif, terrains nus exclus. Réel : travaux de construction, reconstruction, agrandissement, amélioration **réalisés par une entreprise** et justifiés par ses factures, non déjà déduits pour l'IR. Exclus : entretien et réparations même grosses, réparations locatives, intérêts d'emprunt, travaux faits par le vendeur lui-même ou une main d'œuvre non professionnelle, matériaux achetés par le vendeur même posés par une entreprise (BOI-RFPI-PVI-20-10-20-20 § 120 à 340) |
 | Frais de voirie | Montant réel | Participations imposées par les collectivités |
 
-**Minoré des amortissements déduits** (art. 150 VB, III CGI ; LF 2025 art. 84 ; LFI 2026 art. 47) : pour les cessions réalisées depuis le 15/02/2025, les amortissements admis en déduction en location meublée au réel (art. 39 C) et, depuis le 21/02/2026, ceux du dispositif bailleur privé en location nue (art. 31, I, 1°, i et j) sont retranchés du prix d'acquisition, sauf résidences étudiantes ou seniors (CCH L. 631-12 et L. 631-13), établissements médico-sociaux et résidences services agréées, soins de longue durée. Le micro-BIC n'en déduit aucun.
+**Minoré des amortissements déduits** (art. 150 VB, III CGI ; LF 2025 art. 84 ; LFI 2026 art. 47) : pour les cessions réalisées depuis le 15/02/2025, les amortissements admis en déduction en location meublée au réel (art. 39 C) et, depuis le 21/02/2026, ceux du dispositif bailleur privé en location nue (art. 31, I, 1°, i et j) sont retranchés du prix d'acquisition, sauf résidences étudiantes ou seniors (CCH L. 631-12 et L. 631-13), établissements médico-sociaux et résidences services agréées, soins de longue durée. Le micro-BIC n'en déduit aucun. Les amortissements des travaux de construction, reconstruction, agrandissement ou amélioration ne sont pas retranchés (art. 150 VB, III, 1er alinéa) : ces travaux, déjà pris en compte pour l'IR, ne majorent pas non plus le prix d'acquisition.
 
 **Plus-value brute = Prix de cession - Prix d'acquisition corrigé**
 
@@ -174,5 +174,5 @@ Le notaire est responsable du calcul, du prélèvement et du versement à la rec
 ### Non-résidents
 
 - Prélèvement de 19% IR (ou taux conventionnel)
-- Représentant fiscal obligatoire si PV > 150 000 EUR et résidence hors UE/EEE
+- Représentant fiscal accrédité obligatoire si le prix de cession dépasse 150 000 EUR et que le cédant réside hors UE/EEE (dispense automatique si le prix est inférieur ou égal à 150 000 EUR : BOI-RFPI-PVINR-30-20 § 180)
 - Prélèvements sociaux : 7,5% (au lieu de 17,2%) pour les affiliés à un régime de sécurité sociale UE/EEE/Suisse

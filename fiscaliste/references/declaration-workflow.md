@@ -79,6 +79,7 @@ Voir [foyer.example.json](../foyer.example.json) pour la structure. Champs criti
 |-----------|-----------|-------------------|
 | Salaires | 1AJ / 1BJ | — |
 | Gain d'acquisition AGA, plan qualifiant | 1TZ + 1WZ (ou 1UZ / 1VZ) jusqu'à 300 000 €, 1TT / 1UT au-delà et pour les AGA 2012-2015 ; plan non qualifiant : salaire 1AJ | — |
+| Rémunération gérant art. 62 (gérant majoritaire SARL/EURL à l'IS) | 1GB / 1HB | — (voir [remuneration-dirigeants.md](remuneration-dirigeants.md)) |
 | Pensions | 1AS / 1BS | — |
 | Allocations chômage | 1AP / 1BP | — |
 | Indemnités journalières maladie imposables | 1AJ / 1BJ (avec les salaires ; 1AM = autres pensions de source étrangère) | — |
@@ -86,14 +87,20 @@ Voir [foyer.example.json](../foyer.example.json) pour la structure. Champs criti
 | Micro-BNC | 5HQ / 5IQ (professionnel) ; 5KU / 5LU (non professionnel) | — |
 | Revenus fonciers réels | 4BA (bénéfice), 4BB / 4BC / 4BD (déficits) | **2044** |
 | Micro-foncier (nu) | 4BE | — |
-| LMNP micro-BIC longue durée | 5NI / 5OI (non classé 5NH / 5OH, classé et chambres d'hôtes 5NG / 5OG) | — |
-| LMNP réel | 5NA / 5OA (déficit 5NY / 5OY, déficits antérieurs 5GA à 5GJ) | **2031 + 2033-A à D** |
+| LMNP micro-BIC longue durée | 5NI / 5OI / 5PI | — |
+| LMNP micro-BIC meublé de tourisme non classé | 5NH / 5OH / 5PH | — |
+| LMNP micro-BIC meublé de tourisme classé, chambres d'hôtes | 5NG / 5OG / 5PG | — |
+| LMNP réel (bénéfice) | 5NA / 5OA / 5PA | **2031 + 2033-A à D** |
+| LMNP réel (déficit de l'année) | 5NY / 5OY / 5PY | **2031 + 2033-A à D** |
+| LMNP déficits antérieurs non encore déduits | 5GA à 5GJ (déficits 2015 à 2024, une case par année, au niveau du foyer) | — |
 | Dividendes (PFU ou barème) | 2DC | — |
 | Intérêts / produits de placement | 2TR | — |
 | Plus-values mobilières | 3VG | **2074** (si détail) |
 | Plus-values crypto | 3AN / 3BN | **2086** |
 | Plus-value immobilière | 3VZ | **2048-IMM** (notaire) |
 | Revenus étrangers | — | **2047** |
+| Comptes ouverts, détenus, utilisés ou clos à l'étranger (bancaires, paiement, actifs numériques) | 8UU (cocher) | **3916-3916 bis** |
+| Assurance-vie / contrat de capitalisation souscrit hors de France | 8TT (cocher) | **3916-3916 bis** |
 | Patrimoine immobilier net > 1,3 M€ | — | **2042-IFI** |
 | Dons, emploi à domicile, garde d'enfant | — | **2042-RICI** |
 
@@ -150,9 +157,9 @@ Le réel est avantageux dès que charges réelles > 30 % des loyers (crédit imm
 | ≤ 15 000 € (meublé tourisme non classé) | Micro-BIC | 30 % |
 | > seuils deux années consécutives OU sur option | Réel, annexe 2031 | Amortissements + charges réelles |
 
-Au **réel**, l'amortissement du bien (hors terrain, sur ~25-30 ans) ramène souvent le résultat à zéro, sans pouvoir créer de déficit (art. 39 C). Le déficit LMNP est **non imputable sur le revenu global** (reportable 10 ans sur les seuls bénéfices de location meublée non pro). À la revente, les amortissements déduits sont retranchés du prix d'acquisition pour la plus-value (art. 150 VB, III, cessions depuis le 15/02/2025).
+Au **réel**, l'amortissement du bien (hors terrain, sur ~25-30 ans) ramène souvent le résultat à zéro, sans pouvoir créer ni accroître un déficit (art. 39 C). Le déficit LMNP (issu des charges) est **non imputable sur le revenu global** (reportable 10 ans sur les seuls bénéfices de location meublée non professionnelle). À la revente, les amortissements admis en déduction sont retranchés du prix d'acquisition pour la plus-value (art. 150 VB, III, cessions depuis le 15/02/2025), sauf ceux des dépenses de construction, reconstruction, agrandissement ou amélioration.
 
-**Bascule LMP** : si recettes > 23 000 € ET recettes > total des autres revenus d'activité du foyer (salaires, pensions comprises, BIC, BA, BNC) → statut LMP (déficits sur le revenu global, plus-values professionnelles, cotisations sociales SSI ; exonération IFI seulement sous des critères propres, dont la profession principale).
+**Bascule LMP** : si recettes > 23 000 € ET recettes > total des autres revenus d'activité du foyer (salaires, pensions et rentes viagères comprises, BIC, BA, BNC) → statut LMP (déficits sur le revenu global, plus-values professionnelles, cotisations sociales SSI ; exonération IFI seulement sous des critères propres, dont la profession principale, art. 975, V CGI).
 
 ### Étape 6 : Mobilisation du PER
 
@@ -209,7 +216,8 @@ Au **réel**, l'amortissement du bien (hors terrain, sur ~25-30 ans) ramène sou
 | Plus-values mobilières détaillées (plusieurs lignes, reports moins-values) | **2074** |
 | Cessions crypto > 305 € | **2086** (obligatoire même si PV nulle) |
 | Revenus étrangers | **2047** |
-| Patrimoine immobilier net > 1,3 M€ au 1er janvier | **2042-IFI + 2042-IFI-K** |
+| Compte, compte d'actifs numériques ou contrat d'assurance-vie à l'étranger (ouvert, détenu, utilisé ou clos dans l'année) | **3916-3916 bis** (voir [comptes-etrangers.md](comptes-etrangers.md)) |
+| Patrimoine immobilier net > 1,3 M€ au 1er janvier | **2042-IFI** (annexes 1 à 6), case 0IF de la 2042 |
 | Réductions / crédits (dons, emploi à domicile, garde enfant, Pinel, FCPI…) | **2042-RICI** |
 | Plus-value immobilière (hors RP) | **2048-IMM** (en principe pris en charge par le notaire au moment de la vente) |
 | Frais réels salariés (option vs abattement 10 %) | Détail à joindre (tableau) |
@@ -277,7 +285,7 @@ Au **réel**, l'amortissement du bien (hors terrain, sur ~25-30 ans) ramène sou
 
 ## Pièges fréquents
 
-1. **Oublier un compte étranger** — obligation de déclarer l'ouverture (formulaire 3916) sous peine d'amende 1 500 € par compte.
+1. **Oublier un compte étranger** — tout compte ouvert, détenu, utilisé ou clos à l'étranger dans l'année (y compris néobanque étrangère, compte inactif, compte clos, comptes des membres du foyer) se déclare sur le 3916-3916 bis avec la case 8UU ; amende de 1 500 € par compte et par année (art. 1649 A, 1736 IV CGI). Détail, cas IBAN FR et régularisation : [comptes-etrangers.md](comptes-etrangers.md).
 2. **Ne pas cocher 2OP** alors que le barème serait favorable au TMI 11 %.
 3. **ARE en 1AJ au lieu de 1AP** : l'abattement 10 % s'applique dans les deux cas, mais la mauvaise case fausse le prélèvement à la source et la distinction revenu d'activité / remplacement (prestations) ; l'ARE compte pour le plafond PER.
 4. **Oublier le quotient** pour un vesting RSU massif.
@@ -290,7 +298,7 @@ Au **réel**, l'amortissement du bien (hors terrain, sur ~25-30 ans) ramène sou
 
 - Obligation déclarative : art. 170 CGI
 - Option PFU / barème : art. 200 A CGI
-- Déclaration comptes étrangers : art. 1649 A CGI
+- Déclaration comptes, contrats et comptes d'actifs numériques à l'étranger : art. 1649 A, 1649 AA, 1649 bis C CGI (BOI-CF-CPF-30-20)
 - Revenus fonciers : art. 14 à 33 quinquies CGI
 - BIC LMNP : art. 35 CGI
 - Plus-values mobilières : art. 150-0 A CGI

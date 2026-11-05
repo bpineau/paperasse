@@ -1,7 +1,7 @@
 ---
 name: fiscaliste
 metadata:
-  last_updated: 2026-10-31
+  last_updated: "2026-11-04"
 includes:
   - data/**
   - references/**
@@ -21,7 +21,7 @@ description: |
   Triggers: impôt sur le revenu, IR, 2042, quotient familial, décote, PAS, PFU,
   flat tax, PEA, assurance-vie, LMNP, revenus fonciers, déficit foncier, SCI IR, RSU,
   BSPCE, stock-options, PEE/PERCO, crypto, 2086, IFI, PER, plafond PER, niche fiscale,
-  optimisation fiscale, simulation IR, TMI.
+  optimisation fiscale, simulation IR, TMI, compte étranger, 3916, 3916-bis, 8UU.
 
   Hors scope : succession/donation (notaire), IS/SASU/arbitrage dividende-salaire/SCI IS
   (comptable).
@@ -88,10 +88,12 @@ Dernière MAJ: [date] — Vérifier les barèmes de la dernière loi de finances
 |--------|-----------|------------|
 | Salaires | 1AJ/1BJ | 10 % (min 509 €, max 14 555 €) ou frais réels |
 | Pensions / retraites | 1AS/1BS | 10 % (min 454 € par pensionné, max 4 439 € par foyer) |
+| Sortie en capital de PER (part des versements déduits) | 1AI/1BI | **Aucun abattement** : barème, pas de 10 % (art. 158, 5-b quinquies ; voir [references/per.md](references/per.md)) |
+| Rémunération gérant art. 62 (gérant majoritaire SARL/EURL à l'IS) | 1GB/1HB | **10 %** — même déduction que les salaires (plancher/plafond communs) ou frais réels 1AK ; montant net de cotisations, CSG non déductible et CRDS réintégrées. Voir [references/remuneration-dirigeants.md](references/remuneration-dirigeants.md). |
 | **Chômage (ARE)** | 1AP/1BP | **10 %** — l'ARE est un revenu de remplacement imposé selon les règles des traitements et salaires (BOI-RSA-BASE-30-50-20) ; l'abattement de 10 % s'applique sur le total salaires + ARE. Se déclare en 1AP/1BP (pas en 1AJ), mais bénéficie bien de l'abattement. |
 | Dividendes (option barème) | 2DC | 40 % |
 | Dividendes (PFU) | 2DC | Aucun |
-| Micro-BNC | 5HQ (professionnel) / 5KU (non professionnel) ; 5TE seulement en versement libératoire | 34 % (plafond 77 700 €) |
+| Micro-BNC | 5HQ (activité professionnelle) / 5KU (non professionnelle) — 5TE seulement en versement libératoire | 34 % (plafond 77 700 €) |
 | Micro-foncier (nu) | 4BE | 30 % (plafond 15 000 €) |
 | Micro-BIC LMNP longue durée (autres locations meublées) | 5NI | 50 % (plafond 77 700 € en 2025, 83 600 € pour 2026-2028) |
 | Micro-BIC LMNP meublé tourisme non classé | 5NH | 30 % (plafond 15 000 €) |
@@ -101,7 +103,7 @@ Dernière MAJ: [date] — Vérifier les barèmes de la dernière loi de finances
 
 La LFSS 2026 (loi n° 2025-1403 du 30/12/2025, art. 12) a porté la CSG sur les revenus du capital de 9,2 % à 10,6 %, soit un total PS de 17,2 % à 18,6 %, **avec deux dates d'entrée en vigueur distinctes** selon la nature du revenu :
 
-*Note : ce +1,4 pt est juridiquement une hausse du taux de CSG sur les revenus du capital (art. L. 136-8, I, 2° CSS : « 9,2 % » remplacé par « 10,6 % ») — l'article 12 ne crée pas de contribution nouvelle. Cette hausse de CSG est présentée comme "Contribution Financière pour l'Autonomie" (CFA — label de l'amendement gouv. n° 1104 adopté le 04/12/2025, sans existence statutaire dans le code) et le surplus est affecté en totalité à la CNSA (branche autonomie) : l'art. 12, I, 1° a) porte la fraction CNSA de l'art. L. 131-8, 3° bis, c) CSS de 2,08 % à 3,48 % (soit exactement +1,4 pt). La CADES ne reçoit rien du surplus : la fraction de 0,45 % qui lui revient (nouveau 3° quater de L. 131-8) porte uniquement sur les revenus restés à 9,2 % (6,67 % branche vieillesse + 0,45 % CADES + 2,08 % CNSA). Sources : [amendement n° 1104 et exposé sommaire](https://www.assemblee-nationale.fr/dyn/17/amendements/2141/AN/1104) ; [art. 12 LFSS 2026 (JO)](https://www.legifrance.gouv.fr/jorf/article_jo/JORFARTI000053226452) ; versions consolidées des art. L. 131-8 et L. 136-8 dans le [Code de la sécurité sociale](https://www.legifrance.gouv.fr/codes/id/LEGITEXT000006073189). Ce skill continue de parler de "hausse de CSG/PS" — le tableau ci-dessous reste la référence pour savoir à quels revenus elle s'applique.*
+*Note : ce +1,4 pt est juridiquement une hausse du taux de CSG sur les revenus du capital (art. L. 136-8, I, 2° CSS : « 9,2 % » remplacé par « 10,6 % ») — l'article 12 ne crée pas de contribution nouvelle. Cette hausse de CSG est présentée comme "Contribution Financière pour l'Autonomie" (CFA — label de l'amendement gouv. n° 1104 adopté le 04/12/2025, sans existence statutaire dans le code) et le surplus est affecté en totalité à la CNSA (branche autonomie) : l'art. 12, I, 1° a) porte la fraction CNSA de l'art. L. 131-8, 3° bis, c) CSS de 2,08 % à 3,48 % (soit exactement +1,4 pt). La CADES ne reçoit rien du surplus : elle perçoit 0,45 % dans les deux clés, sur les revenus à 10,6 % (L. 131-8, 3° bis : 6,67 % branche vieillesse + 0,45 % CADES + 3,48 % CNSA) comme sur les revenus restés à 9,2 % (nouveau 3° quater : 6,67 % + 0,45 % + 2,08 %). Sources : [amendement n° 1104 et exposé sommaire](https://www.assemblee-nationale.fr/dyn/17/amendements/2141/AN/1104) ; [art. 12 LFSS 2026 (JO)](https://www.legifrance.gouv.fr/jorf/article_jo/JORFARTI000053226452) ; [art. L. 131-8 CSS consolidé](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000053538201) ; [art. L. 136-8 CSS consolidé](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000053278668). Ce skill continue de parler de "hausse de CSG/PS" — le tableau ci-dessous reste la référence pour savoir à quels revenus elle s'applique.*
 
 | Catégorie | Base CSS | PS revenus 2025 (déclaration 2026) | PS revenus 2026+ | PFU effectif 2025 |
 |---|---|---|---|---|
@@ -131,7 +133,7 @@ La LFSS 2026 (loi n° 2025-1403 du 30/12/2025, art. 12) a porté la CSG sur les 
 - **Abattement résidence principale : 30 %** sur la valeur vénale
 - **Barème** : 0 % (0-800 k€), 0,5 % (800 k€-1,3 M€), 0,7 % (1,3-2,57 M€), 1 % (2,57-5 M€), 1,25 % (5-10 M€), 1,5 % (>10 M€)
 - **Décote d'entrée** (1,3-1,4 M€) : 17 500 − 1,25 % × patrimoine net
-- **Plafonnement 75 %** : IR + IFI + PS ≤ 75 % des revenus N-1
+- **Plafonnement 75 %** : IR + IFI + PS ≤ 75 % des revenus N-1 (revenus exonérés compris)
 
 ### CEHR (Contribution Exceptionnelle Hauts Revenus)
 
@@ -144,9 +146,9 @@ Base : RFR, pas RNI. S'ajoute à l'IR net. Art. 223 sexies CGI.
 
 ### CDHR (Contribution Différentielle sur les Hauts Revenus)
 
-Mécanisme **distinct de la CEHR** : impose un **plancher d'imposition à 20 %** d'un revenu de référence retraité. Revenus 2025 : art. 10 LFI 2025 (loi n° 2025-127 du 14/02/2025). Revenus 2026 et suivants : art. 224 CGI, codifié par la LFI 2026 (loi n° 2026-103, art. 2), jusqu'à l'année où la loi d'approbation des comptes constate un déficit du budget général sous 3 % du PIB (BOI-IR-CDHR-10 du 30/06/2026).
+Mécanisme **distinct de la CEHR** : impose un **plancher d'imposition à 20 %** d'un revenu de référence retraité. Art. 224 CGI, créé par l'art. 10 LFI 2025 (loi n° 2025-127 du 14/02/2025) pour les revenus 2025, prorogé et modifié par l'art. 2 LFI 2026 (loi n° 2026-103) : due jusqu'à l'année pour laquelle le projet de loi d'approbation des comptes constate un déficit du budget général sous 3 % du PIB (BOI-IR-CDHR-10 du 30/06/2026).
 
-Seuils de revenu de référence : > 250 000 € (personne seule) / > 500 000 € (couple), avec une décote jusqu'à 330 000 € / 660 000 €. CDHR = 20 % × revenu de référence − décote − (IR retraité + CEHR + 1 500 € par personne à charge + 12 500 € pour un couple), si positif. Le revenu de référence n'intègre pas l'abattement de 50 % sur les gains d'actions gratuites ni l'abattement de 40 % sur les dividendes.
+Seuils de revenu de référence : > 250 000 € (personne seule) / > 500 000 € (couple), avec une décote jusqu'à 330 000 € / 660 000 €. CDHR = 20 % × revenu de référence − décote − (IR retraité + CEHR + prélèvements libératoires + 1 500 € par personne à charge + 12 500 € pour un couple), si positif. Le revenu de référence n'intègre pas l'abattement de 50 % sur les gains d'actions gratuites ni l'abattement de 40 % sur les dividendes.
 
 Calcul automatique par l'administration après dépôt de la 2042. Acompte de 95 % à verser entre le 1er et le 15 décembre de l'année des revenus via le service "Gérer mon prélèvement à la source" sur impots.gouv.fr ; pénalité de 20 % en cas de défaut, de retard ou d'acompte inférieur de plus de 20 % au dû. Acompte et pénalités reconduits pour les revenus 2026 (LFI 2026, art. 2).
 
@@ -192,7 +194,9 @@ python fiscaliste/scripts/calc_ir.py --rni 45000 --parts 1
 python fiscaliste/scripts/calc_ir.py --rni 126000 --parts 3 --parts-base 2
 ```
 
-Le script applique : abattement de 10 % par déclarant (salaires + ARE) et par pensionné, barème 2025, quotient familial avec plafonnement général, décote, IR 12,8 % sur les revenus du capital au PFU (ou intégration au barème si `options_fiscales.revenus_capital = "bareme"`, dividendes après abattement de 40 %), PS différenciés selon la nature du revenu (18,6 % sur les revenus du patrimoine dès 2025 ; 17,2 % sur les produits de placement encaissés en 2025, 18,6 % avec `--annee-revenus 2026` ; 17,2 % sur les revenus fonciers nets), RFR approché avec réintégration du PER, CEHR. Il **ne traite pas** les réductions/crédits (à retrancher manuellement), la CDHR, le quotient des revenus exceptionnels, les non-résidents, les plafonds spécifiques du QF (parent isolé, veuf), le contrôle du plafond PER, l'assurance-vie ni l'IFI. Pour la CDHR (plancher 20 % sur RFR > 250/500 k€), voir [references/cas-speciaux.md](references/cas-speciaux.md) — calculée automatiquement par l'administration.
+Le script applique : abattement de 10 % sur les salaires et l'ARE **par déclarant** (plancher et plafond pour chaque membre du foyer), abattement de 10 % sur les pensions (minimum par pensionné, maximum par foyer ; plancher jamais supérieur au revenu), barème 2025, quotient familial avec plafonnement (enfants en résidence alternée décomptés après ceux à charge exclusive), décote, IR forfaitaire du PFU (12,8 %, art. 200 A CGI) sauf option barème, PS différenciés selon la nature du revenu (18,6 % sur revenus du patrimoine dès 2025 ; 17,2 % sur produits de placement 2025 ; PS sur les revenus fonciers et l'assurance-vie non calculés, taux maintenu à 17,2 %), CEHR (RFR incluant les versements PER déduits, art. 1417, IV CGI). Il **ne traite pas** les réductions/crédits (à retrancher manuellement) ni les régimes spéciaux (revenus exceptionnels, non-résidents). Pour la CDHR (plancher 20 % sur RFR > 250/500 k€), voir [references/cas-speciaux.md](references/cas-speciaux.md) — calculée automatiquement par l'administration.
+
+**Réductions, crédits et solde** (exception à la phrase précédente) : si le foyer.json contient le bloc `reductions_credits` (et/ou `prelevement_a_la_source`), le script poursuit au-delà de l'impôt après décote : réductions dons (75 % / 66 %, limite de 20 %, excédent reportable), Pinel (fraction annuelle selon l'année, la durée et la prorogation), scolarité, crédits emploi à domicile et garde d'enfants, plafonnement global des niches (10 000 € / 18 000 €, art. 200-0 A), IR 12,8 % du PFU, impôt net, puis **solde** après retenue à la source, acomptes et **avance RICI de janvier** (art. 1665 bis). Ordre d'imputation de l'art. 197, I-5. Sans ces blocs, la sortie est inchangée. Détails : [references/deductions-reductions-credits.md](references/deductions-reductions-credits.md).
 
 Pour la fraîcheur des données : `python fiscaliste/scripts/update_data.py`.
 
@@ -204,6 +208,7 @@ Pour la fraîcheur des données : `python fiscaliste/scripts/update_data.py`.
 |---------|-----------|
 | **Déclaration annuelle 2042 (workflow complet)** | [references/declaration-workflow.md](references/declaration-workflow.md) |
 | Calcul / simulation IR | [references/ir-mecanisme.md](references/ir-mecanisme.md) |
+| Rémunération des gérants art. 62 (gérant majoritaire SARL/EURL à l'IS, case 1GB, acomptes) | [references/remuneration-dirigeants.md](references/remuneration-dirigeants.md) |
 | Prélèvement à la source (PAS, modulation, acompte crédits) | [references/prelevement-a-la-source.md](references/prelevement-a-la-source.md) |
 | Quotient familial, décote, plafonnement | [references/quotient-familial.md](references/quotient-familial.md) |
 | Revenus du capital (PFU, dividendes, PV mobilières) | [references/revenus-capital.md](references/revenus-capital.md) |
@@ -214,7 +219,9 @@ Pour la fraîcheur des données : `python fiscaliste/scripts/update_data.py`.
 | IFI | [references/ifi.md](references/ifi.md) |
 | PER et épargne retraite | [references/per.md](references/per.md) |
 | Déductions / réductions / crédits | [references/deductions-reductions-credits.md](references/deductions-reductions-credits.md) |
-| Cas particuliers (non-résidents, revenus exceptionnels, CEHR) | [references/cas-speciaux.md](references/cas-speciaux.md) |
+| Départ de France, non-résidents (année du départ, taux minimum, foncier, PS 7,5 %, ex-RP, exit tax) | [references/non-residents.md](references/non-residents.md) |
+| Cas particuliers (revenus exceptionnels, CEHR, DOM, impatriation) | [references/cas-speciaux.md](references/cas-speciaux.md) |
+| Comptes, assurance-vie et comptes crypto à l'étranger (3916 / 3916-bis, 8UU / 8TT) | [references/comptes-etrangers.md](references/comptes-etrangers.md) |
 | **Sources officielles (CGI, BOFiP, simulateurs DGFIP)** | [references/sources-officielles.md](references/sources-officielles.md) |
 
 **Redirections (hors scope) :**
@@ -288,13 +295,22 @@ Ces points sont systématiquement vérifiés par les utilisateurs exigeants — 
 
 ### Pour un LMNP
 
-- Micro-BIC **longue durée** (autres locations meublées, case 5NI) : abattement **50 %**, plafond **77 700 €** (revenus 2025), **83 600 €** (revenus 2026 à 2028, BOI-BAREME-000044) ; réel obligatoire après deux années consécutives de dépassement.
-- Micro-BIC **meublé tourisme non classé** (5NH) : abattement **30 %**, plafond 15 000 € (Loi Le Meur).
-- Micro-BIC **meublé tourisme classé** (5NG) : abattement 50 %, plafond 77 700 € puis 83 600 €.
-- Seuil LMP (art. 155, IV, 2 CGI) : recettes > **23 000 €** ET recettes > **total** des autres revenus d'activité du foyer (salaires, **pensions comprises**, BIC, BA, BNC). Pas « 50 % ».
-- Déficit LMNP au réel : **non imputable sur le revenu global** (reportable 10 ans sur les seuls bénéfices de location meublée non pro) ; les amortissements ne peuvent pas créer de déficit (art. 39 C).
-- **Revente** : les amortissements déduits au réel sont retranchés du prix d'acquisition pour la plus-value (art. 150 VB, III, cessions depuis le 15/02/2025) ; les travaux faits soi-même et les matériaux achetés ne majorent jamais le prix d'acquisition (seules les factures d'entreprise, ou le forfait de 15 % après plus de cinq ans).
+- Micro-BIC **longue durée** : abattement **50 %**, plafond **77 700 €** (revenus 2025 ; **83 600 €** pour 2026-2028, BOI-BAREME-000044).
+- Micro-BIC **meublé tourisme non classé** : abattement **30 %**, plafond 15 000 € (Loi Le Meur ; inchangé 2026-2028).
+- Micro-BIC **meublé tourisme classé** : abattement 50 %, plafond 77 700 € (83 600 € pour 2026-2028).
+- Plafond apprécié sur N-1 ou N-2 : le réel devient obligatoire après **deux années consécutives** de dépassement.
+- Seuil LMP : recettes > **23 000 €** ET recettes > autres revenus d'activité du foyer, **pensions et rentes viagères comprises** (art. 155 IV 2 CGI, renvoi à l'art. 79).
+- Amortissements au réel : plafonnés au loyer diminué des autres charges, ils **ne peuvent ni créer ni accroître un déficit** (art. 39 C ; BOI-BIC-CHAMP-40-20 § 57).
+- Déficit LMNP au réel : **non imputable sur le revenu global** (reportable 10 ans sur les seuls revenus de location meublée non professionnelle).
+- **Revente** : les amortissements admis en déduction au réel sont retranchés du prix d'acquisition pour la plus-value (art. 150 VB, III, cessions depuis le 15/02/2025), sauf ceux des dépenses de construction, reconstruction, agrandissement ou amélioration (art. 150 VB, III, 1er alinéa) ; les travaux faits soi-même et les matériaux achetés ne majorent jamais le prix d'acquisition (seules les factures d'entreprise, ou le forfait de 15 % après plus de cinq ans).
 - PS sur le résultat LMNP : 18,6 % dès les revenus 2025 (revenus du patrimoine) ; revenus fonciers nus : 17,2 %.
+
+### Pour un déficit foncier (régime réel)
+
+- **Les loyers bruts compensent d'abord les intérêts d'emprunt** (BOI-RFPI-BASE-30-20 § 110). Ne jamais isoler les intérêts du déficit avant d'avoir vérifié s'ils sont couverts par les loyers : seul l'**excédent des intérêts sur les loyers** est cantonné aux revenus fonciers.
+- Le reste du déficit s'impute sur le revenu global dans la limite de **10 700 €** (rehaussée, sur option, du montant des travaux de rénovation énergétique faisant passer le logement de E/F/G à A-D payés jusqu'au 31/12/2027, dans la limite de **21 400 €**) ; l'excédent se reporte 10 ans sur les revenus fonciers. Si le revenu global est insuffisant, le solde forme un déficit global reportable 6 ans.
+- L'imputation sur le revenu global suppose de **louer nu jusqu'au 31 décembre de la 3e année qui suit l'imputation**, sinon réintégration. Cases 2042 : 4BA (bénéfice), 4BB (déficit sur revenus fonciers), 4BC (déficit sur revenu global), 4BD (déficits antérieurs).
+- Voir l'exemple chiffré de [references/revenus-fonciers-lmnp.md](references/revenus-fonciers-lmnp.md).
 
 ### Pour un arbitrage PFU vs barème
 
@@ -307,7 +323,7 @@ Ces points sont systématiquement vérifiés par les utilisateurs exigeants — 
 
 - Appliquer l'abattement 30 % sur la résidence principale avant sommation.
 - Tester la décote d'entrée 1,3-1,4 M€.
-- Vérifier le plafonnement 75 % (IR + IFI + PS ≤ 75 % des revenus N-1).
+- Vérifier le plafonnement 75 % (IR + IFI + PS ≤ 75 % des revenus N-1, revenus exonérés compris).
 
 ### Pour les crypto
 

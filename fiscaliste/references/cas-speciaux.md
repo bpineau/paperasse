@@ -2,24 +2,9 @@
 
 ## Non-résidents fiscaux
 
-### Définition résidence fiscale
+Départ de France, année du départ (2042 + 2042-NR), taux minimum 20 % / 30 % (art. 197 A CGI) et option pour le taux moyen, non-résidents « Schumacker », revenus fonciers et prélèvements sociaux (7,5 % pour les affiliés à un régime de sécurité sociale de l'EEE, de la Suisse ou du Royaume-Uni), Pinel après le départ, vente de l'ancienne résidence principale et exit tax : voir [non-residents.md](non-residents.md).
 
-Un contribuable est résident fiscal français si l'un de ces critères est rempli (article 4 B CGI) :
-- Foyer ou lieu de séjour principal en France
-- Exercice d'une activité professionnelle principale en France
-- Centre des intérêts économiques en France
-
-**La nationalité n'est pas un critère.**
-
-### Règles applicables aux non-résidents
-
-- Imposés uniquement sur les **revenus de source française** (article 164 A CGI)
-- Taux minimum : 20% sur la fraction ≤ 27 519 € et 30% au-delà (revenus 2025)
-- Pas de quotient familial au-delà de 2 parts
-- Pas de décote
-- Application des conventions fiscales bilatérales (crédit d'impôt, exonérations)
-
-**Ce skill ne couvre PAS la fiscalité des non-résidents en détail.** Pour les cas complexes, orienter vers un avocat fiscaliste spécialisé en fiscalité internationale.
+Critères du domicile fiscal : article 4 B CGI (foyer ou lieu de séjour principal, activité professionnelle principale, centre des intérêts économiques). La nationalité n'est pas un critère. Les conventions fiscales priment sur le droit interne : pour les cas complexes (double résidence, revenus d'activité, dirigeants), orienter vers un avocat fiscaliste spécialisé en fiscalité internationale.
 
 ## Revenus exceptionnels : quotient
 
@@ -93,7 +78,7 @@ Voir `data/bareme-ir-2025.json` → `cehr`. Base légale : art. 223 sexies CGI.
 ### À ne pas oublier
 
 - S'ajoute à l'IR net (ne se déduit pas) ; le quotient des revenus exceptionnels allège l'IR, pas la CEHR
-- **Lissage** (art. 223 sexies, II CGI ; brochure IR 2026, case 8TD) : si le RFR de l'année est au moins égal à 1,5 fois la moyenne des RFR des deux années précédentes, si chacun de ces deux RFR est resté sous le seuil d'assujettissement (250 000 € ou 500 000 €), et si les revenus passibles de l'IR en France ont excédé la moitié du RFR mondial de chacune de ces deux années (sinon cocher 8TD : calcul de droit commun), la fraction du RFR qui dépasse cette moyenne est divisée par deux pour le calcul, puis la contribution supplémentaire obtenue est multipliée par deux. Cas d'usage : une année isolée de grosses cessions. Mariage, Pacs, divorce, séparation ou décès dans l'année ou les deux années précédentes : les RFR retenus sont ceux des foyers successifs auxquels le contribuable a appartenu, et le lissage passe par une réclamation (brochure IR 2026, « Divers », p. 325).
+- **Lissage** (art. 223 sexies, II CGI ; brochure IR 2026, case 8TD) : si le RFR de l'année est au moins égal à 1,5 fois la moyenne des RFR des deux années précédentes, si chacun de ces deux RFR est resté sous le seuil d'assujettissement (250 000 € ou 500 000 €), et si les revenus passibles de l'IR en France ont excédé la moitié du RFR mondial de chacune de ces deux années (sinon cocher 8TD : calcul de droit commun), la fraction du RFR qui dépasse cette moyenne est divisée par deux pour le calcul, puis la contribution supplémentaire obtenue est multipliée par deux. Cas d'usage : une année isolée de grosses cessions. Mariage, Pacs, divorce, séparation ou décès dans l'année ou les deux années précédentes : les RFR retenus sont ceux des foyers successifs auxquels le contribuable a appartenu, et le lissage passe par une réclamation (brochure IR 2026, « Divers », p. 326).
 
 ## CDHR (Contribution Différentielle sur les Hauts Revenus)
 
@@ -103,8 +88,7 @@ Mécanisme **distinct de la CEHR** : impose un **plancher d'imposition à 20 %**
 
 ### Base légale
 
-- Revenus 2025 : **art. 10 de la LFI 2025** (loi n° 2025-127 du 14/02/2025), première année d'application
-- Revenus 2026 et suivants : **art. 224 CGI**, codifié par la LFI 2026 (loi n° 2026-103 du 19/02/2026, art. 2), applicable jusqu'à l'imposition des revenus de l'année pour laquelle la loi d'approbation des comptes constate un déficit du budget général inférieur à 3 % du PIB (brochure IR 2026, nouveautés ; BOFiP ACTU-2026-00104)
+- **Art. 224 CGI**, créé par l'art. 10 de la LFI 2025 (loi n° 2025-127 du 14/02/2025 ; revenus 2025, première année d'application), prorogé et modifié par la LFI 2026 (loi n° 2026-103 du 19/02/2026, art. 2) : applicable jusqu'à l'imposition des revenus de l'année pour laquelle le projet de loi d'approbation des comptes constate un déficit du budget général inférieur à 3 % du PIB (brochure IR 2026, nouveautés ; BOFiP ACTU-2026-00104)
 - Doctrine : BOI-IR-CDHR-10 (version du 30/06/2026)
 
 ### Seuils de revenu de référence
@@ -117,12 +101,12 @@ Mécanisme **distinct de la CEHR** : impose un **plancher d'imposition à 20 %**
 ### Mécanisme (BOI-IR-CDHR-10 § 100 à 370 ; brochure IR 2026, « Divers »)
 
 ```
-CDHR = 20 % × RREF − décote − (IR retraité + CEHR + 1 500 € par personne à charge + 12 500 € si imposition commune)
+CDHR = 20 % × RREF − décote − (IR retraité + CEHR + prélèvements libératoires + 1 500 € par personne à charge + 12 500 € si imposition commune)
 ```
 (retenue si positive)
 
 - **RREF** (revenu de référence) : le RFR calculé sans le quotient, dans lequel les revenus exceptionnels taxés au quotient sont retenus pour le quart, et diminué des abattements réintégrés dans le RFR autres que les abattements pour durée de détention : l'abattement de 40 % sur les dividendes, l'abattement de 50 % sur les gains d'acquisition d'actions gratuites (art. 200 A, 3) et l'abattement fixe des dirigeants n'y sont donc pas réintégrés.
-- **IR retraité** : IR après réductions et crédits, majoré de certains crédits et réductions d'impôt réintégrés et de l'impôt sur les plus-values immobilières, diminué des trois quarts de l'impôt afférent aux revenus exceptionnels taxés au quotient.
+- **IR retraité** : IR après réductions et crédits, majoré de certains crédits et réductions d'impôt réintégrés, diminué des trois quarts de l'impôt afférent aux revenus exceptionnels taxés au quotient.
 - **Décote** : si le RREF est inférieur ou égal à 330 000 € (personne seule) ou 660 000 € (couple), la cotisation de 20 % est diminuée de la différence, si elle est positive, entre cette cotisation et 82,5 % × (RREF − 250 000 € ou 500 000 €).
 
 Un foyer dont les revenus sont surtout des salaires au barème dépasse en général le plancher de 20 % et n'en paie rien ; la CDHR touche ceux dont l'IR effectif est faible au regard du RFR (revenus au PFU à 12,8 %, dividendes, plus-values, abattements importants). Elle est calculée par l'administration après dépôt de la 2042 ; les cases 8KD à 8KG servent à ventiler les revenus exceptionnels et les revenus à taux proportionnel.
@@ -184,11 +168,7 @@ Les deux peuvent s'appliquer simultanément : la CEHR est toujours due au-delà 
 
 ### Exit tax
 
-Article 167 bis CGI — imposition immédiate des plus-values latentes sur titres détenus lors du départ à l'étranger, si :
-- Résidence fiscale française pendant au moins 6 ans sur les 10 dernières années
-- Détention de titres > seuils (plusieurs catégories de seuils)
-
-Sursis de paiement possible dans certains cas. Régime complexe.
+Article 167 bis CGI — imposition des plus-values latentes sur titres lors du transfert du domicile fiscal hors de France (6 ans de domicile sur les 10 dernières années ; participations ≥ 50 % des bénéfices sociaux ou valeur globale > 800 000 €). Seuils, sursis, dégrèvement et formulaires 2074-ETD / 2074-ETS : voir [non-residents.md](non-residents.md) § 7.
 
 ### Retour en France
 
@@ -264,6 +244,7 @@ Délai pendant lequel la DGFIP peut redresser :
 | IR | 3 ans (jusqu'au 31 décembre de la 3e année suivant celle de l'imposition) |
 | IFI | 3 ans si la déclaration déposée révèle suffisamment l'exigibilité (LPF art. L. 180) ; 6 ans sinon (LPF art. L. 186) |
 | Tous impôts | **10 ans** en cas d'activité occulte ou fraude |
+| IR / IS | **10 ans** sur les revenus liés à un compte, un contrat ou un compte d'actifs numériques étranger non déclaré (art. L. 169 LPF ; pour les comptes, si le total des soldes a excédé 50 000 € dans l'année — voir [comptes-etrangers.md](comptes-etrangers.md)) |
 | TVA | 3 ans |
 
 **Conservation des documents** : minimum 6 ans (conseil : 10 ans pour couvrir tous les cas).
@@ -316,7 +297,7 @@ Recouvrement : URSSAF, l'année suivante, d'après les données transmises par l
 ## Références CGI / BOFiP
 
 - Résidence fiscale : art. 4 B CGI
-- Non-résidents : art. 164 A à 165 CGI
+- Non-résidents : art. 164 A à 165 et 197 A CGI (détail : [non-residents.md](non-residents.md))
 - Revenus exceptionnels : art. 163-0 A CGI
 - CEHR : art. 223 sexies CGI
 - Exit tax : art. 167 bis CGI
