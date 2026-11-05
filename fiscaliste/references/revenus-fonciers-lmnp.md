@@ -21,11 +21,12 @@ Voir `data/regimes-fonciers-lmnp.json` → `micro_foncier`.
 - **Condition** : revenus fonciers bruts ≤ 15 000 €
 - **Abattement** : 30% automatique
 - **Recettes brutes** : loyers et recettes accessoires, **hors charges locatives récupérables** (sommes versées par le locataire au titre des charges lui incombant), mais augmentées des dépenses du bailleur mises par convention à la charge du locataire. Source : BOI-RFPI-DECLA-10 § 100. Seuil de 15 000 € apprécié sur l'ensemble du foyer, sans prorata temporis.
-- **Exclusions** (CGI art. 32, 2 ; BOI-RFPI-DECLA-10 § 60 à 80) : monuments historiques, Périssol, Besson neuf et ancien, Robien, Robien ZRR, Borloo neuf et ancien, conventions ANAH, Cosse, déductions spécifiques Scellier intermédiaire et Scellier ZRR (la réduction d'impôt Scellier elle-même n'exclut pas le micro, voir « Compatibles »), résidences de tourisme (art. 199 decies EA) et travaux dans les logements touristiques (art. 199 decies F), Loc'Avantages (art. 199 tricies), immeubles possédés en nue-propriété (brochure IR 2026, revenus fonciers, p. 158), parts de sociétés qui louent l'un de ces immeubles (dont Robien SCPI et Borloo SCPI), parts de sociétés pratiquant l'amortissement de l'art. 31 bis, amortissement « bailleur privé » (art. 31, I, 1°, i et j, ajouté au c du 2 de l'art. 32 par la LFI 2026, art. 47, I, 2°). Voir `micro_foncier.exclusions`. L'exclusion ne vaut que pendant la période où le dispositif est demandé.
+- **Exclusions** (CGI art. 32, 2 ; BOI-RFPI-DECLA-10 § 60 à 80) : monuments historiques, Périssol, Besson neuf et ancien, Robien, Robien ZRR, Borloo neuf et ancien, conventions ANAH, Cosse, déductions spécifiques Scellier intermédiaire et Scellier ZRR (la réduction d'impôt Scellier elle-même n'exclut pas le micro, voir « Compatibles »), résidences de tourisme (art. 199 decies EA) et travaux dans les logements touristiques (art. 199 decies F), Loc'Avantages (art. 199 tricies), immeubles possédés en nue-propriété (brochure IR 2026, revenus fonciers, p. 158), parts de sociétés qui louent l'un de ces immeubles, parts de sociétés pratiquant l'amortissement de l'art. 31 bis (Robien SCPI et Borloo SCPI), amortissement « bailleur privé » (art. 31, I, 1°, i et j, ajouté au c du 2 de l'art. 32 par la LFI 2026, art. 47, I, 2°). Voir `micro_foncier.exclusions`. L'exclusion ne vaut que pendant la période où le dispositif est demandé.
 - **Parts de sociétés et de FPI** (CGI art. 32, 2-d et 2-g ; BOI-RFPI-DECLA-10 § 50 et 70) : pas d'exclusion de principe des SCI. Le micro est exclu seulement si **les seuls revenus fonciers du foyer** viennent de parts de sociétés non soumises à l'IS ou de FPI (quote-part portée directement en 4BA). Un associé qui possède aussi au moins un immeuble loué nu en direct reste éligible ; ses quotes-parts entrent dans le seuil de 15 000 €. Voir `micro_foncier.exclusions_sans_immeuble_en_direct`.
 - **Compatibles** : les réductions d'impôt Scellier, Duflot, Pinel, Denormandie et Malraux **n'excluent pas** le micro-foncier (BOI-RFPI-DECLA-10, remarque sous le § 60).
 - **Avantage** : simplicité. Pas de comptabilité.
 - **Inconvénient** : aucun déficit possible. Si vos charges réelles > 30%, vous payez trop d'impôt.
+- **Déficits antérieurs (réel)** : ceux encore reportables au 1er janvier de la 1re année micro restent imputables sur le revenu net micro-foncier (droit commun, 10 ans). Case **4BD**. Source : BOI-RFPI-DECLA-10 § 170 ; brochure IR 2026 p. 158.
 
 ### Régime réel
 
@@ -52,7 +53,7 @@ Voir `data/regimes-fonciers-lmnp.json` → `regime_reel_foncier.deficit_foncier`
 - **Condition de maintien** : le bien doit rester loué nu jusqu'au **31 décembre de la troisième année qui suit l'imputation** ; à défaut (vente, reprise pour soi, passage en meublé), le déficit imputé sur le revenu global est réintégré (BOI-RFPI-BASE-30-20 § 20 et § 340 à 370)
 - Au-delà de la limite : reportable sur les revenus fonciers des **10 années suivantes**
 - Si le revenu global ne suffit pas à absorber la part imputable : l'excédent forme un **déficit global reportable 6 ans** sur le revenu global (art. 156-I, 1er alinéa CGI ; BOI-RFPI-BASE-30-20 § 160)
-- **Exception critique** : la part du déficit qui provient de l'excédent des intérêts d'emprunt sur les loyers **n'est JAMAIS imputable sur le revenu global**, uniquement sur les revenus fonciers
+- **Exception critique** : la part du déficit qui provient de l'excédent des intérêts d'emprunt sur les loyers **n'est pas imputable sur le revenu global**, uniquement sur les revenus fonciers (sauf monuments historiques, BOI-RFPI-SPEC-30-20-10 § 80)
 - Cases 2042 : 4BA (bénéfice), 4BB (déficit imputable sur les revenus fonciers), 4BC (déficit imputable sur le revenu global), 4BD (déficits antérieurs), annexe 2044.
 
 **Exemple** : loyers 15 000 €, charges 4 000 €, travaux 18 000 €, intérêts 6 000 € → déficit 13 000 €. Les loyers (15 000 €) couvrent les intérêts (6 000 €) : tout le déficit vient des autres charges. 10 700 € s'imputent sur le revenu global, 2 300 € se reportent sur les revenus fonciers des 10 années suivantes.
@@ -81,6 +82,10 @@ Voir `data/regimes-fonciers-lmnp.json` → `micro_bic_lmnp`.
 
 Seuils 2026-2028 : BOI-BAREME-000044 (version du 19/08/2026). Le micro reste applicable si le seuil n'est pas dépassé en N-1 ou en N-2 ; régime réel obligatoire après deux années consécutives de dépassement (brochure IR 2026, revenus non salariés). La case 5ND n'existe plus.
 
+**Déficits LMNP antérieurs (constatés au réel)** : le micro-BIC ne crée jamais de déficit, mais les déficits LMNP des 10 années précédentes non encore imputés (cases **5GA à 5GJ**) s'imputent sur le résultat micro-BIC net (recettes − abattement), comme en micro-foncier. Imputation limitée au revenu LMNP net de l'année (pas de déficit créé, rien sur le revenu global), les plus anciens d'abord.
+- Fondement : art. 156-I-1° ter CGI (imputation sur « les revenus provenant d'une telle activité », sans distinction de régime) ; BOI-BIC-CHAMP-40-20 § 250. La calculette officielle DGFiP (`ir-calcul`, chap-85 : `DNPLOCIMPU = min(déficits 5GA-5GJ, BIC LMNP réel + micro net)`) applique bien ces déficits au résultat micro.
+- Nuance : aucun § BOFiP ne nomme expressément le micro-BIC (contrairement au micro-foncier, BOI-RFPI-DECLA-10 § 170).
+
 ### Régime réel LMNP
 
 **Principe** : résultat BIC = recettes − charges − **amortissements**.
@@ -94,7 +99,7 @@ Seuils 2026-2028 : BOI-BAREME-000044 (version du 19/08/2026). Le micro reste app
 
 **Résultat fiscal** : souvent nul grâce aux amortissements → pas d'IR sur les loyers pendant des années. Un déficit ne peut provenir que des charges hors amortissements. Cette économie est en partie reprise à la revente (voir « Cession d'un bien LMNP »).
 
-**Déficit LMNP** : NON imputable sur le revenu global (contrairement au LMP). Reportable sur les seuls bénéfices de location meublée non professionnelle des **10 années suivantes** (art. 156, I, 1° ter CGI), pas sur d'autres BIC.
+**Déficit LMNP** : NON imputable sur le revenu global (contrairement au LMP). Reportable sur les seuls revenus de location meublée non professionnelle (réel **ou micro-BIC**) des **10 années suivantes**, tant que l'activité reste non professionnelle (art. 156, I, 1° ter CGI ; BOI-BIC-CHAMP-40-20 § 240-250), pas sur d'autres BIC. Report : cases 5GA à 5GJ de la 2042 C-PRO.
 
 **Formalités** : déclaration de début d'activité au guichet unique dans les 15 jours (numéro SIRET) ; au réel, liasse 2031 et annexes 2033 ; CFE possible (service-public F32744).
 
@@ -167,7 +172,8 @@ Voir `data/regimes-fonciers-lmnp.json` → `sci_ir`.
 ## Références CGI / BOFiP
 
 - Revenus fonciers : art. 14 à 33 quater CGI
-- Déficit foncier : art. 156-I-3° CGI
+- Déficit foncier : art. 156-I-3° CGI ; déficits antérieurs en micro-foncier : BOI-RFPI-DECLA-10 § 170
+- Déficit LMNP : art. 156-I-1° ter CGI ; BOI-BIC-CHAMP-40-20 § 240-250
 - LMNP : art. 35-I-5° bis CGI
 - LMP : art. 155-IV CGI ; exonération des plus-values : art. 151 septies CGI
 - Limite des amortissements : art. 39 C CGI
